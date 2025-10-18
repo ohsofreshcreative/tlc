@@ -6,15 +6,15 @@ import { wordpressPlugin, wordpressThemeJson } from '@roots/vite-plugin'
 export default defineConfig({
   server: {
     host: 'windes.local', // 🔁 <-- zmiana z 'localhost'
-    port: 5173,
+    port: 5981,
     strictPort: true,
     cors: true,
-    origin: 'http://windes.local:5173',
+    origin: 'http://windes.local:5981',
 
     hmr: {
       protocol: 'ws',
       host: 'windes.local', // 🔁 <-- tu też!
-      port: 5173,
+      port: 5981,
     },
   },
 
