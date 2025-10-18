@@ -1,0 +1,41 @@
+{
+  "editor.deps.json": {
+    "file": "assets/editor.deps-DxpY22xl.json",
+    "src": "editor.deps.json"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-DVIsYJNk.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/css/editor.css": {
+    "file": "assets/editor-BPSrWQX0.css",
+    "src": "resources/css/editor.css",
+    "isEntry": true,
+    "names": [
+      "editor.css"
+    ]
+  },
+  "resources/images/ohsofresh.svg": {
+    "file": "assets/ohsofresh-DBDLJZzV.svg",
+    "src": "resources/images/ohsofresh.svg"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-Bx6RFe5B.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "css": [
+      "assets/app-DHBATib1.css"
+    ]
+  },
+  "resources/js/editor.js": {
+    "file": "assets/editor-CfU4GbSP.js",
+    "name": "editor",
+    "src": "resources/js/editor.js",
+    "isEntry": true
+  }
+}
