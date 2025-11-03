@@ -38,39 +38,39 @@ class Hero extends Block
 			->addTab('Treść', ['placement' => 'top'])
 			->addGroup('g_hero', ['label' => 'Hero'])
 			->addTrueFalse('use_video', [
-  'label' => 'Użyj wideo w tle',
-  'ui' => 1,
-  'default_value' => 0, // domyślnie obraz
-  'ui_on_text' => 'Tak',
-  'ui_off_text' => 'Nie',
-])
+				'label' => 'Użyj wideo w tle',
+				'ui' => 1,
+				'default_value' => 0, // domyślnie obraz
+				'ui_on_text' => 'Tak',
+				'ui_off_text' => 'Nie',
+			])
 
-->addImage('image', [
-  'label' => 'Obraz',
-  'return_format' => 'array',
-  'preview_size' => 'medium',
-  'conditional_logic' => [
-    [[ 'field' => 'use_video', 'operator' => '!=', 'value' => 1 ]] // pokazuj tylko gdy wideo = off
-  ],
-])
+			->addImage('image', [
+				'label' => 'Obraz',
+				'return_format' => 'array',
+				'preview_size' => 'medium',
+				'conditional_logic' => [
+					[['field' => 'use_video', 'operator' => '!=', 'value' => 1]] // pokazuj tylko gdy wideo = off
+				],
+			])
 
-->addFile('video', [
-  'label' => 'Wideo (MP4/WebM/Ogg)',
-  'return_format' => 'array',
-  'mime_types' => 'mp4,webm,ogv',
-  'conditional_logic' => [
-    [[ 'field' => 'use_video', 'operator' => '==', 'value' => 1 ]]
-  ],
-])
+			->addFile('video', [
+				'label' => 'Wideo (MP4/WebM/Ogg)',
+				'return_format' => 'array',
+				'mime_types' => 'mp4,webm,ogv',
+				'conditional_logic' => [
+					[['field' => 'use_video', 'operator' => '==', 'value' => 1]]
+				],
+			])
 
-->addImage('video_poster', [
-  'label' => 'Poster (obrazek startowy)',
-  'return_format' => 'array',
-  'preview_size' => 'medium',
-  'conditional_logic' => [
-    [[ 'field' => 'use_video', 'operator' => '==', 'value' => 1 ]]
-  ],
-])
+			->addImage('video_poster', [
+				'label' => 'Poster (obrazek startowy)',
+				'return_format' => 'array',
+				'preview_size' => 'medium',
+				'conditional_logic' => [
+					[['field' => 'use_video', 'operator' => '==', 'value' => 1]]
+				],
+			])
 
 			->addText('title', ['label' => 'Tytuł'])
 			->addWysiwyg('txt', [
@@ -89,6 +89,22 @@ class Hero extends Block
 			])
 
 			->endGroup()
+
+			->addTab('TLC w liczbach', ['placement' => 'top'])
+			->addRepeater('numbers', [
+				'label' => 'Funkcje',
+				'layout' => 'row', // 'row', 'block', albo 'table'
+				'min' => 1,
+				'max' => 3,
+				'button_label' => 'Dodaj'
+			])
+			->addText('number', [
+				'label' => 'Liczba',
+			])
+			->addText('opis', [
+				'label' => 'Opis',
+			])
+			->endRepeater()
 
 			->addTab('Ustawienia bloku', ['placement' => 'top'])
 
@@ -112,6 +128,7 @@ class Hero extends Block
 	{
 		return [
 			'g_hero' => get_field('g_hero'),
+			'numbers' => get_field('numbers'),
 			'flip' => get_field('flip'),
 			'section_id' => get_field('section_id'),
 			'section_class' => get_field('section_class'),

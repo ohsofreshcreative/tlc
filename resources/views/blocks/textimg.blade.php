@@ -20,12 +20,12 @@ $sectionClass .= $darkbg ? ' section-dark' : '';
 		<div class="__col grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
 			@if (!empty($g_textimg['image']))
 			<div data-gsap-element="{{ $flip ? 'img-right' : 'img-left' }}" class="__img order1">
-				<img class="object-cover w-full __img img-xl radius-img" src="{{ $g_textimg['image']['url'] }}" alt="{{ $g_textimg['image']['alt'] ?? '' }}">
+				<img class="object-cover w-full __img img-xl radius-img overflow-visible" src="{{ $g_textimg['image']['url'] }}" alt="{{ $g_textimg['image']['alt'] ?? '' }}">
 			</div>
 			@endif
 
 			<div class="__content order2">
-				<h2 data-gsap-element="header" class="">{{ $g_textimg['title'] }}</h2>
+				<h3 data-gsap-element="header" class="">{{ $g_textimg['title'] }}</h3>
 
 				<div data-gsap-element="txt" class="mt-2">
 					{!! $g_textimg['txt'] !!}

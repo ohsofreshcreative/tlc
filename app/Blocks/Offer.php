@@ -5,14 +5,14 @@ namespace App\Blocks;
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-class Reviews extends Block
+class Offer extends Block
 {
-	public $name = 'Slider - Opinie';
-	public $description = 'reviews';
-	public $slug = 'reviews';
+	public $name = 'Oferta';
+	public $description = 'offer';
+	public $slug = 'offer';
 	public $category = 'formatting';
-	public $icon = 'format-quote';
-	public $keywords = ['reviews', 'kafelki'];
+	public $icon = 'ellipsis';
+	public $keywords = ['offer', 'kafelki'];
 	public $mode = 'edit';
 	public $supports = [
 		'align' => false,
@@ -22,52 +22,48 @@ class Reviews extends Block
 
 	public function fields()
 	{
-		$reviews = new FieldsBuilder('reviews');
+		$offer = new FieldsBuilder('offer');
 
-		$reviews
-			->setLocation('block', '==', 'acf/reviews') // ważne!
+		$offer
+			->setLocation('block', '==', 'acf/offer') // ważne!
 			->addText('block-title', [
 				'label' => 'Tytuł',
 				'required' => 0,
 			])
 			->addAccordion('accordion1', [
-				'label' => 'Slider - Opinie',
+				'label' => 'Oferta',
 				'open' => false,
 				'multi_expand' => true,
 			])
-			/*--- FIELDS ---*/
+			/*--- TAB #1 ---*/
 			->addTab('Treści', ['placement' => 'top'])
-			->addGroup('g_reviews', ['label' => ''])
-			->addText('title', ['label' => 'Tytuł'])
-			->endGroup()
-
-			/*--- OPINIE ---*/
-
-			->addTab('Opinie', ['placement' => 'top'])
-			->addRepeater('r_reviews', [
-				'label' => 'Slider - Opinie',
+			->addGroup('g_offer', ['label' => ''])
+			->addText('header', ['label' => 'Nagłówek'])
+			->addRepeater('r_offer', [
+				'label' => 'Kafelki',
 				'layout' => 'table', // 'row', 'block', albo 'table'
 				'min' => 1,
-				'max' => 15,
 				'button_label' => 'Dodaj kafelek'
 			])
-			->addImage('img', [
+			->addImage('image', [
 				'label' => 'Obraz',
 				'return_format' => 'array', // lub 'url', lub 'id'
 				'preview_size' => 'medium',
 			])
-			->addTextarea('txt', [
-				'label' => 'Opis',
-				'rows' => 4,
-				'new_lines' => 'br',
+			->addText('header', [
+				'label' => 'Nagłówek',
 			])
-			->addText('name', [
-				'label' => 'Klient',
+			->addTextarea('text', [
+				'label' => 'Opis',
+			])
+			->addLink('button', [
+				'label' => 'Przycisk',
+				'return_format' => 'array',
 			])
 			->endRepeater()
+			->endGroup()
 
 			/*--- USTAWIENIA BLOKU ---*/
-
 			->addTab('Ustawienia bloku', ['placement' => 'top'])
 			->addText('section_id', [
 				'label' => 'ID',
@@ -75,7 +71,6 @@ class Reviews extends Block
 			->addText('section_class', [
 				'label' => 'Dodatkowe klasy CSS',
 			])
-
 			->addTrueFalse('flip', [
 				'label' => 'Odwrotna kolejność',
 				'ui' => 1,
@@ -90,6 +85,12 @@ class Reviews extends Block
 			])
 			->addTrueFalse('nomt', [
 				'label' => 'Usunięcie marginesu górnego',
+				'ui' => 1,
+				'ui_on_text' => 'Tak',
+				'ui_off_text' => 'Nie',
+			])
+			->addTrueFalse('gap', [
+				'label' => 'Większy odstęp',
 				'ui' => 1,
 				'ui_on_text' => 'Tak',
 				'ui_off_text' => 'Nie',
@@ -117,30 +118,32 @@ class Reviews extends Block
 				'ui' => 1,
 				'ui_on_text' => 'Tak',
 				'ui_off_text' => 'Nie',
+			])
+			->addTrueFalse('darkbg', [
+				'label' => 'Ciemne tło',
+				'ui' => 1,
+				'ui_on_text' => 'Tak',
+				'ui_off_text' => 'Nie',
 			]);
-
-		return $reviews;
+		return $offer;
 	}
 
 	public function with()
 	{
 		return [
-			'g_reviews' => get_field('g_reviews'),
-			'r_reviews' => get_field('r_reviews'),
+			'g_offer' => get_field('g_offer'),
+			'r_offer' => get_field('r_offer'),
 			'section_id' => get_field('section_id'),
 			'section_class' => get_field('section_class'),
 			'flip' => get_field('flip'),
 			'wide' => get_field('wide'),
 			'nomt' => get_field('nomt'),
+			'gap' => get_field('gap'),
 			'lightbg' => get_field('lightbg'),
 			'graybg' => get_field('graybg'),
 			'whitebg' => get_field('whitebg'),
 			'brandbg' => get_field('brandbg'),
+			'darkbg' => get_field('darkbg'),
 		];
 	}
-
-    public function enqueue()
-    {
-        // Pozostaw tę metodę pustą.
-    }
 }

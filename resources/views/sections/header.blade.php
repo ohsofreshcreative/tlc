@@ -3,13 +3,13 @@ use App\Walkers\DropdownWalker;
 use App\Walkers\MobileDropdownWalker;
 @endphp
 
-<header x-data="{ mobileOpen: false }" class="relative top-0 z-50 bg-dark masthead fixed-top">
+<header x-data="{ mobileOpen: false }" class="relative top-0 z-50 bg-white masthead fixed-top mx-4 mt-4 rounded-full">
 
 	<!-- Desktop Header -->
 	<div class="items-center justify-between hidden h-full py-4 px-12 mx-auto md:flex">
 		<a class="brand shrink-0" href="{{ home_url('/') }}">
 			@if ($logo)
-			<img src="{{ $logo['url'] }}" alt="{{ $logo['alt'] ?? 'Logo' }}" class="w-auto h-12">
+			<img src="{{ $logo['url'] }}" alt="{{ $logo['alt'] ?? 'Logo' }}" class="relative w-auto max-w-[200px] h-12 -top-0.5">
 			@else
 			<span class="text-xl font-bold">{{ $siteName }}</span>
 			@endif
@@ -29,10 +29,10 @@ use App\Walkers\MobileDropdownWalker;
 	</div>
 
 	<!-- Mobile Header Bar -->
-	<div class="flex items-center justify-between p-4 mobile-menu fixed-top md:hidden">
-		<a class="brand shrink-0" href="{{ home_url('/') }}">
+	<div class="flex items-center justify-between p-4 mobile-menu fixed-top md:hidden gap-20">
+		<a class="brand" href="{{ home_url('/') }}">
 			@if ($logo)
-			<img src="{{ $logo['url'] }}" alt="{{ $logo['alt'] ?? 'Logo' }}" class="w-auto h-12">
+			<img src="{{ $logo['url'] }}" alt="{{ $logo['alt'] ?? 'Logo' }}" class="relative w-auto h-12 -top-0.5">
 			@else
 			<span class="text-lg font-bold">{{ $siteName }}</span>
 			@endif

@@ -4,7 +4,7 @@
     "src": "editor.deps.json"
   },
   "resources/css/app.css": {
-    "file": "assets/app-DD9oz_i6.css",
+    "file": "assets/app-ay-O5G05.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "names": [
@@ -12,19 +12,51 @@
     ]
   },
   "resources/css/editor.css": {
-    "file": "assets/editor-D56u2dUJ.css",
+    "file": "assets/editor-En_vh2tD.css",
     "src": "resources/css/editor.css",
     "isEntry": true,
     "names": [
       "editor.css"
     ]
   },
+  "resources/fonts/SohoPro-Bold.woff2": {
+    "file": "assets/SohoPro-Bold-CvNEMWgj.woff2",
+    "src": "resources/fonts/SohoPro-Bold.woff2"
+  },
+  "resources/fonts/SohoPro-ExtraBold.woff2": {
+    "file": "assets/SohoPro-ExtraBold-D8itJACH.woff2",
+    "src": "resources/fonts/SohoPro-ExtraBold.woff2"
+  },
+  "resources/fonts/SohoPro-ExtraLight.woff2": {
+    "file": "assets/SohoPro-ExtraLight-DOlQY3Qc.woff2",
+    "src": "resources/fonts/SohoPro-ExtraLight.woff2"
+  },
+  "resources/fonts/SohoPro-ExtraLightItalic.woff2": {
+    "file": "assets/SohoPro-ExtraLightItalic-4A182zoi.woff2",
+    "src": "resources/fonts/SohoPro-ExtraLightItalic.woff2"
+  },
+  "resources/fonts/SohoPro-Italic.woff2": {
+    "file": "assets/SohoPro-Italic-BnPzMU3z.woff2",
+    "src": "resources/fonts/SohoPro-Italic.woff2"
+  },
+  "resources/fonts/SohoPro-Light.woff2": {
+    "file": "assets/SohoPro-Light-ftqCK5_D.woff2",
+    "src": "resources/fonts/SohoPro-Light.woff2"
+  },
+  "resources/fonts/SohoPro-Medium.woff2": {
+    "file": "assets/SohoPro-Medium-BbHXlDyH.woff2",
+    "src": "resources/fonts/SohoPro-Medium.woff2"
+  },
+  "resources/fonts/SohoPro-Regular.woff2": {
+    "file": "assets/SohoPro-Regular-BEQL6-pY.woff2",
+    "src": "resources/fonts/SohoPro-Regular.woff2"
+  },
   "resources/images/ohsofresh.svg": {
     "file": "assets/ohsofresh-DBDLJZzV.svg",
     "src": "resources/images/ohsofresh.svg"
   },
   "resources/js/app.js": {
-    "file": "assets/app-Bx6RFe5B.js",
+    "file": "assets/app-B5eQwGcM.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
