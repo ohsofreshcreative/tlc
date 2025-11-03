@@ -39,23 +39,29 @@ class Categories extends Block
 			])
 			->addTab('Elementy', ['placement' => 'top'])
 			->addGroup('g_categories', ['label' => ''])
-				->addText('title', ['label' => 'Tytuł'])
-				->addTaxonomy('selected_categories', [
-					'label' => 'Wybierz kategorie',
-					'instructions' => 'Wybierz kategorie do wyświetlenia w sliderze. Jeśli zostawisz puste, wyświetlą się wszystkie główne kategorie.',
-					'taxonomy' => 'product_cat',
-					'field_type' => 'checkbox',
-					'add_term' => 0,
-					'load_terms' => 1,
-					'save_terms' => 0,
-					'return_format' => 'id',
-				])
-				->addTrueFalse('hide_empty', [
-					'label' => 'Ukryj puste kategorie',
-					'instructions' => 'Czy ukryć kategorie, które nie mają przypisanych produktów?',
-					'ui' => 1,
-					'default_value' => 1,
-				])
+			->addText('title', ['label' => 'Tytuł'])
+			->addWysiwyg('txt', [
+				'label' => 'Treść',
+				'tabs' => 'all', // 'visual', 'text', 'all'
+				'toolbar' => 'full', // 'basic', 'full'
+				'media_upload' => true,
+			])
+			->addTaxonomy('selected_categories', [
+				'label' => 'Wybierz kategorie',
+				'instructions' => 'Wybierz kategorie do wyświetlenia w sliderze. Jeśli zostawisz puste, wyświetlą się wszystkie główne kategorie.',
+				'taxonomy' => 'product_cat',
+				'field_type' => 'checkbox',
+				'add_term' => 0,
+				'load_terms' => 1,
+				'save_terms' => 0,
+				'return_format' => 'id',
+			])
+			->addTrueFalse('hide_empty', [
+				'label' => 'Ukryj puste kategorie',
+				'instructions' => 'Czy ukryć kategorie, które nie mają przypisanych produktów?',
+				'ui' => 1,
+				'default_value' => 1,
+			])
 			->endGroup()
 			->addTab('Ustawienia bloku', ['placement' => 'top'])
 			->addText('section_id', [
@@ -122,62 +128,62 @@ class Categories extends Block
 		return $categories;
 	}
 
-    public function getCategories()
-    {
-        $group = get_field('g_categories');
-        
-        if (empty($group)) {
-            return [];
-        }
+	public function getCategories()
+	{
+		$group = get_field('g_categories');
 
-        $selected_ids = $group['selected_categories'] ?? [];
-        $hide_empty = $group['hide_empty'] ?? true;
+		if (empty($group)) {
+			return [];
+		}
 
-        $args = [
-            'taxonomy'   => 'product_cat',
-            'orderby'    => 'name',
-            'order'      => 'ASC',
-            'hide_empty' => $hide_empty,
-        ];
+		$selected_ids = $group['selected_categories'] ?? [];
+		$hide_empty = $group['hide_empty'] ?? true;
 
-        if (!empty($selected_ids)) {
-            $args['include'] = $selected_ids;
-            $args['orderby'] = 'include';
-        } else {
-            $args['parent'] = 0;
-        }
+		$args = [
+			'taxonomy'   => 'product_cat',
+			'orderby'    => 'name',
+			'order'      => 'ASC',
+			'hide_empty' => $hide_empty,
+		];
 
-        $product_categories = get_terms($args);
+		if (!empty($selected_ids)) {
+			$args['include'] = $selected_ids;
+			$args['orderby'] = 'include';
+		} else {
+			$args['parent'] = 0;
+		}
 
-        if (is_wp_error($product_categories) || empty($product_categories)) {
-            return [];
-        }
+		$product_categories = get_terms($args);
 
-        return array_map(function ($term) {
-            $thumbnail_id = get_term_meta($term->term_id, 'thumbnail_id', true);
-            $image_url = $thumbnail_id ? wp_get_attachment_url($thumbnail_id) : wc_placeholder_img_src('woocommerce_thumbnail');
+		if (is_wp_error($product_categories) || empty($product_categories)) {
+			return [];
+		}
 
-            return [
-                'name' => $term->name,
-                'url' => get_term_link($term),
-                'image_url' => $image_url,
-            ];
-        }, $product_categories);
-    }
+		return array_map(function ($term) {
+			$thumbnail_id = get_term_meta($term->term_id, 'thumbnail_id', true);
+			$image_url = $thumbnail_id ? wp_get_attachment_url($thumbnail_id) : wc_placeholder_img_src('woocommerce_thumbnail');
 
-    public function with()
-    {
-        return [
-            'g_categories' => get_field('g_categories'),
-            'categories' => $this->getCategories(),
-            'section_id' => get_field('section_id'),
-            'section_class' => get_field('section_class'),
-            'nomt' => get_field('nomt'),
-            'lightbg' => get_field('lightbg'),
-            'graybg' => get_field('graybg'),
-            'whitebg' => get_field('whitebg'),
-            'darkbg' => get_field('darkbg'),
-            'brandbg' => get_field('brandbg'),
-        ];
-    }
+			return [
+				'name' => $term->name,
+				'url' => get_term_link($term),
+				'image_url' => $image_url,
+			];
+		}, $product_categories);
+	}
+
+	public function with()
+	{
+		return [
+			'g_categories' => get_field('g_categories'),
+			'categories' => $this->getCategories(),
+			'section_id' => get_field('section_id'),
+			'section_class' => get_field('section_class'),
+			'nomt' => get_field('nomt'),
+			'lightbg' => get_field('lightbg'),
+			'graybg' => get_field('graybg'),
+			'whitebg' => get_field('whitebg'),
+			'darkbg' => get_field('darkbg'),
+			'brandbg' => get_field('brandbg'),
+		];
+	}
 }

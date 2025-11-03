@@ -93,6 +93,7 @@ body {
   --body: #12141a !important;
   --primary: #00aa4f;
   --p-hover: #008a40;
+  --p-50: #f2fbf6;
   --p-100: #cceddb;
   --p-200: #aae1c4;
   --p-300: #80d2a6;
@@ -166,7 +167,7 @@ body {
 
   --footer-py: 156px 0;
 
-  --gradient: linear-gradient(90deg, var(--primary) 0%, var(--p-500) 100%);
+  --gradient: linear-gradient(90deg, var(--secondary) 0%, #006F11 100%);
 }
 
 @font-face {
@@ -715,6 +716,10 @@ h6,
 
 .border-right-p {
   border-right: 1px dotted var(--border-p) !important;
+}
+
+.border-left-p {
+  border-left: 1px dotted var(--border-p) !important;
 }
 
 .border-right-p:last-child{
