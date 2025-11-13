@@ -5,7 +5,7 @@ $shop = $shop ?? get_field('product_shop') ?? [];
 $image = $shop['image'] ?? null;
 $icon = $shop['icon'] ?? null;
 $header = $shop['header'] ?? '';
-$content = $shop['content'] ?? '';
+$title = $shop['title'] ?? '';
 $link = $shop['link'] ?? null;
 
 // ACF link: ['url' => ..., 'title' => ..., 'target' => '_blank'|'' ]
@@ -14,9 +14,9 @@ $link_title = $link['title'] ?? '';
 $link_target = $link['target'] ?? '';
 @endphp
 
-@if($image || $header || $content || $link)
-<section class="product-shop bg-dark relative -smt">
-	<div class="__wrapper grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
+@if($image || $header || $title || $link)
+<section class="product-shop c-main relative -smt">
+	<div class="__wrapper bg-dark radius grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
 
 		@if($image)
 		<figure class="__img img-2xl !mb-0">
@@ -25,7 +25,7 @@ $link_target = $link['target'] ?? '';
 			'large',
 			false,
 			[
-			'class' => '__img object-cover',
+			'class' => '__img object-cover rounded-l-2xl',
 			'loading' => 'lazy',
 			'alt' => esc_attr($image['alt'] ?? ($header ?: get_the_title())),
 			'sizes' => '(min-width: 1024px) 800px, 100vw',
@@ -40,14 +40,12 @@ $link_target = $link['target'] ?? '';
 			<img src="{{ esc_url($icon['url']) }}" alt="{{ esc_attr($icon['alt'] ?? '') }}" class="__icon mb-4" />
 			@endif
 
-			@if($header)
-			<h3 class="__title primary m-header">{{ esc_html($header) }}</h3>
+			@if($title)
+			<p class="__title primary text-2xl">{{ esc_html($title) }}</p>
 			@endif
 
-			@if($content)
-			<div class="__text text-white">
-				{!! wp_kses_post($content) !!}
-			</div>
+			@if($header)
+			<h3 class="__title text-white mt-4">{{ esc_html($header) }}</h3>
 			@endif
 
 			@if($link_url && $link_title)

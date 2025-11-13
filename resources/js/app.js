@@ -97,26 +97,4 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   });
-
-  // --- SKRYPT DO PRZEWIJANIA ---
-  const scrollArrows = document.querySelectorAll('.js-scroll-to-next');
-  scrollArrows.forEach(arrow => {
-    arrow.addEventListener('click', function(event) {
-      event.preventDefault();
-      const currentSection = this.closest('section');
-      if (currentSection) {
-        const nextSection = currentSection.nextElementSibling;
-        if (nextSection) {
-          const offset = 104;
-          const sectionTopPosition = nextSection.getBoundingClientRect().top + window.scrollY;
-          const targetPosition = sectionTopPosition - offset;
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-        }
-      }
-    });
-  });
-
 });

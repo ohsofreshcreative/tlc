@@ -4,7 +4,7 @@
     "src": "editor.deps.json"
   },
   "resources/css/app.css": {
-    "file": "assets/app-DtjLBrni.css",
+    "file": "assets/app-C8Jxv9Oo.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "names": [
@@ -12,7 +12,7 @@
     ]
   },
   "resources/css/editor.css": {
-    "file": "assets/editor-C9rSRq8E.css",
+    "file": "assets/editor-94CFpB6F.css",
     "src": "resources/css/editor.css",
     "isEntry": true,
     "names": [
@@ -55,8 +55,12 @@
     "file": "assets/ohsofresh-DBDLJZzV.svg",
     "src": "resources/images/ohsofresh.svg"
   },
+  "resources/images/ring-mask.svg": {
+    "file": "assets/ring-mask-tM1W9PyO.svg",
+    "src": "resources/images/ring-mask.svg"
+  },
   "resources/js/app.js": {
-    "file": "assets/app-DDBV2OEO.js",
+    "file": "assets/app-BFpB_KYj.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,

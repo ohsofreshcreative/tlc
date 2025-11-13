@@ -1,58 +1,44 @@
 @php
-// Jeśli nie przekażesz $about przez @include, pobierz z ACF
-$about = $about ?? get_field('product_about') ?? [];
+$about_group = get_field('product_about') ?? [];
 
-$image = $about['image'] ?? null;
-$header = $about['header'] ?? '';
-$content = $about['content'] ?? '';
-$link = $about['link'] ?? null;
-
-// ACF link: ['url' => ..., 'title' => ..., 'target' => '_blank'|'' ]
-$link_url = $link['url'] ?? '';
-$link_title = $link['title'] ?? '';
-$link_target = $link['target'] ?? '';
+$main_header = $about_group['header'] ?? '';
+$items = $about_group['items'] ?? [];
 @endphp
 
-@if($image || $header || $content || $link)
-<section class="product-about bg-dark relative -spt">
-	<div class="__wrapper c-main grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
+@if($main_header || !empty($items))
+<section class="product-about relative -spt">
+	<div class="__wrapper c-main">
 
-		@if($image)
-		<figure class="__img img-xl order-1 lg:order-2">
-			{!! wp_get_attachment_image(
-			$image['ID'] ?? $image,
-			'large',
-			false,
-			[
-			'class' => '__img radius-img object-cover',
-			'loading' => 'lazy',
-			'alt' => esc_attr($image['alt'] ?? ($header ?: get_the_title())),
-			'sizes' => '(min-width: 1024px) 800px, 100vw',
-			]
-			) !!}
-		</figure>
-		@endif
-
-		<div class="__content order-2 lg:order-1">
-			@if($header)
-			<h4 class="__title m-header text-white">{{ esc_html($header) }}</h4>
+		<div class="__content">
+			@if($main_header)
+			<h3 class="w-full md:w-1/2">{{ esc_html($main_header) }}</h3>
 			@endif
 
-			@if($content)
-			<div class="__text text-white">
-				{!! wp_kses_post($content) !!}
+			@if(!empty($items))
+			<div class="__items mt-14">
+				@foreach($items as $item)
+				<div class="__item grid grid-cols-1 md:grid-cols-[1fr_3fr] border-top-p pt-14 mt-14">
+					
+					@if(!empty($item['title']))
+					<h6 class="primary mb-6">{{ esc_html($item['title']) }}</h6>
+					@endif
+
+					<div>
+						@if(!empty($item['header']))
+						<h5 class="">{{ esc_html($item['header']) }}</h5>
+						@endif
+						@if(!empty($item['content']))
+						<div class="mt-2">
+							{!! wp_kses_post($item['content']) !!}
+						</div>
+						@endif
+					</div>
+				</div>
+				@endforeach
 			</div>
-			@endif
-
-			@if($link_url && $link_title)
-			<a data-gsap-element="btn" class="main-btn m-btn" href="{{ esc_url($link_url) }}" target="{{ esc_attr($link_target ?: '_self') }}">
-				{{ esc_html($link_title) }}
-			</a>
 			@endif
 		</div>
 
 	</div>
-	<img class="absolute top-1/2 -left-1/3" src="/wp-content/uploads/2025/10/sign-reversed.svg" />
-	<div class="__glow"></div>
 </section>
 @endif

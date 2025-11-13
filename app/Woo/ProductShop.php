@@ -32,19 +32,16 @@ add_action('acf/init', function () {
 						'preview_size'  => 'thumbnail'
 					],
 					[
+						'key' => 'title',
+						'label' => 'Tytuł',
+						'name' => 'title',
+						'type' => 'text',
+					],
+					[
 						'key' => 'header',
 						'label' => 'Nagłówek',
 						'name' => 'header',
 						'type' => 'text',
-					],
-					[
-						'key' => 'content',
-						'label' => 'Treść',
-						'name' => 'content',
-						'type' => 'wysiwyg',
-						'tabs' => 'all',
-						'toolbar' => 'full',
-						'media_upload' => false,
 					],
 					[
 						'key' => 'link',

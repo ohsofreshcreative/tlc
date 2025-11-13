@@ -11,7 +11,7 @@ $sectionClass .= $brandbg ? ' section-brand' : '';
 
 <!--- reviews --->
 
-<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="reviews -smt {{ $sectionClass }} {{ $section_class }}">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="s-reviews -smt {{ $sectionClass }} {{ $section_class }}">
 	<div class="__wrapper c-main">
 		<div class="__content">
 			<div class="__wrapper c-main block pb-20">

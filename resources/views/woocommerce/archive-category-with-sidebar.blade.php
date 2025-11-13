@@ -3,7 +3,6 @@
 @section('content')
   <main id="main" class="main c-main -spt">
 
-    {{-- DODAJEMY BREADCRUMBS W TYM MIEJSCU --}}
     @php
       if (function_exists('woocommerce_breadcrumb')) {
         woocommerce_breadcrumb();
@@ -17,26 +16,24 @@
     </header>
 
     <div class="flex flex-wrap lg:flex-nowrap gap-x-8 mt-10">
-      <aside class="sidebar w-full lg:w-1/4 order-first">
+     <!--  <aside class="sidebar w-full lg:w-1/4 order-first">
         @php dynamic_sidebar('sidebar-shop') @endphp
-      </aside>
+      </aside> -->
 
-      <div class="products-wrapper w-full lg:w-3/4">
+      <div class="products-wrapper w-full">
         @if(woocommerce_product_loop())
           @php
             do_action('woocommerce_before_shop_loop');
-            // Ta funkcja jest teraz tylko dla hooków, nie generuje tagu.
             woocommerce_product_loop_start(false);
           @endphp
 
-          {{-- ZMIANA: Zmieniamy <div> na <ul> i dodajemy klasę `products` --}}
           <ul class="products_grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @if(wc_get_loop_prop('total'))
               @while(have_posts())
                 @php the_post(); wc_get_template_part('content', 'product'); @endphp
               @endwhile
             @endif
-          </ul> {{-- Zamykamy nasz <ul> --}}
+          </ul> 
 
           @php
             woocommerce_product_loop_end(false);

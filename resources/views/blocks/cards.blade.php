@@ -4,14 +4,15 @@ $sectionClass .= $flip ? ' order-flip' : '';
 $sectionClass .= $wide ? ' wide' : '';
 $sectionClass .= $nomt ? ' !mt-0' : '';
 $sectionClass .= $gap ? ' wider-gap' : '';
-$sectionClass .= $lightbg ? ' section-light' : '';
-$sectionClass .= $graybg ? ' section-gray' : '';
-$sectionClass .= $whitebg ? ' section-white' : '';
-$sectionClass .= $brandbg ? ' section-brand' : '';
-$sectionClass .= $darkbg ? ' section-dark' : '';
+
+if (!empty($background) && $background !== 'none') {
+    $sectionClass .= ' ' . $background;
+}
 @endphp
 
-<section data-gsap-anim="section" class="cards -smt {{ $sectionClass }}">
+<!--- cards --->
+
+<section data-gsap-anim="section" class="s-cards -smt {{ $sectionClass }}">
 	<div class="__wrapper c-main">
 		<div class="">
 
@@ -19,35 +20,6 @@ $sectionClass .= $darkbg ? ' section-dark' : '';
 				<div class="__content">
 					<h2 class="m-header">{{ strip_tags($g_cards['header']) }}</h2>
 					<p>{{ $g_cards['text'] }}</p>
-				</div>
-
-				@if (!empty($g_photos))
-				<div class="__photos relative z-9">
-					@if (!empty($g_photos['image1']))
-					<div data-gsap-element="image" class="__img1">
-						<img class="object-cover w-full __img img-xl radius-img"
-							src="{{ $g_photos['image1']['url'] }}"
-							alt="{{ $g_photos['image1']['alt'] ?? '' }}">
-					</div>
-					@endif
-					@if (!empty($g_photos['image2']))
-					<div data-gsap-element="image" class="__img2">
-						<img class="radius-img"
-							src="{{ $g_photos['image2']['url'] }}"
-							alt="{{ $g_photos['image2']['alt'] ?? '' }}">
-					</div>
-					@endif
-					@if (!empty($g_photos['image3']))
-					<div data-gsap-element="image" class="__img3">
-						<img class="radius-img"
-							src="{{ $g_photos['image3']['url'] }}"
-							alt="{{ $g_photos['image3']['alt'] ?? '' }}">
-					</div>
-					@endif
-				</div>
-				@endif
-
-				<div class="__glow">
 				</div>
 			</div>
 
@@ -63,7 +35,7 @@ $sectionClass .= $darkbg ? ' section-dark' : '';
 
 			<div class="grid {{ $gridClass }} gap-8 mt-10">
 				@foreach ($r_cards as $item)
-				<div class="__card relative bg-dark radius border-p p-8">
+				<div class="__card relative border-right-p">
 					@if (!empty($item['image']['url']))
 					<img class="mb-6" src="{{ $item['image']['url'] }}" alt="{{ $item['image']['alt'] ?? '' }}" />
 					@endif

@@ -201,6 +201,7 @@ add_action('widgets_init', function () {
 	] + $defaultConfig);
 });
 
+
 /*--- CATEGORY IMAGE ---*/
 
 /**
@@ -296,4 +297,26 @@ add_action('init', function () {
 
     // Usuń akcję odpowiedzialną za wyświetlanie dropdownu do sortowania
     remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+});
+
+
+/*---- CATEGORY REDIRECT TO PAGE ----*/
+
+add_action('template_redirect', function () {
+    // Sprawdź, czy jesteśmy na stronie kategorii produktu i czy ACF jest aktywny
+    if (!is_product_category() || !function_exists('get_field')) {
+        return;
+    }
+
+    // Pobierz aktualny obiekt kategorii
+    $category = get_queried_object();
+
+    // Pobierz ID strony podlinkowanej w polu ACF
+    $linked_page_url = get_field('linked_page', $category);
+
+    // Jeśli strona została podlinkowana, wykonaj przekierowanie 301
+    if ($linked_page_url) {
+        wp_redirect($linked_page_url, 301);
+        exit();
+    }
 });

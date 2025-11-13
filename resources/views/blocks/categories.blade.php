@@ -14,7 +14,7 @@ $darkbg ? 'section-dark' : '',
 <section
 	data-gsap-anim="section"
 	@if (!empty($section_id)) id="{{ $section_id }}" @endif
-	class="categories relative -smt  {{ $sectionClass }} {{ $section_class }}">
+	class="s-categories relative -smt  {{ $sectionClass }} {{ $section_class }}">
 	<div class="__wrapper c-main relative">
 		<div class="w-100 md:w-2/3 lg:w-1/2">
 			@if (!empty($g_categories['title']))

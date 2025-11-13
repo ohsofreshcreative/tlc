@@ -5,11 +5,11 @@ namespace App\Blocks;
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-class HeroCases extends Block
+class HeroCat extends Block
 {
-	public $name = 'Sekcja Hero - Realizacje';
-	public $description = 'hero-cases';
-	public $slug = 'hero-cases';
+	public $name = 'Hero - Kategoria';
+	public $description = 'hero-cat';
+	public $slug = 'hero-cat';
 	public $category = 'formatting';
 	public $icon = 'align-full-width';
 	public $keywords = ['tresc', 'zdjecie'];
@@ -22,31 +22,36 @@ class HeroCases extends Block
 
 	public function fields()
 	{
-		$hero_cases = new FieldsBuilder('hero-cases');
+		$hero_cat = new FieldsBuilder('hero-cat');
 
-		$hero_cases
-			->setLocation('block', '==', 'acf/hero-cases') // ważne!
+		$hero_cat
+			->setLocation('block', '==', 'acf/hero-cat') // ważne!
 			->addText('block-title', [
 				'label' => 'Tytuł',
 				'required' => 0,
 			])
 			->addAccordion('accordion1', [
-				'label' => 'Hero - Realizacje',
+				'label' => 'Hero - Kategoria',
 				'open' => false,
 				'multi_expand' => true,
 			])
-			->addTab('Treść', ['placement' => 'top']) 
-			->addGroup('g_herocases', ['label' => 'Hero - Pojedyncza oferta'])
+			->addTab('Treść', ['placement' => 'top'])
+			->addGroup('g_herocat', ['label' => 'Hero - Pojedyncza oferta'])
 			->addImage('image', [
 				'label' => 'Obraz',
 				'return_format' => 'array', // lub 'url', lub 'id'
-				'preview_size' => 'medium',
+				'preview_size' => 'thumbnail',
 			])
 			->addText('title', ['label' => 'Tytuł'])
-
+			->addWysiwyg('txt', [
+				'label' => 'Treść',
+				'tabs' => 'all', // 'visual', 'text', 'all'
+				'toolbar' => 'full', // 'basic', 'full'
+				'media_upload' => true,
+			])
 			->endGroup()
 
-			->addTab('Ustawienia bloku', ['placement' => 'top']) 
+			->addTab('Ustawienia bloku', ['placement' => 'top'])
 
 			->addTrueFalse('flip', [
 				'label' => 'Odwrotna kolejność',
@@ -55,13 +60,13 @@ class HeroCases extends Block
 				'ui_off_text' => 'Nie',
 			]);
 
-		return $hero_cases;
+		return $hero_cat;
 	}
 
 	public function with()
 	{
 		return [
-			'g_herocases' => get_field('g_herocases'),
+			'g_herocat' => get_field('g_herocat'),
 			'flip' => get_field('flip'),
 		];
 	}

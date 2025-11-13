@@ -13,7 +13,7 @@ $sectionClass .= $darkbg ? ' section-dark' : '';
 
 <!--- offer --->
 
-<section data-gsap-anim="section" class="offer -smt border-top-p {{ $sectionClass }}">
+<section data-gsap-anim="section" class="s-offer -smt border-top-p {{ $sectionClass }}">
 	<div class="__wrapper c-main">
 
 		<h2 class="text-center">{{ strip_tags($g_offer['header']) }}</h2>

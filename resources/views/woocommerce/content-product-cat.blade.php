@@ -1,46 +1,44 @@
 {{-- resources/views/woocommerce/content-product_cat.blade.php --}}
 @php
-  if (empty($category)) {
-    return;
-  }
+if (empty($category)) {
+return;
+}
 
-  // Pobranie klas kategorii i zamiana na string jeśli tablica
-  $classes = wc_get_product_cat_class('product-category product', $category);
-  if (is_array($classes)) {
-    $classes = implode(' ', $classes);
-  }
+// Pobranie klas kategorii i zamiana na string jeśli tablica
+$classes = wc_get_product_cat_class('product-category product', $category);
+if (is_array($classes)) {
+$classes = implode(' ', $classes);
+}
 @endphp
 
 
 
-<li class="{{ $classes }}">
+<li class="__product border-left-p">
 
-  {{-- Hook przed kategorią (np. otwarcie <a>) --}}
-  @php do_action('woocommerce_before_subcategory', $category); @endphp
+	@php do_action('woocommerce_before_subcategory', $category); @endphp
 
-  <a href="{{ esc_url(get_term_link($category, 'product_cat')) }}"
-     class="woocommerce-LoopCategory-link woocommerce-loop-category__link"
-     aria-label="{{ esc_attr($category->name) }}">
+	<a href="{{ esc_url(get_term_link($category, 'product_cat')) }}"
+		class="woocommerce-LoopCategory-link woocommerce-loop-category__link block !px-10 !py-14 bg-white hover:bg-green-50"
+		aria-label="{{ esc_attr($category->name) }}">
 
-    {{-- Miniaturka kategorii --}}
-    @php do_action('woocommerce_before_subcategory_title', $category); @endphp
+		@php do_action('woocommerce_before_subcategory_title', $category); @endphp
 
-    <h2 class="woocommerce-loop-category__title">
-      {{ $category->name }}
+		<h2 class="woocommerce-loop-category__title text-left text-h6 !mt-8">
+			{{ $category->name }}
 
-      @if (!empty($category->count))
-        {!! apply_filters(
-          'woocommerce_subcategory_count_html',
-          ' <mark class="count">' . intval($category->count) . '</mark>',
-          $category
-        ) !!}
-      @endif
-    </h2>
+			@if (!empty($category->count))
+			{!! apply_filters(
+			'woocommerce_subcategory_count_html',
+			' <mark class="count">' . intval($category->count) . '</mark>',
+			$category
+			) !!}
+			@endif
+		</h2>
 
-    {{-- Dodatkowe elementy po tytule (np. opis) --}}
-    @php do_action('woocommerce_after_subcategory_title', $category); @endphp
-  </a>
+		<p class="underline-btn mt-4">Zobacz produkty</p>
 
-  {{-- Hook po kategorii (np. zamknięcia wrapperów) --}}
-  @php do_action('woocommerce_after_subcategory', $category); @endphp
+		@php do_action('woocommerce_after_subcategory_title', $category); @endphp
+	</a>
+
+	@php do_action('woocommerce_after_subcategory', $category); @endphp
 </li>

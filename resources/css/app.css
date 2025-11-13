@@ -13,17 +13,22 @@
 @import '../css/blocks/hero.scss';
 @import '../css/blocks/tlc.scss';
 @import '../css/blocks/offer.scss';
-@import '../css/blocks/text-image.scss';
+@import '../css/blocks/text-img.scss';
 @import '../css/blocks/categories.scss';
 @import '../css/blocks/cta-bg.scss';
 @import '../css/blocks/reviews.scss';
-/*-- bottom-block --*/
+@import '../css/blocks/bottom-block.scss';
+@import '../css/blocks/hero-prod.scss';
+@import '../css/blocks/hero-cat.scss';
+@import '../css/blocks/selection.scss';
+@import '../css/blocks/order.scss';
+@import '../css/blocks/cards.scss';
+@import '../css/blocks/product-hero.scss';
+@import '../css/blocks/hero-sub.scss';
 
 /*-- NOT USED --*/
-@import '../css/blocks/hero-sub.scss';
 @import '../css/blocks/hero-offer.scss';
 
-@import '../css/blocks/cards.scss';
 @import '../css/blocks/categories.scss';
 @import '../css/blocks/area-block.scss';
 @import '../css/blocks/cases.scss';

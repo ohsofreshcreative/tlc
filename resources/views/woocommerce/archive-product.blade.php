@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <header class="woocommerce-products-header">
 	@if (apply_filters('woocommerce_show_page_title', true))
 	<h1 class="woocommerce-products-header__title page-title">{!! woocommerce_page_title(false) !!}</h1>
@@ -10,27 +9,20 @@
 </header>
 
 @php
-// Ten hook generuje opis kategorii. Zostaje nad układem dwukolumnowym.
 do_action('woocommerce_archive_description');
 @endphp
 
-{{-- ==================================================================== --}}
-{{-- POCZĄTEK TWOJEJ WYMARZONEJ STRUKTURY: KONTENER FLEX --}}
-{{-- ==================================================================== --}}
 <div class="flex flex-wrap lg:flex-nowrap gap-x-8">
 
-	{{-- Kolumna 1: Sidebar (widżety) --}}
 	@if (is_active_sidebar('sidebar-shop'))
 	<aside class="sidebar w-full lg:w-1/4">
 		@php dynamic_sidebar('sidebar-shop') @endphp
 	</aside>
 	@endif
 
-	{{-- Kolumna 2: Główna treść (produkty) --}}
 	<div class="content-products w-full {{ is_active_sidebar('sidebar-shop') ? 'lg:w-3/4' : 'lg:w-full' }}">
 		@if (woocommerce_product_loop())
 		@php
-		// Te hooki generują sortowanie i liczbę wyników
 		do_action('woocommerce_before_shop_loop');
 		woocommerce_product_loop_start();
 		@endphp
@@ -53,13 +45,9 @@ do_action('woocommerce_archive_description');
 		@endif
 	</div> {{-- Koniec .content-products --}}
 
-</div> {{-- Koniec .flex --}}
-{{-- ==================================================================== --}}
-{{-- KONIEC KONTENERA FLEX --}}
-{{-- ==================================================================== --}}
+</div> 
 
 
-{{-- Twoja sekcja z opisem ACF na dole --}}
 @php $term = get_queried_object() @endphp
 @if ($term instanceof WP_Term && $term->taxonomy === 'product_cat')
 <section class="shop-term-intro mt-8">

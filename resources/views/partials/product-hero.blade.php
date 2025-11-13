@@ -4,61 +4,37 @@ $extras = get_field('product_extras') ?: [];
 $imgUrl = $extras['image']['url'] ?? '';
 $link = $extras['link'] ?? null;
 
-// Klasy sekcji (możesz podpiąć to pod toggles w ACF jeśli chcesz)
-$flip = false; $wide = false; $nomt = false; $gap = false;
-$lightbg = false; $graybg = false; $whitebg = false; $brandbg = false;
-
-$sectionClass = '';
-$sectionClass .= $flip ? ' order-flip' : '';
-$sectionClass .= $wide ? ' wide' : '';
-$sectionClass .= $nomt ? ' !mt-0' : '';
-$sectionClass .= $gap ? ' wider-gap' : '';
-$sectionClass .= $lightbg ? ' section-light' : '';
-$sectionClass .= $graybg ? ' section-gray' : '';
-$sectionClass .= $whitebg ? ' section-white' : '';
-$sectionClass .= $brandbg ? ' section-brand' : '';
-
-// Tło jak w Twoim przykładzie (z gradientami)
-$backgroundImage = $imgUrl ? "
-linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 50%),
-linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%),
-url({$imgUrl})
-" : '';
 @endphp
 
 @if($imgUrl)
 <section data-gsap-anim="section"
-	class="hero-sub relative h-[90vh] max-h-[940px] {{ $sectionClass }}"
-	style="background-image: {{ $backgroundImage }}; background-size: cover; background-position: center;">
+	class="s-product-hero relative bg-gradient -spt">
 
-	<div class="__wrapper c-main h-full pt-6 pb-26">
-		<div class="__content h-full flex flex-col justify-between w-full sm:w-1/2 relative z-10">
-			@if (function_exists('woocommerce_breadcrumb'))
-			@php
-			woocommerce_breadcrumb([
-			'delimiter' => '<span class="sep"> / </span>',
-			'wrap_before' => '<nav class="woocommerce-breadcrumb" aria-label="Breadcrumb">',
-				'wrap_after' => '</nav>',
-			'before' => '',
-			'after' => '',
-			'home' => _x('Strona główna', 'breadcrumb', 'sage'),
-			]);
-			@endphp
-			@endif
+	<div class="__wrapper c-main h-full">
+		@php
+		if (function_exists('woocommerce_breadcrumb')) {
+		woocommerce_breadcrumb(); }
+		@endphp
 
-			<div>
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+			<div class="__text">
 				<h1 class="text-white text-h2 m-header">{{ get_the_title() }}</h1>
-				@if(!empty($link['url']))
-				<div class="inline-buttons m-btn">
-					<a class="main-btn left-btn" href="">Zapytaj o produkt</a>
-					<a class="shop-btn"
-						href="{{ esc_url($link['url']) }}"
-						target="{{ esc_attr($link['target'] ?? '_self') }}">
-						{{ $link['title'] ?? 'Zobacz więcej' }}
-					</a>
+				@if (!empty($extras['content']))
+				<div class="text-white mt-4">
+					{!! $extras['content'] !!}
 				</div>
 				@endif
+				<a data-gsap-element="arrow" href="#" class="__scroll block m-btn">
+					<div class="__arrow border-p">
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="20" viewBox="0 0 20 24" fill="none">
+							<path d="M10.7383 22.7454L19.4181 14.0655C19.8264 13.6572 19.8265 12.9932 19.4183 12.585C19.0101 12.1768 18.3461 12.1768 17.9378 12.5851L11.0484 19.4744L11.0476 1.99787C11.0474 1.41913 10.5788 0.95049 10 0.950244C9.42127 0.950596 8.95255 1.41932 8.9522 1.99806L8.953 19.4752L2.06463 12.5869C1.65641 12.1786 0.99242 12.1787 0.584122 12.587C0.175823 12.9953 0.175763 13.6593 0.583987 14.0675L9.25988 22.7434C9.666 23.1537 10.33 23.1537 10.7383 22.7454Z" fill="#00aa4f" />
+						</svg>
+					</div>
+				</a>
 			</div>
+			@if($imgUrl)
+			<img src="{{ $imgUrl }}" class="relative justify-self-center -bottom-20">
+			@endif
 		</div>
 	</div>
 </section>

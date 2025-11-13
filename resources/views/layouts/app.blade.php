@@ -27,7 +27,7 @@
 
 		@elseif (function_exists('is_product') && is_product())
 
-		<main id="main" class="main -spt">
+		<main id="main" class="main">
 			@yield('content')
 		</main>
 

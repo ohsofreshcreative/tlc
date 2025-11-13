@@ -26,13 +26,13 @@ class ThemeServiceProvider extends SageServiceProvider
 	{
 		parent::boot();
 
-		// CUSTOM POST TYPE OFERTA
+		// CUSTOM POST TYPE BRANŻE
 		add_action('init', function () {
-			register_post_type('offer', [
-				'label' => 'Oferta',
+			register_post_type('sectors', [
+				'label' => 'Branże',
 				'public' => true,
 				'has_archive' => false,
-				'rewrite' => ['slug' => 'oferta'],
+				'rewrite' => ['slug' => 'sectors'],
 				'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
 				'show_in_rest' => true,
 				'taxonomies' => ['category'],
@@ -42,10 +42,10 @@ class ThemeServiceProvider extends SageServiceProvider
 
 		if (function_exists('acf_add_options_page')) {
 			acf_add_options_sub_page([
-				'page_title'  => 'Kafelki oferty',
-				'menu_title'  => 'Kafelki oferty',
-				'parent_slug' => 'edit.php?post_type=offer',
-				'menu_slug'   => 'offer-cards',
+				'page_title'  => 'Kafelki',
+				'menu_title'  => 'Kafelki',
+				'parent_slug' => 'edit.php?post_type=sectors',
+				'menu_slug'   => 'sectors-cards',
 				'capability'  => 'edit_posts',
 			]);
 		};
@@ -93,7 +93,7 @@ class ThemeServiceProvider extends SageServiceProvider
 				/* 	acf_add_options_page([
 					'page_title' => 'Oferta',
 					'menu_title' => 'Oferta',
-					'menu_slug'  => 'offer',
+					'menu_slug'  => 'sectors',
 					'capability' => 'edit_posts',
 					'parent_slug' => '',
 					'redirect'   => false,

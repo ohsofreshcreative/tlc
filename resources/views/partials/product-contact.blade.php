@@ -1,59 +1,59 @@
 @php
-  // Dane z ACF (fallback – można też przekazać przez @include)
-  $productContact = $productContact ?? get_field('product_contact') ?? [];
-  $g_contact_1    = $g_contact_1    ?? ($productContact['g_contact_1'] ?? []);
-  $g_contact_2    = $g_contact_2    ?? ($productContact['g_contact_2'] ?? []);
+// Pobieramy dane z globalnej strony opcji 'bottom'
+$bottom = get_field('bottom', 'option');
+$flip = get_field('flip', 'option');
+$section_id = get_field('section_id', 'option');
+$section_class_from_options = get_field('section_class', 'option');
 
-  // Klasy zewnętrzne (opcjonalnie)
-  $sectionClass   = $sectionClass   ?? '';
+// Budujemy klasy CSS
+$sectionClass = '';
+$sectionClass .= $flip ? ' order-flip' : '';
+$sectionClass .= ' ' . $section_class_from_options; // Dodajemy klasy z opcji
 
-  // Dane treści
-  $header   = $g_contact_1['header'] ?? '';
-  $txt      = $g_contact_1['txt'] ?? '';
-  $image    = $g_contact_1['image'] ?? null; // array / id / null
-  $imgUrl   = is_array($image) ? ($image['url'] ?? '') : (is_numeric($image) ? wp_get_attachment_image_url((int)$image, 'large') : '');
-  $imgAlt   = is_array($image) ? ($image['alt'] ?? '') : '';
-
-  $shortcode = $g_contact_2['shortcode'] ?? '';
+// Sprawdzamy, czy mamy co wyświetlić
+if (!$bottom) {
+    return;
+}
 @endphp
 
-@if($header || $txt || $shortcode || $imgUrl)
-<section data-gsap-anim="section" class="contact bg-s-lighter relative -smt pt-30 pb-30 {{ $sectionClass }}">
-  <div class="__wrapper c-main relative z-2">
+<!-- bottom-block -->
+<section data-gsap-anim="section" @if($section_id) id="{{ $section_id }}" @endif class="s-bottom-block relative overflow-hidden -smt bg-dark {{ $sectionClass }}">
+    <div class="grid grid-cols-1 md:grid-cols-2 items-center">
 
-    <div class="relative grid grid-cols-1 lg:grid-cols-2 items-center gap-10 z-10">
-      {{-- Kolumna treści --}}
-      <div class="__content w-full lg:w-11/12 flex flex-col justify-between">
-        <div class="__data">
-          @if($header)
-            <h3 data-gsap-element="header">{!! $header !!}</h3>
-          @endif
-
-          @if($txt)
-            <div data-gsap-element="txt" class="mt-6">
-              {!! $txt !!}
+        <div class="__content w-11/12 md:w-3/4 lg:w-1/2 py-20 m-auto">
+            <h4 data-gsap-element="header" class="text-white mt-4">{{ $bottom['title'] }}</h4>
+            <div data-gsap-element="txt" class="mt-2 text-white">
+                {!! $bottom['txt'] !!}
             </div>
-          @endif
 
-          @if($shortcode)
-            <div data-gsap-element="form" class="mt-10">
-              {!! do_shortcode($shortcode) !!}
+            <div data-gsap-element="form" class="mt-8">
+                {!! do_shortcode($bottom['shortcode']) !!}
             </div>
-          @endif
         </div>
-      </div>
 
-      {{-- Kolumna obrazu --}}
-      <div data-gsap-element="img" class="!h-full">
-        @if($imgUrl)
-          <img class="!h-full radius-img object-cover w-full"
-               src="{{ esc_url($imgUrl) }}"
-               alt="{{ esc_attr($imgAlt) }}">
-        @endif
-      </div>
+        <div class="__img inset-y-0 h-full aspect-square">
+            <svg
+                viewBox="0 0 100 100"
+                class="block h-full w-auto"
+                role="img"
+                aria-label="{{ $bottom['image']['alt'] ?? '' }}">
+                <title>{{ $bottom['image']['alt'] ?? '' }}</title>
+
+                <defs>
+                    <mask id="ringMask">
+                        <rect width="100%" height="100%" fill="black" />
+                        <circle cx="50" cy="50" r="50" fill="white" />
+                        <circle cx="50" cy="50" r="20" fill="black" />
+                    </mask>
+                </defs>
+
+                <image
+                    href="{{ $bottom['image']['url'] }}"
+                    x="0" y="0" width="100%" height="100%"
+                    preserveAspectRatio="xMidYMid slice"
+                    mask="url(#ringMask)" />
+            </svg>
+        </div>
+
     </div>
-
-    <div class="__glow"></div>
-  </div>
 </section>
-@endif
