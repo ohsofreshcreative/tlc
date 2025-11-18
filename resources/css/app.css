@@ -25,6 +25,8 @@
 @import '../css/blocks/cards.scss';
 @import '../css/blocks/product-hero.scss';
 @import '../css/blocks/hero-sub.scss';
+@import '../css/blocks/sectors.scss';
+@import '../css/blocks/services.scss';
 
 /*-- NOT USED --*/
 @import '../css/blocks/hero-offer.scss';

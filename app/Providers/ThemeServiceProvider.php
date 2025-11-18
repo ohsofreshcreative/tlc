@@ -40,28 +40,29 @@ class ThemeServiceProvider extends SageServiceProvider
 			]);
 		});
 
-		if (function_exists('acf_add_options_page')) {
-			acf_add_options_sub_page([
-				'page_title'  => 'Kafelki',
-				'menu_title'  => 'Kafelki',
-				'parent_slug' => 'edit.php?post_type=sectors',
-				'menu_slug'   => 'sectors-cards',
-				'capability'  => 'edit_posts',
-			]);
-		};
-
 		// CUSTOM POST TYPE CASES
 		add_action('init', function () {
-			register_post_type('cases', [
-				'label' => 'Realizacje',
-				'public' => true,
-				'has_archive' => false,
-				'rewrite' => ['slug' => 'realizacje'],
-				'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
-				'show_in_rest' => true,
-				'menu_icon' => 'dashicons-format-image',
-			]);
-		});
+            // Najpierw rejestrujemy taksonomię (kategorie)
+            register_taxonomy('uslugi_category', 'uslugi', [
+                'label' => 'Kategorie Usług',
+                'rewrite' => ['slug' => 'kategorie-uslug'],
+                'hierarchical' => true,
+                'show_admin_column' => true,
+                'show_in_rest' => true,
+            ]);
+
+            // Następnie rejestrujemy CPT i łączymy go z taksonomią
+            register_post_type('uslugi', [
+                'label' => 'Usługi',
+                'public' => true,
+                'has_archive' => false,
+                'rewrite' => ['slug' => 'uslugi'],
+                'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
+                'show_in_rest' => true,
+                'menu_icon' => 'dashicons-admin-generic',
+                'taxonomies' => ['uslugi_category'], // Tutaj łączymy CPT z nową taksonomią
+            ]);
+        });
 
 		// USATAWIENIA MOTYWU
 		add_action('acf/init', function () {

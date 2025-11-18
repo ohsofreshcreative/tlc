@@ -144,6 +144,8 @@ body {
 
   --smt: 104px;
   --spt: 104px;
+  --smb: 104px;
+  --spb: 104px;
   --menu-height: 72px !important;
 
   --img-xs: 200px;
@@ -258,7 +260,15 @@ body {
 }
 
 .-spt {
-  padding-top: var(--smt) !important;
+  padding-top: var(--spt) !important;
+}
+
+.-smb {
+  margin-bottom: var(--smb) !important;
+}
+
+.-spb {
+  padding-bottom: var(--spb) !important;
 }
 
 .img-square {
@@ -719,6 +729,10 @@ h6,
 
 .radius-img {
   border-radius: var(--radius) !important;
+}
+
+.border-solid-p {
+  border: 1px solid var(--border-p) !important;
 }
 
 .border-p {

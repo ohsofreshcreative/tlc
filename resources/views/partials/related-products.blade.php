@@ -28,7 +28,7 @@ if (!empty($term_ids) && !is_wp_error($term_ids)) {
 @if(isset($related_products_query) && $related_products_query->have_posts())
 <section class="related-products s-selection relative -smt">
     <div class="c-main">
-        <h3 class="m-header">Produkty powiązane</h3>
+        <h3 class="m-header">Pozostałe z tej kategorii</h3>
 
         <div class="products_grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             @while ($related_products_query->have_posts()) @php $related_products_query->the_post() @endphp
