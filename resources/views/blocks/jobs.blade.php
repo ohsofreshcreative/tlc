@@ -1,38 +1,47 @@
-@php $sectionClass = '';$sectionClass .= $flip ? ' order-flip' : '';$sectionClass .= $darkbg ? ' section-dark' : '';$sectionId = $block->data['id'] ?? null;$customClass = $block->data['className'] ?? '';@endphp
+@php
+$sectionClass = '';
+$sectionClass .= $flip ? ' order-flip' : '';
+$sectionClass .= $wide ? ' wide' : '';
+$sectionClass .= $nomt ? ' !mt-0' : '';
+$sectionClass .= $gap ? ' wider-gap' : '';
 
-<section data-gsap-anim="section" @if($sectionId) id="{{ $sectionId }}" @endif class="accordion faq relative overflow-hidden -smt {{ $block->classes }} {{ $customClass }} {{ $sectionClass }}">
+if (!empty($background) && $background !== 'none') {
+    $sectionClass .= ' ' . $background;
+}
 
-	<div class="__wrapper c-main relative z-2">
-		<h2 data-gsap-element="header" class="w-full lg:w-1/2">{{ $g_jobs['title'] }}</h2>
-		<div class="grid grid-cols-1 lg:grid-cols-[2.5fr_1fr] gap-20 mt-10">
-			<div class="__content order2">
-				@if (!empty($g_jobs['button']))
-				<a class="main-btn m-btn" href="{{ $g_jobs['button']['url'] }}">{{ $g_jobs['button']['title'] }}</a>
-				@endif
-				<div data-gsap-element="accordion" class="accordion-wrapper grid">
-					@foreach ($repeater as $item)
-					<div class="accordion px-8">
-						<input
-							class="acc-check"
-							type="radio"
-							name="radio-a"
-							id="check{{ $loop->index }}">
-						<label class="accordion-label text-h6 font-semibold" for="check{{ $loop->index }}">{{ $item['title'] }}</label>
-						<div class="accordion-content">
-							<p>{!! $item['txt'] !!}</p>
-							<a href="#" class="stroke-btn js-open-modal m-btn" data-job-title="{{ $item['title'] }}">Aplikuj</a>
-						</div>
-					</div>
-					@endforeach
-				</div>
-			</div>
-			<div class="b-border p-10 h-max">
-				<h5 data-gsap-element="header" class="">{{ $g_jobs['subtitle'] }}</h5>
-				<h5 data-gsap-element="header" class="primary">{{ $g_jobs['header'] }}</h5>
-				<div data-gsap-element="txt" class="">{!! $g_jobs['content'] !!}</div>
-				<a href="#" class="stroke-btn js-open-modal m-btn" data-job-title="Ogólne zapytanie CV">Wyślij CV</a>
-			</div>
-		</div>
-	</div>
+@endphp
 
+<!--- jobs --->
+
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="b-jobs relative -spt {{ $sectionClass }}">
+    <div class="__wrapper c-main relative">
+        @if (!empty($g_jobs['title']))
+            <h2 data-gsap-element="header" class="">{{ $g_jobs['title'] }}</h2>
+        @endif
+
+        <div class="__col grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
+            @if($jobs)
+                @foreach ($jobs as $sector)
+                    <div class="__card bg-white">
+                        @if (has_post_thumbnail($sector->ID))
+                            <a href="{{ get_permalink($sector->ID) }}">
+                                <img src="{{ get_the_post_thumbnail_url($sector->ID, 'large') }}" alt="{{ $sector->post_title }}" class="w-full img-s object-cover rounded-t-2xl">
+                            </a>
+                        @endif
+                        <div class="__content relative bg-white border-p radius p-6" style="margin-top:-32px;">
+                            <h6 class="">
+                                <a href="{{ get_permalink($sector->ID) }}">{{ $sector->post_title }}</a>
+                            </h6>
+                            <div class="flex items-center gap-2 mt-2">
+                                <img src="/wp-content/uploads/2025/11/place.svg" />{{ get_the_excerpt($sector->ID) }}
+                            </div>
+                            <a href="{{ get_permalink($sector->ID) }}" class="stroke-btn mt-5">
+                               Aplikuj
+                            </a>
+                        </div>
+                    </div>
+                @endforeach
+            @endif
+        </div>
+    </div>
 </section>

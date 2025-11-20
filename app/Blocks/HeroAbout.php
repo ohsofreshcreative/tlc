@@ -5,14 +5,14 @@ namespace App\Blocks;
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-class Steps extends Block
+class HeroAbout extends Block
 {
-	public $name = 'Proces - Kafelki po prawej';
-	public $description = 'steps';
-	public $slug = 'steps';
+	public $name = 'Hero - O nas';
+	public $description = 'hero-about';
+	public $slug = 'hero-about';
 	public $category = 'formatting';
-	public $icon = 'randomize';
-	public $keywords = ['steps'];
+	public $icon = 'align-full-width';
+	public $keywords = ['tresc', 'zdjecie'];
 	public $mode = 'edit';
 	public $supports = [
 		'align' => false,
@@ -22,47 +22,51 @@ class Steps extends Block
 
 	public function fields()
 	{
-		$steps = new FieldsBuilder('steps');
+		$hero_about = new FieldsBuilder('hero-about');
 
-		$steps
-			->setLocation('block', '==', 'acf/steps') // ważne!
+		$hero_about
+			->setLocation('block', '==', 'acf/hero-about') // ważne!
 			->addText('block-title', [
 				'label' => 'Tytuł',
 				'required' => 0,
 			])
 			->addAccordion('accordion1', [
-				'label' => 'Proces - Kafelki po prawej',
+				'label' => 'Hero - O nas',
 				'open' => false,
 				'multi_expand' => true,
 			])
-			/*--- FIELDS ---*/
 			->addTab('Treść', ['placement' => 'top'])
-
-			->addGroup('g_steps', ['label' => ''])
-			->addText('title', ['label' => 'Tytuł'])
-			->addWysiwyg('txt', [
-				'label' => 'Treść',
-				'tabs' => 'all', // 'visual', 'text', 'all'
-				'toolbar' => 'full', // 'basic', 'full'
-				'media_upload' => true,
+			->addGroup('g_heroabout', ['label' => 'Hero - Pojedyncza oferta'])
+			->addImage('image', [
+				'label' => 'Obraz #1',
+				'return_format' => 'array', // lub 'url', lub 'id'
+				'preview_size' => 'thumbnail',
 			])
+			->addImage('image2', [
+				'label' => 'Obraz #2',
+				'return_format' => 'array', // lub 'url', lub 'id'
+				'preview_size' => 'thumbnail',
+			])
+			->addImage('bg', [
+				'label' => 'Obraz w tle',
+				'return_format' => 'array', // lub 'url', lub 'id'
+				'preview_size' => 'thumbnail',
+			])
+			->addText('title', ['label' => 'Tytuł'])
 			->endGroup()
 
-			->addTab('Kafelki', ['placement' => 'top'])
-			->addRepeater('r_steps', [
-				'label' => 'steps',
+			/*--- TAB #2 ---*/
+			->addTab('Liczby', ['placement' => 'top'])
+			->addRepeater('r_heroabout', [
+				'label' => 'Liczby',
 				'layout' => 'table', // 'row', 'block', albo 'table'
-				'min' => 4,
-				'min' => 4,
-				'button_label' => 'Dodaj element oferty'
+				'min' => 1,
+				'button_label' => 'Dodaj kafelek'
 			])
 			->addText('title', [
-				'label' => 'Krok',
+				'label' => 'Liczba',
 			])
-			->addText('header', [
-				'label' => 'Nagłówek',
-			])
-			->addTextarea('txt', [
+			->addTextarea('text', [
 				'label' => 'Opis',
 			])
 			->endRepeater()
@@ -116,16 +120,14 @@ class Steps extends Block
                 'allow_null' => 0,
             ]);
 
-		return $steps;
+		return $hero_about;
 	}
 
 	public function with()
 	{
 		return [
-			'g_steps' => get_field('g_steps'),
-			'r_steps' => get_field('r_steps'),
-			'section_id' => get_field('section_id'),
-			'section_class' => get_field('section_class'),
+			'g_heroabout' => get_field('g_heroabout'),
+			'r_heroabout' => get_field('r_heroabout'),
 			'flip' => get_field('flip'),
 			'wide' => get_field('wide'),
 			'nomt' => get_field('nomt'),

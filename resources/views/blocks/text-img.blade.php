@@ -13,7 +13,7 @@ if (!empty($background) && $background !== 'none') {
 
 <!--- text-img -->
 
-<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="s-text-img relative -smt {{ $sectionClass }} {{ $section_class }}">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="b-text-img relative -smt {{ $sectionClass }} {{ $section_class }}">
 
 	<div class="__wrapper c-main relative">
 		<div class="__col grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
@@ -31,7 +31,7 @@ if (!empty($background) && $background !== 'none') {
 				</div>
 
 				@if (!empty($g_textimg['button']))
-				<a data-gsap-element="btn" class="main-btn m-btn" href="{{ $g_textimg['button']['url'] }}">{{ $g_textimg['button']['title'] }}</a>
+				<a data-gsap-element="btn" class="main-btn m-btn align-self-bottom" href="{{ $g_textimg['button']['url'] }}">{{ $g_textimg['button']['title'] }}</a>
 				@endif
 
 			</div>

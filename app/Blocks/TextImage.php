@@ -43,7 +43,7 @@ class TextImage extends Block
 			->addImage('image', [
 				'label' => 'Obraz',
 				'return_format' => 'array', // lub 'url', lub 'id'
-				'preview_size' => 'medium',
+				'preview_size' => 'thumbnail',
 			])
 			->addText('title', ['label' => 'Tytuł'])
 			->addWysiwyg('txt', [

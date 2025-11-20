@@ -40,7 +40,21 @@ class ThemeServiceProvider extends SageServiceProvider
 			]);
 		});
 
-		// CUSTOM POST TYPE CASES
+		// CUSTOM POST TYPE OFERTY PRACY
+		add_action('init', function () {
+			register_post_type('job_offers', [
+				'label' => 'Oferty Pracy',
+				'public' => true,
+				'has_archive' => false,
+				'rewrite' => ['slug' => 'job_offers'],
+				'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
+				'show_in_rest' => true,
+				'taxonomies' => ['category'],
+				'menu_icon' => 'dashicons-open-folder',
+			]);
+		});
+
+		// CUSTOM POST TYPE KATEGORIE USŁUG
 		add_action('init', function () {
             // Najpierw rejestrujemy taksonomię (kategorie)
             register_taxonomy('uslugi_category', 'uslugi', [

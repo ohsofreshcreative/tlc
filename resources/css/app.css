@@ -20,6 +20,7 @@
 @import '../css/blocks/bottom-block.scss';
 @import '../css/blocks/hero-prod.scss';
 @import '../css/blocks/hero-cat.scss';
+@import '../css/blocks/hero-about.scss';
 @import '../css/blocks/selection.scss';
 @import '../css/blocks/order.scss';
 @import '../css/blocks/cards.scss';
@@ -27,6 +28,8 @@
 @import '../css/blocks/hero-sub.scss';
 @import '../css/blocks/sectors.scss';
 @import '../css/blocks/services.scss';
+@import '../css/blocks/steps.scss';
+@import '../css/blocks/faq.scss';
 
 /*-- NOT USED --*/
 @import '../css/blocks/hero-offer.scss';
@@ -36,10 +39,8 @@
 @import '../css/blocks/cases.scss';
 @import '../css/blocks/history.scss';
 @import '../css/blocks/category-posts.scss';
-@import '../css/blocks/accordion.scss';
 @import '../css/blocks/cases-slider.scss';
 @import '../css/blocks/proces.scss';
-@import '../css/blocks/steps.scss';
 @import '../css/blocks/path.scss';
 @import '../css/blocks/contact.scss';
 @import '../css/blocks/duotitle.scss';

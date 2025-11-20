@@ -49,6 +49,10 @@ class HeroCat extends Block
 				'toolbar' => 'full', // 'basic', 'full'
 				'media_upload' => true,
 			])
+			->addLink('button', [
+				'label' => 'Przycisk',
+				'return_format' => 'array',
+			])
 			->endGroup()
 
 			->addTab('Ustawienia bloku', ['placement' => 'top'])

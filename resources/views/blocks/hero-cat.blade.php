@@ -5,7 +5,7 @@ $sectionClass .= $flip ? ' order-flip' : '';
 
 <!--- hero-cat -->
 
-<section data-gsap-anim="section" class="s-hero-cat bg-gradient relative z-10 -spt {{ $sectionClass }}">
+<section data-gsap-anim="section" class="b-hero-cat bg-gradient relative z-10 -spt {{ $sectionClass }}">
 
 	<div class="__wrapper c-main relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20">
 
@@ -30,7 +30,13 @@ $sectionClass .= $flip ? ' order-flip' : '';
 			</a>
 		</div>
 
+		@if (!empty($g_herocat['button']))
+		<a data-gsap-element="btn" class="white-btn m-btn" href="{{ $g_herocat['button']['url'] }}">{{ $g_herocat['button']['title'] }}</a>
+		@endif
+
+		@if ($g_herocat['image'])
 		<img data-gsap-element="image" class="__img absolute max-w-1/3 top-16 right-0" src="{{ $g_herocat['image']['url'] }}" alt="{{ $g_herocat['image']['alt'] ?? '' }}">
+		@endif
 
 	</div>
 

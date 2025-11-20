@@ -6,40 +6,43 @@ $sectionId = $block->data['id'] ?? null;
 $customClass = $block->data['className'] ?? '';
 @endphp
 
-<section data-gsap-anim="section" @if($sectionId) id="{{ $sectionId }}" @endif class="faq -smt {{ $block->classes }} {{ $customClass }} {{ $sectionClass }}">
+<!--- faq --->
 
-	<div class="__wrapper c-main grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-10">
+<section data-gsap-anim="section" @if($sectionId) id="{{ $sectionId }}" @endif class="b-faq -smt {{ $block->classes }} {{ $customClass }} {{ $sectionClass }}">
 
-		<div>
-			@if (!empty($faq['image']))
-			<img class="c-main-wide object-cover w-full __img img-xl order1" src="{{ $faq['image']['url'] }}" alt="{{ $faq['image']['alt'] ?? '' }}">
-			@endif
-			<div class="__content order2">
-				<h3 data-gsap-element="header" class="">{{ $faq['title'] }}</h3>
-				<div data-gsap-element="header" class="mt-2">
-					{!! $faq['content'] !!}
+	<div class="__wrapper c-main grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-10 md:gap-20">
+
+		<div class="__content">
+			<h3 data-gsap-element="header" class="">{{ $faq['title'] }}</h3>
+			<div class="accordion-wrapper mt-8">
+				@foreach ($repeater as $item)
+				<div class="accordion border-p">
+					<input
+						class="acc-check"
+						type="radio"
+						name="radio-a"
+						id="check{{ $loop->index }}"
+						{{ $loop->first ? 'checked' : '' }}>
+					<label class="accordion-label font-bold" for="check{{ $loop->index }}">{{ $item['title'] }}</label>
+					<div class="accordion-content">
+						<p>{{ $item['txt'] }}</p>
+					</div>
 				</div>
-				@if (!empty($faq['button']))
-				<a class="main-btn m-btn" href="{{ $faq['button']['url'] }}">{{ $faq['button']['title'] }}</a>
-				@endif
+				@endforeach
 			</div>
 		</div>
 
-		<div class="accordion-wrapper grid">
-			@foreach ($repeater as $item)
-			<div class="accordion">
-				<input
-					class="acc-check"
-					type="radio"
-					name="radio-a"
-					id="check{{ $loop->index }}"
-					{{ $loop->first ? 'checked' : '' }}>
-				<label class="accordion-label" for="check{{ $loop->index }}">{{ $item['title'] }}</label>
-				<div class="accordion-content">
-					<p>{{ $item['txt'] }}</p>
-				</div>
+		<div class="__box bg-dark radius p-10">
+			<h6 data-gsap-element="header" class="text-white">{{ $g_faq_box['title'] }}</h6>
+			@if (!empty($g_faq_box['image']))
+			<img data-gsap-element="img" class="mt-6" src="{{ $g_faq_box['image']['url'] }}" alt="{{ $g_faq_box['image']['alt'] ?? '' }}">
+			@endif
+			<div data-gsap-element="text" class="text-white mt-6">
+				{!! $g_faq_box['content'] !!}
 			</div>
-			@endforeach
+			@if (!empty($g_faq_box['button']))
+			<a data-gsap-element="btn" class="main-btn m-btn" href="{{ $g_faq_box['button']['url'] }}">{{ $g_faq_box['button']['title'] }}</a>
+			@endif
 		</div>
 
 	</div>

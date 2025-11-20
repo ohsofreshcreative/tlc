@@ -70,6 +70,27 @@ class Faq extends Block
 			])
 			->endRepeater()
 
+			/*--- TAB #3 ---*/
+			->addTab('CTA', ['placement' => 'top'])
+			->addGroup('g_faq_box', ['label' => ''])
+			->addImage('image', [
+				'label' => 'Obraz',
+				'return_format' => 'array', // lub 'url', lub 'id'
+				'preview_size' => 'thumbnail',
+			])
+			->addText('title', ['label' => 'Tytuł'])
+			->addWysiwyg('content', [
+				'label' => 'Treść',
+				'tabs' => 'all', // 'visual', 'text', 'all'
+				'toolbar' => 'full', // 'basic', 'full'
+				'media_upload' => true,
+			])
+			->addLink('button', [
+				'label' => 'Przycisk',
+				'return_format' => 'array',
+			])
+			->endGroup()
+
 			/*--- USTAWIENIA BLOKU ---*/
 
 			->addTab('Ustawienia bloku', ['placement' => 'top'])
@@ -87,6 +108,7 @@ class Faq extends Block
 	{
 		return [
 			'faq' => get_field('faq'),
+			'g_faq_box' => get_field('g_faq_box'),
 			'repeater' => get_field('repeater'),
 			'flip' => get_field('flip'),
 		];
