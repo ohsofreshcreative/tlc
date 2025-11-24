@@ -126,11 +126,10 @@ body {
   --gray: #63656a;
   --bg: #fafafa;
   --bg-dark: #002704;
-  --bg-p-light: #fffafa;
+  --bg-p-light: #DDF3E7;
   --bg-p-lighter: var(--p-200);
-  --bg-p-bright: #efe4d5;
   --bg-s-light: var(--s-300);
-  --bg-s-lighter: #f5fbff;
+  --bg-s-lighter: var(--s-100);
 
   --border-p: var(--primary);
   --border-p-light: var(--p-200);
@@ -176,54 +175,54 @@ body {
 
 @font-face {
   font-family: 'SohoPro';
-  src: url('/fonts/SohoPro-Bold.woff2') format('woff2');
+  src: url('../fonts/SohoPro-Bold.woff2') format('woff2');
   font-weight: 700; /* Bold */
   font-style: normal;
 }
 
 @font-face {
   font-family: 'SohoPro';
-  src: url('/fonts/SohoPro-ExtraBold.woff2') format('woff2');
+  src: url('../fonts/SohoPro-ExtraBold.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'SohoPro';
-  src: url('/fonts/SohoPro-ExtraLight.woff2') format('woff2');
+  src: url('../fonts/SohoPro-ExtraLight.woff2') format('woff2');
   font-weight: 200; /* ExtraLight */
   font-style: normal;
 }
 
 @font-face {
   font-family: 'SohoPro';
-  src: url('/fonts/SohoPro-ExtraLightItalic.woff2') format('woff2');
+  src: url('../fonts/SohoPro-ExtraLightItalic.woff2') format('woff2');
   font-weight: 200; /* ExtraLight */
   font-style: italic;
 }
 
 @font-face {
   font-family: 'SohoPro';
-  src: url('/fonts/SohoPro-Italic.woff2') format('woff2');
+  src: url('../fonts/SohoPro-Italic.woff2') format('woff2');
   font-weight: normal; /* Domyślny, jeśli nie ma w nazwie */
   font-style: italic;
 }
 
 @font-face {
   font-family: 'SohoPro';
-  src: url('/fonts/SohoPro-Light.woff2') format('woff2');
+  src: url('../fonts/SohoPro-Light.woff2') format('woff2');
   font-weight: 300; /* Light */
   font-style: normal;
 }
 
 @font-face {
   font-family: 'SohoPro';
-  src: url('/fonts/SohoPro-Medium.woff2') format('woff2');
+  src: url('../fonts/SohoPro-Medium.woff2') format('woff2');
   font-weight: 500; /* Medium */
   font-style: normal;
 }
 
 @font-face {
   font-family: 'SohoPro';
-  src: url('/fonts/SohoPro-Regular.woff2') format('woff2');
+  src: url('../fonts/SohoPro-Regular.woff2') format('woff2');
   font-weight: 400; /* Regular */
   font-style: normal;
 }
@@ -328,7 +327,8 @@ body {
 .section-white {
   background-color: #fff;
   padding: var(--smt) 0;
-  border-top: 1px solid var(--border-light);
+  border-top: 1px dashed var(--primary);
+  border-bottom: 1px dashed var(--primary);
 }
 
 .section-s-light {
@@ -420,7 +420,8 @@ body {
   ul,
   ul li,
   a,
-  .accordion-label {
+  .accordion-label,
+  .__txt {
     color: #fff;
   }
 
@@ -619,7 +620,7 @@ h6,
 }
 
 .text-body {
-  color: var(--body);
+  color: var(--body) !important;
 }
 
 .text-p-light {
@@ -767,6 +768,10 @@ h6,
 
 .border-right-p {
   border-right: 1px dashed var(--border-p) !important;
+}
+
+.border-bottom-p {
+  border-bottom: 1px dashed var(--border-p) !important;
 }
 
 .border-left-p {

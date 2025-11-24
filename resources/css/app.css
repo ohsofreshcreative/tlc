@@ -30,6 +30,9 @@
 @import '../css/blocks/services.scss';
 @import '../css/blocks/steps.scss';
 @import '../css/blocks/faq.scss';
+@import '../css/blocks/values.scss';
+@import '../css/blocks/tabs.scss';
+@import '../css/blocks/cert.scss';
 
 /*-- NOT USED --*/
 @import '../css/blocks/hero-offer.scss';

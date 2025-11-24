@@ -6,13 +6,13 @@ $sectionClass .= $nomt ? ' !mt-0' : '';
 $sectionClass .= $gap ? ' wider-gap' : '';
 
 if (!empty($background) && $background !== 'none') {
-    $sectionClass .= ' ' . $background;
+$sectionClass .= ' ' . $background;
 }
 @endphp
 
 <!--- cards --->
 
-<section data-gsap-anim="section" class="s-cards -smt {{ $sectionClass }}">
+<section data-gsap-anim="section" class="b-cards -smt {{ $sectionClass }}">
 	<div class="__wrapper c-main">
 		<div class="">
 

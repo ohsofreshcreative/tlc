@@ -24,13 +24,24 @@ $sectionClass .= $flip ? ' order-flip' : '';
 			@if ($g_heroabout['image'])
 			<img data-gsap-element="image" class="__img radius img-3xl object-cover" src="{{ $g_heroabout['image']['url'] }}" alt="{{ $g_heroabout['image']['alt'] ?? '' }}">
 			@endif
-			<div class="__img2">
-				@if ($g_heroabout['image2'])
-				<img data-gsap-element="image" class="__img radius img-2xl w-full object-cover" src="{{ $g_heroabout['image2']['url'] }}" alt="{{ $g_heroabout['image2']['alt'] ?? '' }}">
-				@endif
+			<div class="__second">
+				<div class="__img2">
+					@if ($g_heroabout['image2'])
+					<img data-gsap-element="image" class="__img radius img-2xl w-full object-cover" src="{{ $g_heroabout['image2']['url'] }}" alt="{{ $g_heroabout['image2']['alt'] ?? '' }}">
+					@endif
+				</div>
+
+				<div data-gsap-element="numbers" class="border-top-p flex gap-4 w-max pt-10 mt-10 ml-auto">
+					@foreach ($r_heroabout as $item)
+					<div class="border-right-p pr-4">
+						<p class="text-h3">{{ $item['title'] }}</p>
+						<p class="text-lg">{{ $item['text'] }}</p>
+					</div>
+					@endforeach
+				</div>
 			</div>
 		</div>
 
 	</div>
-
+	<div class="__bg"></div>
 </section>

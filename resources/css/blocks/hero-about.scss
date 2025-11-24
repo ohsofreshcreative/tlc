@@ -6,8 +6,17 @@
     }
   }
   .__img2 {
-	 margin-right: calc(50% - 50vw);
-  padding-right: calc(50% - 50vw);
-  box-sizing: border-box;
+    margin-right: calc(90% - 50vw);
+    padding-right: calc(90% - 50vw);
+    box-sizing: border-box;
+  }
+  .__bg {
+    z-index: -1;
+    background-color: #fafafa;
+    height: 36%;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
   }
 }

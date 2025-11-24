@@ -12,7 +12,7 @@ $sectionClass .= $brandbg ? ' section-brand' : '';
 
 <!-- hero-sub -->
 
-<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="hero-sub relative -spt {{ $sectionClass }} {{ $section_class }}">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="hero-sub relative -spt {{ $sectionClass }}">
 
 	<div class="__wrapper c-main grid grid-cols-1 md:grid-cols-2">
 

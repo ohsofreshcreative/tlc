@@ -11,7 +11,7 @@ $sectionClass .= $brandbg ? ' section-brand' : '';
 $sectionClass .= $darkbg ? ' section-dark' : '';
 @endphp
 
-<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="partners relative -smt {{ $sectionClass }} {{ $section_class }}">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="partners relative -smt {{ $sectionClass }}">
 
 	<div class="__wrapper c-main flex flex-col lg:flex-row items-start lg:items-end gap-8">
 		<div class="__content">

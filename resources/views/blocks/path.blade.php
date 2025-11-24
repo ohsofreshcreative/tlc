@@ -12,7 +12,7 @@ $sectionClass .= $brandbg ? ' section-brand' : '';
 
 <!--- path --->
 
-<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="path -smt {{ $sectionClass }} {{ $section_class }}">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="path -smt {{ $sectionClass }}">
 	<div class="__wrapper c-main">
 		<div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
 			<div class="__content">

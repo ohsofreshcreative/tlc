@@ -20,7 +20,7 @@ $sectionClass .= $bgClass[$bg ?? ''] ?? '';
 
 <!--- tlc -->
 
-<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="b-tlc relative -smt {{ $sectionClass }} {{ $section_class }}">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="b-tlc relative -smt {{ $sectionClass }}">
 
 	<div class="__wrapper c-main relative">
 		<div class="__top relative grid grid-cols-1 md:grid-cols-2 gap-10">

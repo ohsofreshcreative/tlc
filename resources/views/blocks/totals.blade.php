@@ -13,7 +13,7 @@ $sectionClass .= $brandbg ? ' section-brand' : '';
 
 <!--- totals -->
 
-<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="totals relative -smt {{ $sectionClass }} {{ $section_class }}">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="totals relative -smt {{ $sectionClass }}">
 
 	<div class="__wrapper c-main relative">
 		<div class="grid grid-cols-1 lg:grid-cols-[2fr_1fr] items-center gap-10 mt-10">

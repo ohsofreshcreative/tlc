@@ -13,7 +13,7 @@ $sectionClass .= $brandbg ? ' section-brand' : '';
 
 <!--- numbers --->
 
-<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="numbers -smt {{ $sectionClass }} {{ $section_class }}">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="numbers -smt {{ $sectionClass }}">
 
 	<div class="__wrapper c-main">
 		<div class="">

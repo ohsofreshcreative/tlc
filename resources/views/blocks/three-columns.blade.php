@@ -11,7 +11,7 @@ $sectionClass .= $brandbg ? ' section-brand' : '';
 $sectionClass .= $darkbg ? ' section-dark' : '';
 @endphp
 
-<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="three-columns -smt {{ $sectionClass }} {{ $section_class }}">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="three-columns -smt {{ $sectionClass }}">
 	<div class="__wrapper c-main">
 		<div class="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr_1fr] gap-8">
 

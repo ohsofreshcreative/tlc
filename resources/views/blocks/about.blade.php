@@ -20,7 +20,7 @@ $sectionClass .= $bgClass[$bg ?? ''] ?? '';
 
 <!--- about -->
 
-<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="about relative -smt {{ $sectionClass }} {{ $section_class }}">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="about relative -smt {{ $sectionClass }}">
 
 	<div class="__wrapper c-main relative">
 		<div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] section-gap">

@@ -5,7 +5,19 @@
   img {
     aspect-ratio: 1 / 1;
     border-radius: 50% !important;
-	width: 432px;
-	margin:0 auto;
+    width: 432px;
+    margin: 0 auto;
+  }
+}
+
+.b-text-img.aboutus {
+  .__col {
+    grid-template-columns: 1.5fr 2fr;
+    gap: 80px;
+  }
+  .__img {
+    margin-right: calc(80% - 50vw);
+    padding-right: calc(80% - 50vw);
+    box-sizing: border-box;
   }
 }
