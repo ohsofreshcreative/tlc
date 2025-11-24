@@ -42,19 +42,28 @@ class Connect extends Block
 			/*--- TAB #1 ---*/
 			->addTab('Dane', ['placement' => 'top'])
 			->addGroup('g_connect_1', ['label' => ''])
-			->addText('header', ['label' => 'Tytuł'])
+			->addText('header', ['label' => 'Nagłówek'])
+			->addTextarea('txt', [
+				'label' => 'Opis',
+				'rows' => 1,
+				'new_lines' => 'br',
+			])
 			->addText('phone', ['label' => 'Telefon'])
 			->addText('email', ['label' => 'Email'])
 			->addText('name', ['label' => 'Nazwa firmy'])
 			->addTextarea('address', [
 				'label' => 'Adres',
-				'rows' => 4,
+				'rows' => 2,
 				'new_lines' => 'br',
 			])
 			->addTextarea('data', [
 				'label' => 'Nip, Regon',
-				'rows' => 4,
+				'rows' => 3,
 				'new_lines' => 'br',
+			])
+			->addLink('button', [
+				'label' => 'Przycisk',
+				'return_format' => 'array',
 			])
 			->addImage('image', [
 				'label' => 'Obraz w tle',

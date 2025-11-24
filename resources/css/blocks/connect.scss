@@ -1,155 +1,139 @@
-.connect {
+.b-connect::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: var(--bg-image);
+	background-size: cover;
+	background-position: center;
+	mix-blend-mode: multiply;
+	z-index: 1;
+	opacity:.5;
+}
 
-  .__phone,
-  .__mail {
-    background-color: #fff;
-    padding: 8px 24px 8px 8px;
-    display: flex;
-    align-items: center;
-    border-radius: 40px;
-    transition: all 0.6s;
-  }
+.b-connect {
 
-  .__phone:hover,
-  .__mail:hover {
-    background-color: var(--p-200);
-    transition: all 0.6s;
-  }
+	.__phone::before {
+		content: url('http://tlc.local/wp-content/uploads/2025/11/phone.svg');
+		margin-right: 16px;
+		position: relative;
+		display: inline-block;
+		transition: all 0.6s;
+		top:2px;
+	}
 
-  .__phone::before {
-    content: url('http://windes.local/wp-content/uploads/2025/10/phone.svg');
-    margin-right: 16px;
-    position: relative;
-    background-color: var(--primary);
-    border-radius: 40px;
-    padding: 8px;
-    height: 40px;
-    width: 40px;
-    position: relative;
-    display: inline-block;
-    transition: all 0.6s;
-  }
+	.__mail::before {
+		content: url('http://tlc.local/wp-content/uploads/2025/11/mail.svg');
+		margin-right: 16px;
+		position: relative;
+		display: inline-block;
+		transition: all 0.6s;
+		top:3px;
+	}
 
-  .__mail::before {
-    content: url('http://windes.local/wp-content/uploads/2025/10/mail.svg');
-    margin-right: 16px;
-    position: relative;
-    background-color: var(--primary);
-    border-radius: 40px;
-    padding: 11px 8px;
-    height: 40px;
-    width: 40px;
-    position: relative;
-    display: inline-block;
-    transition: all 0.6s;
-  }
+	.__form {
+		label {
+			margin-top: 24px;
+			display: block;
+		}
 
-  .__phone:hover::before,
-  .__mail:hover::before {
-    background-color: var(--p-700);
-    transition: all 0.6s;
-  }
+		.wpcf7 form .wpcf7-response-output {
+			color: var(--body);
+			width: max-content;
+		}
 
-  .__form {
-    label {
-      margin-top: 24px;
-      display: block;
-    }
+		/*--- !INPUT CONTACT ---*/
 
-    .wpcf7 form .wpcf7-response-output {
-      color: var(--body);
-      width: max-content;
-    }
+		input[type='text'],
+		input[type='tel'],
+		input[type='email'],
+		select,
+		textarea {
+			width: 100%;
+			background-color: #FFF;
+			border: none;
+			color: var(--p-dark);
+			border: 1px solid var(--border-p);
+			padding: 12px 16px;
+			transition: all 0.2s ease-out;
+			border-radius: 4px;
+			font-size: 16px;
+		}
 
-    /*--- !INPUT CONTACT ---*/
+		input::placeholder,
+		textarea::placeholder {
+			color: #706e68;
+			opacity: 1;
+		}
 
-    input[type='text'],
-    input[type='tel'],
-    input[type='email'],
-    select,
-    textarea {
-      width: 100%;
-      background-color: transparent;
-      border: none;
-      color: #FFF;
-      border: 1px solid var(--border-p-light);
-      padding: 12px 16px;
-      transition: all 0.2s ease-out;
-      border-radius: 4px;
-      font-size: 16px;
-    }
+		input[type='text']:focus,
+		input[type='tel']:focus,
+		input[type='email']:focus,
+		textarea:focus {
+			width: 100%;
+			background-color: var(--p-100);
+			border: 1px dashed var(--p-600);
+			outline: none;
+			transition: all 0.2s ease-out;
+		}
 
-    input::placeholder,
-    textarea::placeholder {
-      color: #706e68;
-      opacity: 1;
-    }
+		textarea {
+			height: 120px;
+		}
 
-    input[type='text']:focus,
-    input[type='tel']:focus,
-    input[type='email']:focus,
-    textarea:focus {
-      width: 100%;
-      border: 1px solid var(--p-600);
-      outline: none;
-      transition: all 0.2s ease-out;
-    }
+		input[type='submit'] {
+			font-size: 16px;
+			background: var(--primary);
+			color: #fff;
+			padding: 15px 45px;
+			display: inline-block;
+			transition: all 0.2s ease-out;
+			border-radius: 8px;
+			font-weight: 600;
+			border: 1px solid transparent;
+			text-decoration: none;
+			white-space: nowrap;
+			width: unset !important;
+			margin-top: 24px;
+			cursor: pointer;
+		}
 
-    textarea {
-      height: 120px;
-    }
+		input[type='submit']:hover {
+			color: #fff;
+			background: var(--s-hover);
+			transition: all 0.2s ease-out;
+			border: 1px solid transparent;
+		}
 
-    input[type='submit'] {
-      font-size: 16px;
-      background: var(--primary);
-      color: #fff;
-      padding: 15px 45px;
-      display: inline-block;
-      transition: all 0.2s ease-out;
-      border-radius: 8px;
-      font-weight: 600;
-      border: 1px solid transparent;
-      text-decoration: none;
-      white-space: nowrap;
-      width: unset !important;
-      margin-top: 24px;
-      cursor: pointer;
-    }
+	}
 
-    input[type='submit']:hover {
-      color: #fff;
-      background: var(--s-hover);
-      transition: all 0.2s ease-out;
-      border: 1px solid transparent;
-    }
+	.__glow1 {
+		top: -40%;
+		left: -10%;
+		width: 423px;
+		height: 423px;
+		flex-shrink: 0;
+		position: absolute;
+		border-radius: 423px;
+		background: linear-gradient(315deg,
+				rgb(239, 221, 197, 0.1) 47.34%,
+				rgb(239, 221, 197, 0.1) 84.97%);
+		filter: blur(75px);
+	}
 
-  }
-
-  .__glow1 {
-    top: -40%;
-    left: -10%;
-    width: 423px;
-    height: 423px;
-    flex-shrink: 0;
-    position: absolute;
-    border-radius: 423px;
-    background: linear-gradient(315deg,
-        rgb(239, 221, 197, 0.1) 47.34%,
-        rgb(239, 221, 197, 0.1) 84.97%);
-    filter: blur(75px);
-  }
-
-  .__glow2 {
-    bottom: -60%;
-    right: -30%;
-    width: 423px;
-    height: 423px;
-    flex-shrink: 0;
-    position: absolute;
-    border-radius: 423px;
-    background: linear-gradient(315deg,
-        rgb(239, 221, 197, 0.2) 47.34%,
-        rgb(239, 221, 197, 0.2) 84.97%);
-    filter: blur(150px);
-  }
+	.__glow2 {
+		bottom: -60%;
+		right: -30%;
+		width: 423px;
+		height: 423px;
+		flex-shrink: 0;
+		position: absolute;
+		border-radius: 423px;
+		background: linear-gradient(315deg,
+				rgb(239, 221, 197, 0.2) 47.34%,
+				rgb(239, 221, 197, 0.2) 84.97%);
+		filter: blur(150px);
+	}
 }

@@ -33,6 +33,7 @@
 @import '../css/blocks/values.scss';
 @import '../css/blocks/tabs.scss';
 @import '../css/blocks/cert.scss';
+@import '../css/blocks/contact.scss';
 
 /*-- NOT USED --*/
 @import '../css/blocks/hero-offer.scss';
@@ -45,7 +46,6 @@
 @import '../css/blocks/cases-slider.scss';
 @import '../css/blocks/proces.scss';
 @import '../css/blocks/path.scss';
-@import '../css/blocks/contact.scss';
 @import '../css/blocks/duotitle.scss';
 @import '../css/blocks/inspirations.scss';
 @import '../css/blocks/about.scss';
