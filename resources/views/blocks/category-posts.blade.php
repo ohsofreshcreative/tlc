@@ -13,7 +13,7 @@ $sectionClass .= $brandbg ? ' section-brand' : '';
 
 <!--- category-posts -->
 
-<div data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="block-category-posts -smt layout-{{ $layout }} {{ $sectionClass }}">
+<div data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="block-category-posts -smt layout-{{ $layout }} {{ $sectionClass }} {{ $section_class }}">
 	<div class="c-main">
 		<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10">
 			<h2 data-gsap-element="title" class="block-title">{{ $posts_settings['title'] }}</h2>

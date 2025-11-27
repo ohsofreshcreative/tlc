@@ -16,7 +16,7 @@ $customClass = $block->data['className'] ?? '';
 
 <!-- area-block -->
 
-<section data-gsap-anim="section" @if($sectionId) id="{{ $sectionId }}" @endif class="area relative -smt {{ $block->classes }} {{ $customClass }} {{ $sectionClass }}">
+<section data-gsap-anim="section" @if($sectionId) id="{{ $sectionId }}" @endif class="area relative -smt {{ $block->classes }} {{ $customClass }} {{ $sectionClass }} {{ $section_class }}">
 
 	<div class="__wrapper c-main relative">
 		<div class="__col grid grid-cols-1 lg:grid-cols-2 items-center gap-10">

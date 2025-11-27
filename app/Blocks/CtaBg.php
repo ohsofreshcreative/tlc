@@ -61,11 +61,11 @@ class CtaBg extends Block
 			/*--- USTAWIENIA BLOKU ---*/
 
 			->addTab('Ustawienia bloku', ['placement' => 'top'])
-			->addTrueFalse('flip', [
-				'label' => 'Odwrotna kolejność',
-				'ui' => 1,
-				'ui_on_text' => 'Tak',
-				'ui_off_text' => 'Nie',
+			->addText('section_id', [
+				'label' => 'ID',
+			])
+			->addText('section_class', [
+				'label' => 'Dodatkowe klasy CSS',
 			])
 			->addTrueFalse('lightbg', [
 				'label' => 'Jasne tło',
@@ -89,8 +89,9 @@ class CtaBg extends Block
 	{
 		return [
 			'cta_bg' => get_field('cta_bg'),
-			'flip' => get_field('flip'),
 			'lightbg' => get_field('lightbg'),
+			'section_id' => get_field('section_id'),
+			'section_class' => get_field('section_class'),
 			'nomt' => get_field('nomt'),
 		];
 	}

@@ -14,7 +14,7 @@ $mediaType = $g_duotitle['media_type'] ?? 'image';
 
 <!--- duotitle -->
 
-<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="duotitle relative mt-20 {{ $sectionClass }}">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="duotitle relative mt-20 {{ $sectionClass }} {{ $section_class }}">
 
 	<div class="__wrapper c-main">
 

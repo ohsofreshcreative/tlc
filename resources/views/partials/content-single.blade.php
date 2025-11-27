@@ -1,34 +1,48 @@
 @php
-$backgroundImage = !empty(get_the_post_thumbnail_url(null, 'full')) ? "
-linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 50%),
-linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%),
-url(" . get_the_post_thumbnail_url(null, 'full') . ") " : '';
+$categories = get_the_category();
+$category = !empty($categories) ? $categories[0] : null;
 @endphp
 
-<section data-gsap-anim="section" class="hero relative overflow-hidden" style="background-image: {{ $backgroundImage }}; background-size: cover; background-position: center;">
-	<div class="__wrapper c-main relative z-10 pt-60 pb-26">
+<section data-gsap-anim="section" class="hero-blog relative overflow-hidden">
+	<div class="__wrapper c-main relative z-10 -spt">
 		<div class="__content w-full sm:w-3/4">
-			<h1 data-gsap-element="header" class=" text-white text-h2">{{ get_the_title() }}</h1>
-			@if(has_excerpt())
-			<div data-gsap-element="content" class="">
-				{!! get_the_excerpt() !!}
-			</div>
+			@if (function_exists('woocommerce_breadcrumb'))
+			{!! woocommerce_breadcrumb() !!}
 			@endif
 
-			<a data-gsap-element="btn" href="#" class="js-scroll-to-next block m-btn">
-				<div class="__arrow bg-primary">
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 20 24" fill="none">
-						<path d="M10.7383 22.7454L19.4181 14.0655C19.8264 13.6572 19.8265 12.9932 19.4183 12.585C19.0101 12.1768 18.3461 12.1768 17.9378 12.5851L11.0484 19.4744L11.0476 1.99787C11.0474 1.41913 10.5788 0.95049 10 0.950244C9.42127 0.950596 8.95255 1.41932 8.9522 1.99806L8.953 19.4752L2.06463 12.5869C1.65641 12.1786 0.99242 12.1787 0.584122 12.587C0.175823 12.9953 0.175763 13.6593 0.583987 14.0675L9.25988 22.7434C9.666 23.1537 10.33 23.1537 10.7383 22.7454Z" fill="white" />
-					</svg>
+			<div class="__top mt-30">
+				@if ($category)
+				<a data-gsap-element="header" href="{{ get_category_link($category->term_id) }}" class="stroke-small-btn mb-4 inline-block">{{ $category->name }}</a>
+				@endif
+				<h1 data-gsap-element="header" class="text-h2 mt-6">{{ get_the_title() }}</h1>
+				@if(has_excerpt())
+				<div data-gsap-element="content" class="">
+					{!! get_the_excerpt() !!}
 				</div>
-			</a>
+				@endif
+			</div>
 		</div>
 	</div>
 </section>
 
 <div id="tresc" class="__entry mt-10">
-	<div class="c-main">
-		{!! the_content() !!}
+	<div class="c-main grid grid-cols-1 md:grid-cols-[3fr_1fr] gap-8">
+
+		<div class="__content">
+			@if(has_post_thumbnail())
+			<div class="img-2xl rounded-xl overflow-hidden mb-16">
+				{!! get_the_post_thumbnail(get_the_ID(), 'large') !!}
+			</div>
+			@endif
+			{!! the_content() !!}
+		</div>
+		<div class="__sidebar sticky top-10 bg-dark radius h-max p-8">
+			<h6 class="text-white">Doradzimy Ci najlepsze rozwiązanie</h6>
+			<img class="my-8" src="http://tlc.local/wp-content/uploads/2025/11/photos.png" />
+			<p class="text-white">Szybki kontakt z ekspertem pozwoli uniknąć kosztownych przestojów.</p>
+
+			<a data-gsap-element="btn" class="main-btn m-btn align-self-bottom" href="/kontakt">Porozmawiajmy</a>
+		</div>
 	</div>
 </div>
 

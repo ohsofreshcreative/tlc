@@ -15,7 +15,7 @@ if (!empty($background) && $background !== 'none') {
 
 <section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="s-order c-main relative -smt">
 
-	<div class="__wrapper relative radius {{ $sectionClass }}">
+	<div class="__wrapper relative radius {{ $sectionClass }} {{ $section_class }}">
 		<div class="__col grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
 			@if (!empty($g_order['image']))
 			<div data-gsap-element="image" class="__img order1">

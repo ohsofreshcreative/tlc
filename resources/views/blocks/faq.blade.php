@@ -1,14 +1,11 @@
 @php
 $sectionClass = '';
-$sectionClass .= $flip ? ' order-flip' : '';
-
-$sectionId = $block->data['id'] ?? null;
-$customClass = $block->data['className'] ?? '';
+$sectionClass .= $nomt ? ' !mt-0' : '';
 @endphp
 
 <!--- faq --->
 
-<section data-gsap-anim="section" @if($sectionId) id="{{ $sectionId }}" @endif class="b-faq -smt {{ $block->classes }} {{ $customClass }} {{ $sectionClass }}">
+<section data-gsap-anim="section" class="b-faq -smt {{ $sectionClass }} {{ $section_class }}">
 
 	<div class="__wrapper c-main grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-10 md:gap-20">
 

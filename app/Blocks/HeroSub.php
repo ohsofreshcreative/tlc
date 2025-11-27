@@ -56,22 +56,17 @@ class HeroSub extends Block
 
 			->endGroup()
 
-			->addTab('Ustawienia bloku', ['placement' => 'top'])
+			/*--- USTAWIENIA BLOKU ---*/
 
-			->addTrueFalse('flip', [
-				'label' => 'Odwrotna kolejność',
-				'ui' => 1,
-				'ui_on_text' => 'Tak',
-				'ui_off_text' => 'Nie',
+			->addTab('Ustawienia bloku', ['placement' => 'top'])
+			->addText('section_id', [
+				'label' => 'ID',
 			])
-			->addTrueFalse('gfx_top', [
-				'label' => 'Grafika górna',
-				'ui' => 1,
-				'ui_on_text' => 'Tak',
-				'ui_off_text' => 'Nie',
+			->addText('section_class', [
+				'label' => 'Dodatkowe klasy CSS',
 			])
-			->addTrueFalse('gfx_bottom', [
-				'label' => 'Grafika dolna',
+			->addTrueFalse('nomt', [
+				'label' => 'Usunięcie marginesu górnego',
 				'ui' => 1,
 				'ui_on_text' => 'Tak',
 				'ui_off_text' => 'Nie',
@@ -86,14 +81,7 @@ class HeroSub extends Block
 			'g_hero_sub' => get_field('g_hero_sub'),
 			'section_id' => get_field('section_id'),
 			'section_class' => get_field('section_class'),
-			'flip' => get_field('flip'),
-			'wide' => get_field('wide'),
 			'nomt' => get_field('nomt'),
-			'gap' => get_field('gap'),
-			'lightbg' => get_field('lightbg'),
-			'graybg' => get_field('graybg'),
-			'whitebg' => get_field('whitebg'),
-			'brandbg' => get_field('brandbg'),
 		];
 	}
 }

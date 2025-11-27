@@ -6,7 +6,7 @@ $sectionId = $block->data['id'] ?? null;
   $customClass = $block->data['className'] ?? '';
 @endphp
 
-<section data-gsap-anim="section" @if($sectionId) id="{{ $sectionId }}" @endif class="home-about {{ $block->classes }} {{ $customClass }} {{ $sectionClass }}">
+<section data-gsap-anim="section" @if($sectionId) id="{{ $sectionId }}" @endif class="home-about {{ $block->classes }} {{ $customClass }} {{ $sectionClass }} {{ $section_class }}">
 	<div class="">
 		@if (!empty($about1['image']))
 		<img class="c-main-wide object-cover w-full __img img-xl" src="{{ $about1['image']['url'] }}" alt="{{ $about1['image']['alt'] ?? '' }}">

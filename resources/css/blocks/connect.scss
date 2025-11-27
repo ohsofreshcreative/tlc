@@ -109,31 +109,4 @@
 
 	}
 
-	.__glow1 {
-		top: -40%;
-		left: -10%;
-		width: 423px;
-		height: 423px;
-		flex-shrink: 0;
-		position: absolute;
-		border-radius: 423px;
-		background: linear-gradient(315deg,
-				rgb(239, 221, 197, 0.1) 47.34%,
-				rgb(239, 221, 197, 0.1) 84.97%);
-		filter: blur(75px);
-	}
-
-	.__glow2 {
-		bottom: -60%;
-		right: -30%;
-		width: 423px;
-		height: 423px;
-		flex-shrink: 0;
-		position: absolute;
-		border-radius: 423px;
-		background: linear-gradient(315deg,
-				rgb(239, 221, 197, 0.2) 47.34%,
-				rgb(239, 221, 197, 0.2) 84.97%);
-		filter: blur(150px);
-	}
 }

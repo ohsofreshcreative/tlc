@@ -13,7 +13,7 @@ if (!empty($background) && $background !== 'none') {
 
 <!--- sectors --->
 
-<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="b-sectors relative -spt {{ $sectionClass }}">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="b-sectors relative -spt {{ $sectionClass }} {{ $section_class }}">
     <div class="__wrapper c-main relative">
         @if (!empty($g_sectors['title']))
             <h2 data-gsap-element="header" class="">{{ $g_sectors['title'] }}</h2>

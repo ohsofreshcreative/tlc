@@ -13,7 +13,7 @@ $sectionClass .= $brandbg ? ' section-brand' : '';
 
 <!--- inspirations -->
 
-<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="inspirations relative -smt {{ $sectionClass }}">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="inspirations relative -smt {{ $sectionClass }} {{ $section_class }}">
 
 	<div class="__wrapper c-main relative z-10">
 		<div class="__col relative grid grid-cols-1 lg:grid-cols-2 items-center gap-10  z-10">

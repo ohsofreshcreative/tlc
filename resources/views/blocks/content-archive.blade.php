@@ -4,7 +4,7 @@ $sectionClass .= $flip ? ' order-flip' : '';
 $sectionClass .= $lightbg ? ' section-light' : '';
 @endphp
 
-<section data-gsap-anim="section" class="cards -smt {{ $sectionClass }}">
+<section data-gsap-anim="section" class="cards -smt {{ $sectionClass }} {{ $section_class }}">
 	<div class="__wrapper c-main">
 		<div class="">
 			

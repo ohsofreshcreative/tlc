@@ -17,7 +17,7 @@ if (!$bottom) {
 @endphp
 
 <!-- bottom-block -->
-<section data-gsap-anim="section" @if($section_id) id="{{ $section_id }}" @endif class="s-bottom-block relative overflow-hidden -smt bg-dark {{ $sectionClass }}">
+<section data-gsap-anim="section" @if($section_id) id="{{ $section_id }}" @endif class="s-bottom-block relative overflow-hidden -smt bg-dark {{ $sectionClass }} {{ $section_class }}">
     <div class="grid grid-cols-1 md:grid-cols-2 items-center">
 
         <div class="__content w-11/12 md:w-3/4 lg:w-1/2 py-20 m-auto">

@@ -1,18 +1,11 @@
 @php
 $sectionClass = '';
-$sectionClass .= $flip ? ' order-flip' : '';
-$sectionClass .= $wide ? ' wide' : '';
 $sectionClass .= $nomt ? ' !mt-0' : '';
-$sectionClass .= $gap ? ' wider-gap' : '';
-$sectionClass .= $lightbg ? ' section-light' : '';
-$sectionClass .= $graybg ? ' section-gray' : '';
-$sectionClass .= $whitebg ? ' section-white' : '';
-$sectionClass .= $brandbg ? ' section-brand' : '';
 @endphp
 
 <!-- bottom-block -->
 
-<section data-gsap-anim="section" class="s-bottom-block relative overflow-hidden -smt bg-dark {{ $sectionClass }}">
+<section data-gsap-anim="section" class="s-bottom-block relative overflow-hidden -smt bg-dark {{ $sectionClass }} {{ $section_class }}">
 	<div class="grid grid-cols-1 md:grid-cols-2 items-center">
 
 		<div class="__content w-11/12 md:w-3/4 lg:w-1/2 py-20 m-auto">

@@ -4,7 +4,7 @@ $sectionId = $block->data['id'] ?? null;
 $customClass = $block->data['className'] ?? '';
 @endphp
 
-<section data-gsap-anim="section" @if($sectionId) id="{{ $sectionId }}" @endif class="slides -smt {{ $block->classes }} {{ $customClass }} {{ $sectionClass }}">
+<section data-gsap-anim="section" @if($sectionId) id="{{ $sectionId }}" @endif class="slides -smt {{ $block->classes }} {{ $customClass }} {{ $sectionClass }} {{ $section_class }}">
 	<div class="{{ $block->classes }}">
 
 		<div class="__wrapper c-main block">

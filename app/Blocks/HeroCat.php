@@ -55,10 +55,17 @@ class HeroCat extends Block
 			])
 			->endGroup()
 
-			->addTab('Ustawienia bloku', ['placement' => 'top'])
+			/*--- USTAWIENIA BLOKU ---*/
 
-			->addTrueFalse('flip', [
-				'label' => 'Odwrotna kolejność',
+			->addTab('Ustawienia bloku', ['placement' => 'top'])
+			->addText('section_id', [
+				'label' => 'ID',
+			])
+			->addText('section_class', [
+				'label' => 'Dodatkowe klasy CSS',
+			])
+			->addTrueFalse('nomt', [
+				'label' => 'Usunięcie marginesu górnego',
 				'ui' => 1,
 				'ui_on_text' => 'Tak',
 				'ui_off_text' => 'Nie',
@@ -71,7 +78,9 @@ class HeroCat extends Block
 	{
 		return [
 			'g_herocat' => get_field('g_herocat'),
-			'flip' => get_field('flip'),
+			'section_id' => get_field('section_id'),
+			'section_class' => get_field('section_class'),
+			'nomt' => get_field('nomt'),
 		];
 	}
 }

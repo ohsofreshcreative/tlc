@@ -1,6 +1,6 @@
 @php
 $sectionClass = '';
-$sectionClass .= $flip ? ' order-flip' : '';
+$sectionClass .= $nomt ? ' !mt-0' : '';
 @endphp
 
 <!-- hero --->
@@ -8,7 +8,7 @@ $sectionClass .= $flip ? ' order-flip' : '';
 <section
 	data-gsap-anim="section"
 	@if(!empty($section_id)) id="{{ $section_id }}" @endif
-	class="s-hero bg-secondary relative min-h-[100svh] {{ $sectionClass }}">
+	class="s-hero bg-secondary relative min-h-[100svh] {{ $sectionClass }} {{ $section_class }}">
 
 	@if (!empty($g_hero['use_video']) && !empty($g_hero['video']))
 	<video

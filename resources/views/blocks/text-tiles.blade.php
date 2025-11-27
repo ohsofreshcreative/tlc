@@ -10,7 +10,7 @@ $sectionClass .= $nomt ? ' !mt-0' : '';
 
 <!--- text-tiles --->
 
-<section data-gsap-anim="section" class="text-tiles relative -smt {{ $sectionClass }}">
+<section data-gsap-anim="section" class="text-tiles relative -smt {{ $sectionClass }} {{ $section_class }}">
 	<div class="__wrapper c-main">
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 mt-16">
 

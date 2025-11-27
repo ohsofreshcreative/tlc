@@ -1,7 +1,7 @@
 @php
 $sectionClass = '';
+$sectionClass .= $nomt ? ' !mt-0' : '';
 @endphp
-
 @php
 $backgroundGradients = "
 linear-gradient(to bottom, rgba(0, 39, 4,0.9) 0%, rgba(0, 39, 4,0.9) 50%),
@@ -14,7 +14,7 @@ $imageUrl = !empty($g_connect_1['image']['url']) ? "url(" . $g_connect_1['image'
 
 <section
 	data-gsap-anim="section"
-	class="b-connect bg-s-lighter relative pt-10 pb-30 {{ $sectionClass }}"
+	class="b-connect bg-s-lighter relative pt-10 pb-30 {{ $sectionClass }} {{ $section_class }}"
 	style="background-color: rgb(0, 39, 4); background-image: {{ $backgroundGradients }}; --bg-image: {{ $imageUrl }};">
 
 

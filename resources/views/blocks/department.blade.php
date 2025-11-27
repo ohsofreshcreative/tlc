@@ -10,7 +10,7 @@ $sectionClass .= $whitebg ? ' section-white' : '';
 $sectionClass .= $brandbg ? ' section-brand' : '';
 @endphp
 
-<section data-gsap-anim="section" class="department -smt {{ $sectionClass }}">
+<section data-gsap-anim="section" class="department -smt {{ $sectionClass }} {{ $section_class }}">
 	<div class="__wrapper c-main">
 		<div class="">
 

@@ -20,6 +20,7 @@
 @import '../css/blocks/bottom-block.scss';
 @import '../css/blocks/hero-prod.scss';
 @import '../css/blocks/hero-cat.scss';
+@import '../css/blocks/hero-job.scss';
 @import '../css/blocks/hero-about.scss';
 @import '../css/blocks/selection.scss';
 @import '../css/blocks/order.scss';
@@ -34,6 +35,12 @@
 @import '../css/blocks/tabs.scss';
 @import '../css/blocks/cert.scss';
 @import '../css/blocks/contact.scss';
+@import '../css/blocks/cta.scss';
+@import '../css/blocks/catalogues.scss';
+@import '../css/blocks/jobs.scss';
+@import '../css/blocks/job.scss';
+@import '../css/blocks/image.scss';
+@import '../css/blocks/map.scss';
 
 /*-- NOT USED --*/
 @import '../css/blocks/hero-offer.scss';

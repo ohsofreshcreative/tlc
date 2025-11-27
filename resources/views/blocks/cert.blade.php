@@ -11,7 +11,7 @@ $sectionClass .= ' ' . $background;
 
 <!--- cert --->
 
-<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="b-cert relative -smt {{ $sectionClass }}">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="b-cert relative -smt {{ $sectionClass }} {{ $section_class }}">
 	<div class="__wrapper c-main relative">
 		@if (!empty($g_cert['header']))
 		<div class="mb-10">

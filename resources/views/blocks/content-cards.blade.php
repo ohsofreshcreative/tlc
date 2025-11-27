@@ -5,7 +5,7 @@ $sectionClass .= $whitebg ? ' section-white' : '';
 $sectionClass .= $lightbg ? ' section-light' : '';
 @endphp
 
-<section data-gsap-anim="section" class="cards -smt {{ $sectionClass }}">
+<section data-gsap-anim="section" class="cards -smt {{ $sectionClass }} {{ $section_class }}">
 	<div class="__wrapper c-main">
 
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">

@@ -36,7 +36,7 @@ $products_query = new WP_Query($args);
 @endphp
 
 <!--- selection -->
-<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="s-selection relative -smt {{ $sectionClass }}">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="s-selection relative -smt {{ $sectionClass }} {{ $section_class }}">
     <div class="c-main">
         @if($title)
             <h3 class="m-header mb-16">{{ $title }}</h3>

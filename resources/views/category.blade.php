@@ -87,15 +87,15 @@ $featured_post_id = $featured_post_query->posts[0]->ID;
 @endif
 
 
-<div class="-smt">
-	<div class="__wrapper c-main flex gap-4 overflow-x-scroll">
-		<a class="stroke-small-btn" href="/kategorie/wszystkie-wpisy/">Wszystkie wpisy</a>
-		@foreach($categories as $category)
-		@if($category->name !== 'Wszystkie wpisy')
-		<a class="stroke-small-btn" href="{{ get_category_link($category->term_id) }}" class="button {{ $term && $term->term_id === $category->term_id ? 'active' : '' }}">{{ $category->name }}</a>
-		@endif
-		@endforeach
-	</div>
+<div id="category-tabs" class="c-main !mt-20 category-tabs">
+    <div class="__wrapper border-b-1 border-b-gray-300 flex justify-center gap-4">
+        <a href="/kategorie/wszystkie/#category-tabs" class="__tab pt-6 {{ is_category('wszystkie') ? 'active' : '' }}">Wszystkie</a>
+        @foreach($categories as $category)
+        @if($category->name !== 'Wszystkie')
+        <a href="{{ get_category_link($category->term_id) }}#category-tabs" class="__tab pt-6 pb-4 {{ $term && $term->term_id === $category->term_id ? 'active' : '' }}">{{ $category->name }}</a>
+        @endif
+        @endforeach
+    </div>
 </div>
 
 @if (have_posts())

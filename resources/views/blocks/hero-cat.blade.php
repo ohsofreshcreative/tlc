@@ -1,11 +1,11 @@
 @php
 $sectionClass = '';
-$sectionClass .= $flip ? ' order-flip' : '';
+$sectionClass .= $nomt ? ' !mt-0' : '';
 @endphp
 
 <!--- hero-cat -->
 
-<section data-gsap-anim="section" class="b-hero-cat bg-gradient relative z-10 -spt {{ $sectionClass }}">
+<section data-gsap-anim="section" class="b-hero-cat bg-gradient relative z-10 -spt {{ $sectionClass }} {{ $section_class }}">
 
 	<div class="__wrapper c-main relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20">
 

@@ -13,7 +13,7 @@ $sectionClass .= $darkbg ? ' section-dark' : '';
 
 <!--- proces --->
 
-<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="proces -smt {{ $sectionClass }}">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="proces -smt {{ $sectionClass }} {{ $section_class }}">
 	<div class="__wrapper c-main">
 		<h2 class="w-full md:w-1/2">{{ $header }}</h2>
 		@if (!empty($r_proces))

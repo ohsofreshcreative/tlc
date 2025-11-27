@@ -133,6 +133,8 @@ class Tabs extends Block
 		return [
 			'g_tabs' => get_field('g_tabs'),
 			'r_tabs' => get_field('r_tabs'),
+			'section_id' => get_field('section_id'),
+			'section_class' => get_field('section_class'),
 			'flip' => get_field('flip'),
 			'wide' => get_field('wide'),
 			'nomt' => get_field('nomt'),

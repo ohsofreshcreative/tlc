@@ -128,6 +128,8 @@ class Cards extends Block
 		return [
 			'g_cards' => get_field('g_cards'),
 			'r_cards' => get_field('r_cards'),
+			'section_id' => get_field('section_id'),
+			'section_class' => get_field('section_class'),
 			'flip' => get_field('flip'),
 			'wide' => get_field('wide'),
 			'nomt' => get_field('nomt'),

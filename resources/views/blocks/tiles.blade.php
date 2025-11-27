@@ -8,7 +8,7 @@ $sectionClass .= $whitebg ? ' section-white' : '';
 $sectionClass .= $nomt ? ' !mt-0' : '';
 @endphp
 
-<section data-gsap-anim="section" class="cards -smt {{ $sectionClass }}">
+<section data-gsap-anim="section" class="cards -smt {{ $sectionClass }} {{ $section_class }}">
 	<div class="__wrapper c-main">
 		<div class="">
 

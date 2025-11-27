@@ -85,8 +85,14 @@ class Connect extends Block
 			/*--- USTAWIENIA BLOKU ---*/
 
 			->addTab('Ustawienia bloku', ['placement' => 'top'])
-			->addTrueFalse('flip', [
-				'label' => 'Odwrotna kolejność',
+			->addText('section_id', [
+				'label' => 'ID',
+			])
+			->addText('section_class', [
+				'label' => 'Dodatkowe klasy CSS',
+			])
+			->addTrueFalse('nomt', [
+				'label' => 'Usunięcie marginesu górnego',
 				'ui' => 1,
 				'ui_on_text' => 'Tak',
 				'ui_off_text' => 'Nie',
@@ -101,9 +107,9 @@ class Connect extends Block
 		return [
 			'g_connect_1' => get_field('g_connect_1'),
 			'g_connect_2' => get_field('g_connect_2'),
-			'tiles' => get_field('tiles'),
-			'flip' => get_field('flip'),
-			'lightbg' => get_field('lightbg'),
+			'section_id' => get_field('section_id'),
+			'section_class' => get_field('section_class'),
+			'nomt' => get_field('nomt'),
 		];
 	}
 }

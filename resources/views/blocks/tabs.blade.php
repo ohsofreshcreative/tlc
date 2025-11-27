@@ -23,7 +23,7 @@ $grouped_tabs[$tabName][] = $item;
 
 <!--- tabs --->
 
-<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="b-tabs relative -spt {{ $sectionClass }}">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="b-tabs relative -spt {{ $sectionClass }} {{ $section_class }}">
 	<div class="__wrapper c-main relative">
 		@if (!empty($g_tabs['header']))
 		<div class="mb-10 text-center">

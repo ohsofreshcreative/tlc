@@ -13,7 +13,7 @@ $sectionClass .= ' ' . $background;
 
 <!--- steps -->
 
-<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="b-steps relative -smt {{ $sectionClass }}">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="b-steps relative -smt {{ $sectionClass }} {{ $section_class }}">
 
 	<div class="__wrapper c-main">
 		<div class="__top">

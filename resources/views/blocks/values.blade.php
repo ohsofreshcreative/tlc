@@ -1,18 +1,11 @@
 @php
 $sectionClass = '';
-$sectionClass .= $flip ? ' order-flip' : '';
-$sectionClass .= $wide ? ' wide' : '';
 $sectionClass .= $nomt ? ' !mt-0' : '';
-$sectionClass .= $gap ? ' wider-gap' : '';
-
-if (!empty($background) && $background !== 'none') {
-$sectionClass .= ' ' . $background;
-}
 @endphp
 
 <!--- values --->
 
-<section data-gsap-anim="section" class="b-values -smt {{ $sectionClass }}">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="b-values -smt {{ $sectionClass }} {{ $section_class }}">
 	<div class="__wrapper c-main">
 
 		<h3 class="m-header text-center w-full md:w-1/2 m-auto">{{ strip_tags($g_values['header']) }}</h3>

@@ -15,7 +15,7 @@ $customClass = $block->data['className'] ?? '';
 
 <!--- overlap --->
 
-<section data-gsap-anim="section" @if($sectionId) id="{{ $sectionId }}" @endif class="overlap relative -smt {{ $block->classes }} {{ $customClass }} {{ $sectionClass }}">
+<section data-gsap-anim="section" @if($sectionId) id="{{ $sectionId }}" @endif class="overlap relative -smt {{ $block->classes }} {{ $customClass }} {{ $sectionClass }} {{ $section_class }}">
 
 	<div class="__wrapper c-main relative">
 		<div class="__content order2">

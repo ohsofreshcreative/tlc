@@ -11,7 +11,7 @@ $sectionClass .= $brandbg ? ' section-brand' : '';
 $sectionClass .= $darkbg ? ' section-dark' : '';
 @endphp
 
-<section data-gsap-anim="section" class="coop  -smt {{ $sectionClass }}">
+<section data-gsap-anim="section" class="coop  -smt {{ $sectionClass }} {{ $section_class }}">
 	<div class="__wrapper c-main relative">
 		<h2 class="m-header">{{ strip_tags($g_coop['header']) }}</h2>
 

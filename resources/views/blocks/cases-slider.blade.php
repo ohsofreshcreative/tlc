@@ -36,7 +36,7 @@ $background_image_url = $background_field['url'];
 
 <!-- cases-slider -->
 
-<section data-gsap-anim="section" @if($sectionId) id="{{ $sectionId }}" @endif class="cases-slider c-main relative -smt {{ $block->classes }} {{ $customClass }} {{ $sectionClass }}">
+<section data-gsap-anim="section" @if($sectionId) id="{{ $sectionId }}" @endif class="cases-slider c-main relative -smt {{ $block->classes }} {{ $customClass }} {{ $sectionClass }} {{ $section_class }}">
 
 	@if ($title)
 	<h2 data-gsap-element="header" class="">{{ $title }}</h2>

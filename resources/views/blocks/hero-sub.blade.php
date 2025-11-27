@@ -1,18 +1,11 @@
 @php
 $sectionClass = '';
-$sectionClass .= $flip ? ' order-flip' : '';
-$sectionClass .= $wide ? ' wide' : '';
 $sectionClass .= $nomt ? ' !mt-0' : '';
-$sectionClass .= $gap ? ' wider-gap' : '';
-$sectionClass .= $lightbg ? ' section-light' : '';
-$sectionClass .= $graybg ? ' section-gray' : '';
-$sectionClass .= $whitebg ? ' section-white' : '';
-$sectionClass .= $brandbg ? ' section-brand' : '';
 @endphp
 
 <!-- hero-sub -->
 
-<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="hero-sub relative -spt {{ $sectionClass }}">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="hero-sub relative -spt {{ $sectionClass }} {{ $section_class }}">
 
 	<div class="__wrapper c-main grid grid-cols-1 md:grid-cols-2">
 

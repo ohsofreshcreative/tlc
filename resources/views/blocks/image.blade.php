@@ -7,7 +7,7 @@ $customClass = $block->data['className'] ?? '';
 
 @endphp
 
-<section data-gsap-anim="section" @if($sectionId) id="{{ $sectionId }}" @endif class="image -smt {{ $block->classes }} {{ $customClass }} {{ $sectionClass }}">
+<section data-gsap-anim="section" @if($sectionId) id="{{ $sectionId }}" @endif class="b-image -smt {{ $customClass }} {{ $sectionClass }} {{ $section_class }}">
 
 	<div class="__wrapper c-main">
 

@@ -20,7 +20,7 @@ $args = [
 $cases = new WP_Query($args);
 @endphp
 
-<section data-gsap-anim="section" @if($sectionId) id="{{ $sectionId }}" @endif class="cases-loop c-main relative -smt {{ $block->classes }} {{ $customClass }} {{ $sectionClass }}">
+<section data-gsap-anim="section" @if($sectionId) id="{{ $sectionId }}" @endif class="cases-loop c-main relative -smt {{ $block->classes }} {{ $customClass }} {{ $sectionClass }} {{ $section_class }}">
 
 	@if ($cases->have_posts())
 	<div class="__cards grid gap-10">

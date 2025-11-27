@@ -5,12 +5,12 @@
         </a>
     @endif
     <div class="__content relative bg-white border-p radius p-6" style="margin-top:-32px;">
-        <h5 class="">
+        <h6 class="">
             <a href="{{ get_permalink() }}">{!! get_the_title() !!}</a>
-        </h5>
-        <div class="mt-2">
+        </h6>
+       <!--  <div class="mt-2">
             @php(the_excerpt())
-        </div>
+        </div> -->
         <a href="{{ get_permalink() }}" class="underline-btn mt-4">
             Dowiedz się więcej
         </a>

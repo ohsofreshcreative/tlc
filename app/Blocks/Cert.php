@@ -124,6 +124,8 @@ class Cert extends Block
 		return [
 			'g_cert' => get_field('g_cert'),
 			'r_cert' => get_field('r_cert'),
+			'section_id' => get_field('section_id'),
+			'section_class' => get_field('section_class'),
 			'flip' => get_field('flip'),
 			'wide' => get_field('wide'),
 			'nomt' => get_field('nomt'),
