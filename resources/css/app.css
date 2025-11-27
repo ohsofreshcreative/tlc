@@ -41,6 +41,7 @@
 @import '../css/blocks/job.scss';
 @import '../css/blocks/image.scss';
 @import '../css/blocks/map.scss';
+@import '../css/blocks/logos.scss';
 
 /*-- NOT USED --*/
 @import '../css/blocks/hero-offer.scss';

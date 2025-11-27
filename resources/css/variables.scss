@@ -749,6 +749,10 @@ h6,
 	border: 1px solid var(--border-p) !important;
 }
 
+.dashed-p-3 {
+	border: 3px dashed var(--border-p) !important;
+}
+
 .border-p {
 	border: 1px dashed var(--border-p) !important;
 }
@@ -1071,6 +1075,7 @@ h6,
 	transition: all 0.3s;
 	transition-delay: 0s;
 	box-shadow: 0 3px 5px rgba(27, 106, 23, 0.2) !important;
+	border-radius:200px;
 
 	.contact__btn {
 		background-color: var(--primary);
@@ -1098,12 +1103,12 @@ h6,
 .fixed-top.scrollUp {
 	transform: translateY(-112px);
 	transition: all 0.3s !important;
-	box-shadow: 0 3px 5px rgba(27, 106, 23, 0.2) !important;
 }
 
 .fixed-top.scrollDown {
 	background-color: #fff !important;
 	box-shadow: 0 3px 5px rgba(27, 106, 23, 0.2) !important;
+	margin-top:0 !important;
 }
 
 .fixed-top.scrollDown .nav-link {
@@ -1329,10 +1334,12 @@ input[type='checkbox'] {
 		border-bottom: 2px solid #FFF;
 		transition: all 0.3s;
 	}
+
 	.__tab:hover {
 		border-bottom: 2px solid var(--p-200);
 		transition: all 0.3s;
 	}
+
 	.active {
 		border-bottom: 2px solid var(--primary);
 	}
@@ -1453,19 +1460,24 @@ article.post:hover img {
 }
 
 /*--- !CTA - STOPKA ---*/
-.cta-bottom {
+
+footer {
 	.__phone::before {
-		content: url('http://windes.local/wp-content/uploads/2025/06/phone.svg');
-		margin-right: 16px;
+		content: url('http://tlc.local/wp-content/uploads/2025/11/phone.svg');
+		margin-right: 8px;
 		position: relative;
-		top: 4px;
+		top: 8px;
+		width:24px;
+		height: 24px;
 	}
 
 	.__mail::before {
-		content: url('http://windes.local/wp-content/uploads/2025/06/mail.svg');
-		margin-right: 16px;
+		content: url('http://tlc.local/wp-content/uploads/2025/11/mail.svg');
+		margin-right: 8px;
 		position: relative;
-		top: 4px;
+		top: 6px;
+		width:24px;
+		height: 24px;
 	}
 }
 
@@ -1670,7 +1682,7 @@ article.post:hover img {
 	}
 
 	.widget-title::after {
-		content: url('http://windes.local/wp-content/uploads/2025/08/down-arrow.svg');
+		content: url('http://tlc.local/wp-content/uploads/2025/11/arrow-1.svg');
 		position: absolute;
 		/*top: 50%;*/
 		right: 10px;
@@ -1681,7 +1693,7 @@ article.post:hover img {
 	}
 
 	.footer_widget.open .widget-title::after {
-		content: url('http://windes.local/wp-content/uploads/2025/08/down-arrow.svg');
+		content: url('http://tlc.local/wp-content/uploads/2025/11/arrow-1.svg');
 		position: absolute;
 		/*top: 50%;*/
 		right: 10px;
@@ -1689,6 +1701,7 @@ article.post:hover img {
 		transition: transform 0.3s;
 		display: block !important;
 		width: 12px;
+		margin-top:-6px;
 	}
 
 	.__widget {
@@ -1719,6 +1732,8 @@ article.post:hover img {
 /*---- !LG --*/
 @media only screen and (max-width: 1024px) {
 	:root {
+		--img-3xl: 420px;
+		--img-2xl: 420px;
 		--img-xxl: 520px;
 		--img-l: 320px;
 	}
@@ -1788,13 +1803,13 @@ article.post:hover img {
 
 	h1,
 	.text-h1 {
-		font-size: 32px !important;
+		font-size: 42px !important;
 		line-height: 3rem;
 	}
 
 	h2,
 	.text-h2 {
-		font-size: 32px !important;
+		font-size: 42px !important;
 		line-height: 2.8rem;
 	}
 

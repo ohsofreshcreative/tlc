@@ -4,6 +4,10 @@ if (empty($category)) {
 return;
 }
 
+if (isset($category->name) && $category->name === 'Wszystkie produkty') {
+    return;
+}
+
 // Pobranie klas kategorii i zamiana na string jeśli tablica
 $classes = wc_get_product_cat_class('product-category product', $category);
 if (is_array($classes)) {

@@ -16,11 +16,11 @@ $sectionClass .= $nomt ? ' !mt-0' : '';
 				}
 				@endphp
 
-				<h1 data-gsap-element="header" class="text-h2 text-white w-full md:w-1/2 mt-30">{{ $g_heroabout['title'] }}</h1>
+				<h1 data-gsap-element="header" class="text-h2 text-white w-full lg:w-1/2 mt-16 lg:mt-30">{{ $g_heroabout['title'] }}</h1>
 
 		</div>
 
-		<div class="grid grid-cols-1 md:grid-cols-[1.5fr_2fr] gap-10 mt-18">
+		<div class="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr] gap-10 mt-18">
 			@if ($g_heroabout['image'])
 			<img data-gsap-element="image" class="__img radius img-3xl object-cover" src="{{ $g_heroabout['image']['url'] }}" alt="{{ $g_heroabout['image']['alt'] ?? '' }}">
 			@endif
@@ -31,7 +31,7 @@ $sectionClass .= $nomt ? ' !mt-0' : '';
 					@endif
 				</div>
 
-				<div data-gsap-element="numbers" class="border-top-p flex gap-4 w-max pt-10 mt-10 ml-auto">
+				<div data-gsap-element="numbers" class="border-top-p flex w-unset md:w-max gap-4 pt-10 mt-10 mt-10 ml-auto">
 					@foreach ($r_heroabout as $item)
 					<div class="border-right-p pr-4">
 						<p class="text-h3">{{ $item['title'] }}</p>

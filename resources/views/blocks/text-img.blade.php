@@ -6,7 +6,7 @@ $sectionClass .= $nomt ? ' !mt-0' : '';
 $sectionClass .= $gap ? ' wider-gap' : '';
 
 if (!empty($background) && $background !== 'none') {
-    $sectionClass .= ' ' . $background;
+$sectionClass .= ' ' . $background;
 }
 @endphp
 
@@ -18,7 +18,7 @@ if (!empty($background) && $background !== 'none') {
 		<div class="__col grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
 			@if (!empty($g_textimg['image']))
 			<div data-gsap-element="{{ $flip ? 'img-right' : 'img-left' }}" class="__img order1">
-				<img class="object-cover w-full __img img-xl radius-img" src="{{ $g_textimg['image']['url'] }}" alt="{{ $g_textimg['image']['alt'] ?? '' }}">
+				<img class="object-cover w-full __img radius-img" src="{{ $g_textimg['image']['url'] }}" alt="{{ $g_textimg['image']['alt'] ?? '' }}">
 			</div>
 			@endif
 
@@ -36,5 +36,6 @@ if (!empty($background) && $background !== 'none') {
 			</div>
 
 		</div>
+	</div>
 
 </section>

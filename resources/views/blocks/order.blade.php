@@ -23,7 +23,7 @@ if (!empty($background) && $background !== 'none') {
 			</div>
 			@endif
 
-			<div class="__content order2 w-full md:w-3/4 m-auto">
+			<div class="__content order2 w-10/12 md:w-3/4 m-auto mb-20">
 
 				<img data-gsap-element="icon" class="__icon" src="{{ $g_order['icon']['url'] }}" alt="{{ $g_order['icon']['alt'] ?? '' }}">
 				<p data-gsap-element="subtitle" class="primary text-2xl mt-4">{{ $g_order['subtitle'] }}</p>

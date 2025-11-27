@@ -383,3 +383,27 @@ function get_pdf_thumbnail_url($pdf_attachment_id)
         return wp_get_attachment_url($pdf_attachment_id);
     }
 }
+
+add_action('wp_footer', function () {
+    // Pobierz obiekt nadrzędnej strony "Sklep" na podstawie jej adresu URL (/produkty).
+    $parent_shop_page = get_page_by_path('produkty');
+
+    // Jeśli strona nadrzędna nie istnieje, zakończ, aby uniknąć błędów.
+    if (!$parent_shop_page) {
+        return;
+    }
+
+    // Sprawdź, czy bieżąca strona jest podstroną strony "Sklep".
+    $is_child_of_shop_page = is_page() && get_queried_object()->post_parent === $parent_shop_page->ID;
+
+    // Jeśli to podstrona sklepu (czyli Twoja niestandardowa kategoria), pokaż dedykowany dymek.
+    if ($is_child_of_shop_page) {
+        echo view('partials.category-bubble');
+        return; // Zakończ, aby nie pokazywać drugiego dymka.
+    }
+
+    // Jeśli to jakakolwiek inna strona WooCommerce (np. strona produktu, koszyk), pokaż ogólny dymek.
+    if (function_exists('is_woocommerce') && is_woocommerce()) {
+        echo view('partials.contact-bubble');
+    }
+});

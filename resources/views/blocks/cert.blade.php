@@ -23,7 +23,7 @@ $sectionClass .= ' ' . $background;
 		<div x-data="{ activeTab: 0 }" class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-20 mt-10">
 
 			{{-- Kolumna lewa: Obrazki z animacją przejścia --}}
-			<div class="relative min-h-[300px] md:min-h-[500px]">
+			<div class="relative min-h-[600px] md:min-h-[500px]">
 				@foreach ($r_cert as $item)
 				<div
 					x-show="activeTab === {{ $loop->index }}"
@@ -36,7 +36,7 @@ $sectionClass .= ' ' . $background;
 					x-transition:leave-start="opacity-100"
 					x-transition:leave-end="opacity-0">
 					@if(!empty($item['image']))
-					<img class="w-full h-full object-cover rounded-lg" src="{{ $item['image']['url'] }}" alt="{{ $item['image']['alt'] ?? '' }}" />
+					<img class="w-full h-full object-contain rounded-lg" src="{{ $item['image']['url'] }}" alt="{{ $item['image']['alt'] ?? '' }}" />
 					@endif
 				</div>
 				@endforeach

@@ -7,7 +7,7 @@ $sectionClass .= $nomt ? ' !mt-0' : '';
 
 <section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="hero-sub relative -spt {{ $sectionClass }} {{ $section_class }}">
 
-	<div class="__wrapper c-main grid grid-cols-1 md:grid-cols-2">
+	<div class="__wrapper c-main grid grid-cols-1 md:grid-cols-2 items-center gap-10">
 
 		<div class="__content relative py-20">
 			@if (function_exists('breadcrumbs'))
@@ -30,9 +30,9 @@ $sectionClass .= $nomt ? ' !mt-0' : '';
 
 		</div>
 
-		<div class="__img absolute right-20 -top-20">
+		<div class="__img relative -left-10 md:left-10 lg:left-40">
 			<div class="__shape absolute top-1/2 -translate-y-1/2 -left-20 z-10"></div>
-			<img class="w-200 aspect-square rounded-full object-cover " src="{{ $g_hero_sub['image']['url'] }}" alt="{{ $g_hero_sub['image']['alt'] ?? '' }}">
+			<img class="min-w-[600px] aspect-square rounded-full object-cover " src="{{ $g_hero_sub['image']['url'] }}" alt="{{ $g_hero_sub['image']['alt'] ?? '' }}">
 		</div>
 
 	</div>

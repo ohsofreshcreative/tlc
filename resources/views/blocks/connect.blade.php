@@ -21,7 +21,7 @@ $imageUrl = !empty($g_connect_1['image']['url']) ? "url(" . $g_connect_1['image'
 	<div class="__wrapper c-main relative z-2 -smt">
 
 		<div class="relative grid grid-cols-1 lg:grid-cols-2 items-center gap-10 z-10">
-			<div class="__content w-full lg:w-11/12 flex flex-col justify-between">
+			<div class="__content w-full lg:w-11/12 flex flex-col justify-between mt-10">
 
 				<h2 data-gsap-element="header" class="text-white">{!! $g_connect_1['header'] !!}</h2>
 				<p data-gsap-element="text" class="text-white">{!! $g_connect_1['txt'] !!}</p>

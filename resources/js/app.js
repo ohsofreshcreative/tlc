@@ -1,5 +1,6 @@
 /*--- GŁÓWNE IMPORTY ---*/
 // Importujemy tylko Alpine, resztę bibliotek (GSAP) ładujemy globalnie
+
 import Alpine from 'alpinejs';
 
 // Importy zasobów dla Vite (np. obrazy, fonty)
@@ -9,9 +10,7 @@ import.meta.glob(['../images/**', '../fonts/**']);
 import './menubar.js';
 import './footer-accordion.js';
 import './swiper.js';
-
-// Importy bloków ACF (jeśli używasz)
-Object.values(import.meta.glob('./blocks/*.js', { eager: true }));
+import './blocks/categories.js';
 
 
 /*--- INICJALIZACJA BIBLIOTEK ---*/

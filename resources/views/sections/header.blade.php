@@ -3,7 +3,7 @@ use App\Walkers\DropdownWalker;
 use App\Walkers\MobileDropdownWalker;
 @endphp
 
-<header x-data="{ mobileOpen: false }" class="relative top-0 z-50 bg-white masthead fixed-top mx-4 mt-4 rounded-full">
+<header x-data="{ mobileOpen: false }" class="relative top-0 z-50 bg-white masthead fixed-top mx-0 md:mx-4 mt-4 rounded-full">
 
 	<!-- Desktop Header -->
 	<div class="items-center justify-between hidden h-full py-4 px-12 mx-auto md:flex">
@@ -32,7 +32,7 @@ use App\Walkers\MobileDropdownWalker;
 	<div class="flex items-center justify-between p-4 mobile-menu fixed-top md:hidden gap-20">
 		<a class="brand" href="{{ home_url('/') }}">
 			@if ($logo)
-			<img src="{{ $logo['url'] }}" alt="{{ $logo['alt'] ?? 'Logo' }}" class="relative w-auto h-12 -top-0.5">
+			<img src="{{ $logo['url'] }}" alt="{{ $logo['alt'] ?? 'Logo' }}" class="relative w-auto h-12 -top-0.5 max-w-[200px]">
 			@else
 			<span class="text-lg font-bold">{{ $siteName }}</span>
 			@endif
@@ -64,11 +64,11 @@ use App\Walkers\MobileDropdownWalker;
 		x-transition:leave="transition ease-in duration-150"
 		x-transition:leave-start="opacity-100 transform translate-x-0"
 		x-transition:leave-end="opacity-0 transform translate-x-full"
-		class="mobile-menu fixed top-0 right-0 bottom-0 w-full h-full bg-primary shadow-xl z-[51] overflow-y-auto md:hidden" {{-- ZMIANA: Usunięto style="display: none;" i zmieniono z-40 na z-[51] --}}
+		class="mobile-menu fixed top-0 right-0 bottom-0 w-full h-full bg-gradient shadow-xl z-[51] overflow-y-auto md:hidden" {{-- ZMIANA: Usunięto style="display: none;" i zmieniono z-40 na z-[51] --}}
 		aria-label="Menu mobilne">
 		<div class="p-4 relative z-10">
 			<div class="flex items-center justify-between mb-6">
-				<span class=""><a class="brand shrink-0" href="{{ home_url('/') }}"><img src="{{ $logo['url'] }}" alt="{{ $logo['alt'] ?? 'Logo' }}" class="w-auto h-12"></a></span>
+				<span class=""><a class="brand shrink-0" href="{{ home_url('/') }}"><img src="{{ $logo['url'] }}" alt="{{ $logo['alt'] ?? 'Logo' }}" class="invert w-auto max-w-[200px] h-12"></a></span>
 				<button
 					@click="mobileOpen = false"
 					class="p-2 text-white rounded-md">
@@ -92,8 +92,8 @@ use App\Walkers\MobileDropdownWalker;
 			@endif
 
 			<div class="mt-8">
-				<a href="/kontakt/" class="block w-full second-btn">
-					Umów konsultację
+				<a href="#" class="block w-full second-btn">
+					Zamów on-line
 				</a>
 			</div>
 		</div>

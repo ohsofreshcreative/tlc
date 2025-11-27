@@ -14,7 +14,7 @@ $sectionClass .= ' ' . $background;
 <!--- services -->
 
 @if (!empty($service_tabs))
-<section @if(!empty($section_id)) id="{{ $section_id }}" @endif class="b-services -spt -smt {{ $sectionClass }} {{ $section_class }}">
+<section @if(!empty($section_id)) id="{{ $section_id }}" @endif class="b-services -smt {{ $sectionClass }} {{ $section_class }}">
 	<div class="c-main">
 		@if ($title)
 		<h2 class="text-center m-header">{{ $title }}</h2>

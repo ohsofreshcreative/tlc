@@ -20,12 +20,12 @@ $sectionClass .= ' ' . $background;
 				<h2 data-gsap-element="header" class="m-header">{{ strip_tags($g_catalogues['header']) }}</h2>
 				<p data-gsap-element="txt">{{ $g_catalogues['text'] }}</p>
 
-				<div class="inline-buttons">
+				<div class="inline-buttons m-btn">
 					@if (!empty($g_catalogues['button']))
-					<a data-gsap-element="btn" class="main-btn m-btn" href="{{ $g_catalogues['button']['url'] }}">{{ $g_catalogues['button']['title'] }}</a>
+					<a data-gsap-element="btn" class="main-btn" href="{{ $g_catalogues['button']['url'] }}">{{ $g_catalogues['button']['title'] }}</a>
 					@endif
 					@if (!empty($g_catalogues['button2']))
-					<a data-gsap-element="btn" class="main-btn m-btn" href="{{ $g_catalogues['button2']['url'] }}">{{ $g_catalogues['button2']['title'] }}</a>
+					<a data-gsap-element="btn" class="second-btn" href="{{ $g_catalogues['button2']['url'] }}">{{ $g_catalogues['button2']['title'] }}</a>
 					@endif
 				</div>
 

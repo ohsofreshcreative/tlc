@@ -1,6 +1,6 @@
-<footer class="footer">
-	<div class="__wrap bg-gradient relative">
-		<div class="__wrapper c-main relative z-10">
+<footer class="footer relative z-10">
+	<div class="__wrap bg-gradient relative z-10">
+		<div class="__wrapper c-main z-10">
 			<div class="__widgets grid gap-1 md:gap-6 py-36">
 				@for ($i = 1; $i <= 4; $i++)
 					@if (is_active_sidebar('sidebar-footer-' . $i))
@@ -9,6 +9,7 @@
 			@endfor
 		</div>
 	</div>
+	<img class="__bg absolute bottom-0 left-1/2 -translate-x-1/2 mix-blend-overlay opacity-20 pointer-events-none" src="/wp-content/uploads/2025/11/big.png" />
 	</div>
 
 	<div class="c-main flex flex-col md:flex-row justify-between gap-6 py-10 footer-bottom">

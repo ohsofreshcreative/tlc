@@ -19,7 +19,7 @@ if (!empty($background) && $background !== 'none') {
             <h2 data-gsap-element="header" class="">{{ $g_sectors['title'] }}</h2>
         @endif
 
-        <div class="__col grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
+        <div class="__col grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             @if($sectors)
                 @foreach ($sectors as $sector)
                     <div class="__card bg-white">
@@ -28,16 +28,16 @@ if (!empty($background) && $background !== 'none') {
                                 <img src="{{ get_the_post_thumbnail_url($sector->ID, 'large') }}" alt="{{ $sector->post_title }}" class="w-full img-s object-cover rounded-t-2xl">
                             </a>
                         @endif
-                        <div class="__content relative bg-white border-p radius p-6" style="margin-top:-32px;">
+                        <div class="__content relative flex flex-col bg-white border-p radius min-h-auto lg:min-h-[244px] p-6" style="margin-top:-32px;">
                             <h5 class="">
                                 <a href="{{ get_permalink($sector->ID) }}">{{ $sector->post_title }}</a>
                             </h5>
-                            <div class="">
+                            <div class="pb-4">
                                 {{ get_the_excerpt($sector->ID) }}
                             </div>
-                            <a href="{{ get_permalink($sector->ID) }}" class="underline-btn mt-4">
+                           <!--  <a href="{{ get_permalink($sector->ID) }}" class="underline-btn mt-auto">
                                 Dowiedz się więcej
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                 @endforeach
