@@ -16,13 +16,13 @@ $sectionClass .= $darkbg ? ' section-dark' : '';
 <section data-gsap-anim="section" class="s-offer -smt border-top-p {{ $sectionClass }} {{ $section_class }}">
 	<div class="__wrapper c-main">
 
-		<h2 class="text-center">{{ strip_tags($g_offer['header']) }}</h2>
+		<h2 data-gsap-element="img" class="text-center">{{ strip_tags($g_offer['header']) }}</h2>
 
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-20">
 			@if (!empty($g_offer['r_offer']))
 			@foreach ($g_offer['r_offer'] as $item)
 			<a class="" href="{{ $item['button']['url'] }}" target="{{ $item['button']['target'] ?? '_self' }}">
-				<div class="__card relative">
+				<div data-gsap-element="card" class="__card relative">
 					<img class="mb-6" src="{{ $item['image']['url'] }}"
 						alt="{{ $item['image']['alt'] ?? '' }}" />
 					<h6 class="mb-4">{{ $item['header'] }}</h6>

@@ -14,11 +14,11 @@ $sectionClass .= $brandbg ? ' section-brand' : '';
 <section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="s-reviews -smt {{ $sectionClass }} {{ $section_class }}">
 	<div class="__wrapper c-main">
 		<div class="__content">
-			<div class="__wrapper c-main block pb-20">
+			<div data-gsap-element="header" class="__wrapper c-main block pb-20">
 				<h3 class="">{{ $g_reviews['title']}}</h3>
 			</div>
 			<div class="swiper reviews-swiper c-main !overflow-visible">
-				<div class="swiper-wrapper">
+				<div data-gsap-element="swiper" class="swiper-wrapper">
 					@foreach($r_reviews as $card)
 					<div class="swiper-slide">
 						<div class="__card relative bg-white border-p p-10 pt-20">
@@ -41,7 +41,7 @@ $sectionClass .= $brandbg ? ' section-brand' : '';
 					@endforeach
 				</div>
 
-				<div class="relative flex gap-2 mt-10">
+				<div data-gsap-element="arrows" class="relative flex gap-2 mt-10">
 					<div class="swiper-button-prev rounded-full"></div>
 					<div class="swiper-button-next rounded-full"></div>
 				</div>

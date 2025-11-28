@@ -27,7 +27,7 @@ $darkbg ? 'section-dark' : '',
 			@endif
 		</div>
 
-		 <div class="swiper offer-swiper !overflow-visible mt-10">
+		 <div data-gsap-element="swiper" class="swiper offer-swiper !overflow-visible mt-10">
             <div class="swiper-wrapper">
                 @foreach ($categories as $category)
                     @if ($category['name'] !== 'Wszystkie produkty')
@@ -53,7 +53,7 @@ $darkbg ? 'section-dark' : '',
             </div>
         </div>
 
-		<div class="relative flex gap-2 mt-10">
+		<div data-gsap-element="arrows" class="relative flex gap-2 mt-10">
 			<div class="swiper-button-prev rounded-full"></div>
 			<div class="swiper-button-next rounded-full"></div>
 		</div>

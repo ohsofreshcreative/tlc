@@ -53,7 +53,7 @@ $sectionClass .= $nomt ? ' !mt-0' : '';
 			@endif
 
 			@if (!empty($numbers))
-			<div class="border-top-p flex gap-4 pt-10 mt-10">
+			<div data-gsap-element="numbers" class="border-top-p flex gap-4 pt-10 mt-10">
 
 				@foreach ($numbers as $item)
 				<div class="border-right-p pr-4">

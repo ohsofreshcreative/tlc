@@ -9,17 +9,19 @@ $sectionClass .= $nomt ? ' !mt-0' : '';
 	<div class="grid grid-cols-1 md:grid-cols-2 items-center">
 
 		<div class="__content w-11/12 md:w-3/4 lg:w-1/2 py-20 m-auto">
-			<h4 data-gsap-element="header" class="text-white mt-4">{{ $bottom['title'] }}</h4>
-			<div data-gsap-element="txt" class="mt-2 text-white">
-				{!! $bottom['txt'] !!}
+			<div data-gsap-element="txt">
+				<h4 data-gsap-element="header" class="text-white mt-4">{{ $bottom['title'] }}</h4>
+				<div data-gsap-element="txt" class="mt-2 text-white">
+					{!! $bottom['txt'] !!}
+				</div>
 			</div>
 
-			<div data-gsap-element="form" class="mt-8">
+			<div data-gsap-element="form" data-gsap-element="form" class="mt-8">
 				{!! do_shortcode($bottom['shortcode']) !!}
 			</div>
 		</div>
 
-		<div class="__img inset-y-0 h-full aspect-square">
+		<div data-gsap-element="img" class="__img inset-y-0 h-full aspect-square">
 			<svg
 				viewBox="0 0 100 100"
 				class="block h-full w-auto"
