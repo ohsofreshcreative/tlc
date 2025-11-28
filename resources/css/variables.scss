@@ -1067,15 +1067,17 @@ h6,
 /*--- !MENU  ---*/
 
 .fixed-top {
-	height: var(--menu-height);
-	position: fixed;
-	width: 100%;
-	max-width: 100%;
-	z-index: 49;
-	transition: all 0.3s;
-	transition-delay: 0s;
-	box-shadow: 0 3px 5px rgba(27, 106, 23, 0.2) !important;
-	border-radius:200px;
+	 height: var(--menu-height);
+    position: fixed;
+    left: 1rem;
+    right: 1rem; 
+    width: auto; 
+    max-width: 100%;
+    z-index: 49;
+    transition: all 0.3s;
+    transition-delay: 0s;
+    box-shadow: 0 3px 5px rgba(27, 106, 23, 0.2) !important;
+    border-radius: 200px;
 
 	.contact__btn {
 		background-color: var(--primary);

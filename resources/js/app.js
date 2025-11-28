@@ -11,7 +11,7 @@ import './menubar.js';
 import './footer-accordion.js';
 import './swiper.js';
 import './blocks/categories.js';
-
+import './blocks/logos.js';
 
 /*--- INICJALIZACJA BIBLIOTEK ---*/
 // Uruchom Alpine.js
