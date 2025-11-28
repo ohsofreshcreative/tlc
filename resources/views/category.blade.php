@@ -89,10 +89,10 @@ $featured_post_id = $featured_post_query->posts[0]->ID;
 
 <div id="category-tabs" class="c-main !mt-20 category-tabs">
     <div class="__wrapper border-b-1 border-b-gray-300 flex justify-center gap-4">
-        <a href="/kategorie/wszystkie/#category-tabs" class="__tab pt-6 {{ is_category('wszystkie') ? 'active' : '' }}">Wszystkie</a>
+        <a href="/kategorie/wszystkie/#category-tabs" class="__tab font-bold pt-6 px-3 {{ is_category('wszystkie') ? 'active' : '' }}">Wszystkie</a>
         @foreach($categories as $category)
         @if($category->name !== 'Wszystkie')
-        <a href="{{ get_category_link($category->term_id) }}#category-tabs" class="__tab pt-6 pb-4 {{ $term && $term->term_id === $category->term_id ? 'active' : '' }}">{{ $category->name }}</a>
+        <a href="{{ get_category_link($category->term_id) }}#category-tabs" class="__tab font-bold pt-6 pb-4 px-3 {{ $term && $term->term_id === $category->term_id ? 'active' : '' }}">{{ $category->name }}</a>
         @endif
         @endforeach
     </div>
