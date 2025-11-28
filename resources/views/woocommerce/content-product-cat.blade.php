@@ -24,7 +24,7 @@ $classes = implode(' ', $classes);
 	<a href="{{ esc_url(get_term_link($category, 'product_cat')) }}"
 		class="woocommerce-LoopCategory-link woocommerce-loop-category__link block h-full !px-10 !py-14 bg-white hover:bg-green-50"
 		aria-label="{{ esc_attr($category->name) }}">
-007OhSoFresh!
+
 		@php do_action('woocommerce_before_subcategory_title', $category); @endphp
 
 		<h2 class="woocommerce-loop-category__title text-left text-h6 !mt-8">
