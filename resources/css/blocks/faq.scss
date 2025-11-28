@@ -35,7 +35,7 @@
 		.accordion-label:hover {}
 
 		.accordion-label::after {
-			content: url('http://tlc.local/wp-content/uploads/2025/11/arrow-1.svg');
+			content: url('/wp-content/uploads/2025/11/arrow-1.svg');
 			-webkit-transition: all 0.3s;
 			transition: all 0.3s;
 			float: right;
@@ -73,7 +73,7 @@
 		}
 
 		input:checked+.accordion-label::after {
-			content: url('http://tlc.local/wp-content/uploads/2025/11/arrow-1.svg');
+			content: url('/wp-content/uploads/2025/11/arrow-1.svg');
 			transform: rotate(180deg);
 		}
 

@@ -54,7 +54,7 @@ $sectionClass .= $bgClass[$bg ?? ''] ?? '';
 					<div class="mt-4">{{ $item['txt'] }}</div>
 				</div>
 				@endforeach
-				<img class="absolute mix-blend-multiply -top-34 -right-10" src="http://tlc.local/wp-content/uploads/2025/11/bearings-1.png" />
+				<img class="absolute mix-blend-multiply -top-34 -right-10" src="/wp-content/uploads/2025/11/bearings-1.png" />
 			</div>
 			@endif
 		</div>

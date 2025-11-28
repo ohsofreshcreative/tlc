@@ -15,7 +15,7 @@
 			</button>
 
 			<h6 class="text-white pr-6">Potrzebujesz pomocy?</h6>
-			<img class="my-8" src="http://tlc.local/wp-content/uploads/2025/11/photos.png" />
+			<img class="my-8" src="/wp-content/uploads/2025/11/photos.png" />
 			<p class="text-white">Nasi doradcy pomogą Ci znaleźć odpowiedni produkt</p>
 
 			<a class="main-btn m-btn mt-6" href="/kontakt">Zapytaj eksperta</a>

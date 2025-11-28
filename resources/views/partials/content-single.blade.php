@@ -38,7 +38,7 @@ $category = !empty($categories) ? $categories[0] : null;
 		</div>
 		<div class="__sidebar sticky top-10 bg-dark radius h-max p-8">
 			<h6 class="text-white">Doradzimy Ci najlepsze rozwiązanie</h6>
-			<img class="my-8" src="http://tlc.local/wp-content/uploads/2025/11/photos.png" />
+			<img class="my-8" src="/wp-content/uploads/2025/11/photos.png" />
 			<p class="text-white">Szybki kontakt z ekspertem pozwoli uniknąć kosztownych przestojów.</p>
 
 			<a data-gsap-element="btn" class="main-btn m-btn align-self-bottom" href="/kontakt">Porozmawiajmy</a>

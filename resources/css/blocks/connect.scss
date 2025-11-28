@@ -16,7 +16,7 @@
 .b-connect {
 
 	.__phone::before {
-		content: url('http://tlc.local/wp-content/uploads/2025/11/phone.svg');
+		content: url('/wp-content/uploads/2025/11/phone.svg');
 		margin-right: 16px;
 		position: relative;
 		display: inline-block;
@@ -25,7 +25,7 @@
 	}
 
 	.__mail::before {
-		content: url('http://tlc.local/wp-content/uploads/2025/11/mail.svg');
+		content: url('/wp-content/uploads/2025/11/mail.svg');
 		margin-right: 16px;
 		position: relative;
 		display: inline-block;
