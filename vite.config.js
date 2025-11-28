@@ -3,22 +3,24 @@ import tailwindcss from '@tailwindcss/vite'
 import laravel from 'laravel-vite-plugin'
 import { wordpressPlugin, wordpressThemeJson } from '@roots/vite-plugin'
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   server: {
-    host: 'windes.local', // 🔁 <-- zmiana z 'localhost'
+    host: 'tlc.local',
     port: 5981,
     strictPort: true,
     cors: true,
-    origin: 'http://windes.local:5981',
+    origin: 'http://tlc.local:5981',
 
     hmr: {
       protocol: 'ws',
-      host: 'windes.local', // 🔁 <-- tu też!
+      host: 'tlc.local',
       port: 5981,
     },
   },
 
-  base: '/build/', // 🔁 zgodne z tym, co generuje @vite()
+  base: command === 'build'
+    ? '/wp-content/themes/tlc/public/build/'
+    : '/build/',
 
   plugins: [
     tailwindcss(),
@@ -50,4 +52,4 @@ export default defineConfig({
       '@images': '/resources/images',
     },
   },
-})
+}))
