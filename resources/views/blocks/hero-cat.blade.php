@@ -5,7 +5,9 @@ $sectionClass .= $nomt ? ' !mt-0' : '';
 
 <!--- hero-cat -->
 
-<section data-gsap-anim="section" class="b-hero-cat bg-gradient relative z-10 -spt {{ $sectionClass }} {{ $section_class }}">
+<section data-gsap-anim="section" class="b-hero-cat relative z-10 -spt {{ $sectionClass }} {{ $section_class }}"
+style="background-image:linear-gradient(-90deg, rgb(0, 111, 51, 0.97) 0%, rgb(0, 55, 26, 0.90) 100%), url('{{ $g_herocat['bg']['url'] }}'); background-size:cover; background-position:top;">
+
 
 	<div class="__wrapper c-main relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20">
 

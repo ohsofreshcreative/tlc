@@ -22,7 +22,6 @@ $sectionClass .= ' ' . $background;
 		@if(!empty($r_cert))
 		<div x-data="{ activeTab: 0 }" class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-20 mt-10">
 
-			{{-- Kolumna lewa: Obrazki z animacją przejścia --}}
 			<div class="relative min-h-[600px] md:min-h-[500px]">
 				@foreach ($r_cert as $item)
 				<div
@@ -35,20 +34,26 @@ $sectionClass .= ' ' . $background;
 					x-transition:leave="transition-opacity ease-in duration-200"
 					x-transition:leave-start="opacity-100"
 					x-transition:leave-end="opacity-0">
-					@if(!empty($item['image']))
-					<img class="w-full h-full object-contain rounded-lg" src="{{ $item['image']['url'] }}" alt="{{ $item['image']['alt'] ?? '' }}" />
+					@if(!empty($item['pdf_file']['id']))
+					@php
+					$thumbnail_url = get_the_post_thumbnail_url($item['pdf_file']['id'], 'large');
+					if (!$thumbnail_url) {
+					$thumbnail_url = wp_get_attachment_image_src($item['pdf_file']['id'], 'large', true)[0];
+					}
+					@endphp
+					<a href="{{ $item['pdf_file']['url'] }}" target="_blank" rel="noopener noreferrer" class="block w-full h-full group">
+						<img class="w-full h-full object-contain rounded-lg transition-transform duration-300 group-hover:scale-105" src="{{ $thumbnail_url }}" alt="{{ $item['pdf_file']['alt'] ?? 'Miniatura certyfikatu' }}" />
+					</a>
 					@endif
 				</div>
 				@endforeach
 			</div>
 
-			{{-- Kolumna prawa: Tytuły i rozwijana treść --}}
 			<div class="flex flex-col">
 				@foreach ($r_cert as $item)
 				<div class="cert-item border-b border-gray-200 last:border-b-0">
 					<button @click="activeTab = (activeTab === {{ $loop->index }} ? null : {{ $loop->index }})" class="w-full text-left py-4">
 						<div class="flex items-center">
-							{{-- Kontener strzałki z animowaną szerokością --}}
 							<div class="transition-all duration-300 ease-in-out" :class="activeTab === {{ $loop->index }} ? 'w-10 mr-4' : 'w-0'">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +69,6 @@ $sectionClass .= ' ' . $background;
 							</h6>
 						</div>
 					</button>
-					{{-- Rozwijana treść --}}
 					<div x-show="activeTab === {{ $loop->index }}" x-collapse x-cloak>
 						@if(!empty($item['text']))
 						<div class="pt-2 pb-4 pl-9 text-sm text-gray-600">

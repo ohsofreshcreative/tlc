@@ -51,13 +51,16 @@ class Cert extends Block
 			])
 			->addText('tab', [
 				'label' => 'Nazwa zakładki',
-				'instructions' => 'Wpisz nazwę zakładki, do której ma trafić ten element (np. "Budownictwo"). Elementy o tej samej nazwie zostaną zgrupowane.',
 				'required' => 1,
 			])
 			->addImage('image', [
-				'label' => 'Obraz',
+				'label' => 'Obraz (jeśli nie mamy PDF)',
 				'return_format' => 'array', // lub 'url', lub 'id'
 				'preview_size' => 'medium',
+			])
+			->addFile('pdf_file', [
+				'label' => 'Plik',
+				'return_format' => 'array',
 			])
 			->addText('title', [
 				'label' => 'Nagłówek',

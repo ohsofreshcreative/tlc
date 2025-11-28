@@ -106,7 +106,7 @@
       }
       h6::before {
         content: url('http://tlc.local/wp-content/uploads/2025/11/download.svg');
-		margin-bottom:8px;
+        margin-bottom: 8px;
       }
     }
     .codedropz-upload-container {
@@ -115,8 +115,22 @@
     .dnd-upload-counter {
       display: none;
     }
-	.cd-upload-btn {
-		text-decoration: underline !important;
+    .cd-upload-btn {
+      text-decoration: underline !important;
+    }
+  }
+}
+
+/*--- CUSTOM BLOCK ---*/
+.b-job.__inbound {
+	.__content {
+		margin-top:40px;
+		margin-bottom:104px;
 	}
+  .__form {
+    margin-top: 32px !important;
+  }
+  .__sidebar {
+    display: none;
   }
 }

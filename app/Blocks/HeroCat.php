@@ -37,6 +37,12 @@ class HeroCat extends Block
 			])
 			->addTab('Treść', ['placement' => 'top'])
 			->addGroup('g_herocat', ['label' => 'Hero - Pojedyncza oferta'])
+			->addImage('bg', [
+				'label' => 'Tło',
+				'return_format' => 'array', // lub 'url', lub 'id'
+				'preview_size' => 'thumbnail',
+				'required' => 1,
+			])
 			->addImage('image', [
 				'label' => 'Obraz',
 				'return_format' => 'array', // lub 'url', lub 'id'

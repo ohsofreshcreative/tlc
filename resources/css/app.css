@@ -42,6 +42,7 @@
 @import '../css/blocks/image.scss';
 @import '../css/blocks/map.scss';
 @import '../css/blocks/logos.scss';
+@import '../css/blocks/locations.scss';
 
 /*-- NOT USED --*/
 @import '../css/blocks/hero-offer.scss';
