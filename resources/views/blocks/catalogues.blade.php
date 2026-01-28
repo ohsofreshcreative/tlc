@@ -87,7 +87,7 @@ $unique_industries = get_unique_values($catalogues_data, 'industry');
                         <input
                             type="text"
                             data-catalogue-search
-                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent !py-2"
                             placeholder="Wpisz nazwę katalogu..."
                         />
                     </div>
