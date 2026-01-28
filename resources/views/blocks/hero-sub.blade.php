@@ -7,12 +7,10 @@ $sectionClass .= $nomt ? ' !mt-0' : '';
 
 <section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="hero-sub relative -spt {{ $sectionClass }} {{ $section_class }}">
 
-	<div class="__wrapper c-main grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+	<div class="__wrapper c-main relative grid grid-cols-1 md:grid-cols-2 items-center gap-10">
 
-		<div class="__content relative py-20">
-			@if (function_exists('breadcrumbs'))
-			{!! breadcrumbs() !!}
-			@endif
+		<div class="__content py-20">
+			{!! \App\Helpers\Breadcrumbs::render() !!}
 
 			<h2 data-gsap-element="header" class="m-header">{{ $g_hero_sub['header'] }}</h2>
 

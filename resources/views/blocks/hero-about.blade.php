@@ -8,15 +8,8 @@ $sectionClass .= $nomt ? ' !mt-0' : '';
 <section data-gsap-anim="section" class="b-hero-about bg-dark relative z-10 -spt {{ $sectionClass }} {{ $section_class }}">
 	<div class="__wrapper c-main relative">
 		<div class="__content">
-			@php
-			if (function_exists('woocommerce_breadcrumb')) {
-			woocommerce_breadcrumb([
-			'wrap_before' => '<nav class="woocommerce-breadcrumb text-white">',
-				]);
-				}
-				@endphp
 
-				<h1 data-gsap-element="header" class="text-h2 text-white w-full lg:w-1/2 mt-16 lg:mt-30">{{ $g_heroabout['title'] }}</h1>
+			<h1 data-gsap-element="header" class="text-h2 text-white w-full lg:w-1/2 mt-16 lg:mt-30">{{ $g_heroabout['title'] }}</h1>
 
 		</div>
 

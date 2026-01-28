@@ -10,11 +10,8 @@ $link = $extras['link'] ?? null;
 <section data-gsap-anim="section"
 	class="s-product-hero relative bg-gradient -spt">
 
-	<div class="__wrapper c-main h-full">
-		@php
-		if (function_exists('woocommerce_breadcrumb')) {
-		woocommerce_breadcrumb(); }
-		@endphp
+	<div class="__wrapper c-main relative h-full">
+		{!! \App\Helpers\Breadcrumbs::render() !!}
 
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
 			<div class="__text">

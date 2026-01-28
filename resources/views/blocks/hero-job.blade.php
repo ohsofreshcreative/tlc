@@ -10,10 +10,8 @@ $sectionClass .= $nomt ? ' !mt-0' : '';
 	<div class="__wrapper c-main relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20">
 
 		<div class="__content text-white">
-			@php
-			if (function_exists('woocommerce_breadcrumb')) {
-			woocommerce_breadcrumb(); }
-			@endphp
+			
+		{!! \App\Helpers\Breadcrumbs::render() !!}
 
 			<h1 data-gsap-element="header" class="text-h2 text-white mt-30">{{ $g_herojob['title'] }}</h1>
 

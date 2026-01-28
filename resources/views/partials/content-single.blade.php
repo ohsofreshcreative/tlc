@@ -5,21 +5,21 @@ $category = !empty($categories) ? $categories[0] : null;
 
 <section data-gsap-anim="section" class="hero-blog relative overflow-hidden">
 	<div class="__wrapper c-main relative z-10 -spt">
-		<div class="__content w-full sm:w-3/4">
-			@if (function_exists('woocommerce_breadcrumb'))
-			{!! woocommerce_breadcrumb() !!}
-			@endif
+		<div class="relative">
+			{!! \App\Helpers\Breadcrumbs::render([ 'container_class' => 'pl-0' ]) !!}
 
-			<div class="__top mt-30">
-				@if ($category)
-				<a data-gsap-element="header" href="{{ get_category_link($category->term_id) }}" class="stroke-small-btn mb-4 inline-block">{{ $category->name }}</a>
-				@endif
-				<h1 data-gsap-element="header" class="text-h2 mt-6">{{ get_the_title() }}</h1>
-				@if(has_excerpt())
-				<div data-gsap-element="content" class="">
-					{!! get_the_excerpt() !!}
+			<div class="__content w-full sm:w-3/4 pt-20">
+				<div class="__top">
+					@if ($category)
+					<a data-gsap-element="header" href="{{ get_category_link($category->term_id) }}" class="stroke-small-btn mb-4 inline-block">{{ $category->name }}</a>
+					@endif
+					<h1 data-gsap-element="header" class="text-h2 mt-6">{{ get_the_title() }}</h1>
+					@if(has_excerpt())
+					<div data-gsap-element="content" class="">
+						{!! get_the_excerpt() !!}
+					</div>
+					@endif
 				</div>
-				@endif
 			</div>
 		</div>
 	</div>

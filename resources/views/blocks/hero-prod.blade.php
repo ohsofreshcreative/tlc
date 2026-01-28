@@ -12,14 +12,12 @@ $sectionClass .= $brandbg ? ' section-brand' : '';
 
 <!-- hero-prod -->
 
-<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="s-hero-prod relative mt-20 {{ $sectionClass }} {{ $section_class }}">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="s-hero-prod relative pt-20 {{ $sectionClass }} {{ $section_class }}">
 
+	<div>{!! \App\Helpers\Breadcrumbs::render() !!}</div>
 	<div class="__wrapper w-full lg:w-4/5">
 
-		<div class="__content w-full sm:w-3/4 relative z-10">
-			@if (function_exists('breadcrumbs'))
-			{!! breadcrumbs() !!}
-			@endif
+		<div class="__content w-full sm:w-3/4  z-10">
 
 			<h2 data-gsap-element="header" class="">{{ $g_hero_prod['header'] }}</h2>
 

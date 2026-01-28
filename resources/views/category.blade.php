@@ -11,8 +11,10 @@ $category_description = get_field('category_description', $term);
 $category_image = get_field('category_image', $term);
 @endphp
 
-<div class="hero category-header">
-	<div class="__wrapper c-main relative z-10 pt-60 pb-26">
+<div class="hero category-header relative -spt">
+	<div class="__wrapper relative c-main z-10 pt-20 pb-26">
+		{!! \App\Helpers\Breadcrumbs::render() !!}
+		
 		<div class="__content grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
 			<h2 class="">
 				{!! $category_header ?: get_the_archive_title() !!}
@@ -88,14 +90,14 @@ $featured_post_id = $featured_post_query->posts[0]->ID;
 
 
 <div id="category-tabs" class="c-main !mt-20 category-tabs">
-    <div class="__wrapper border-b-1 border-b-gray-300 flex justify-center gap-4">
-        <a href="/kategorie/wszystkie/#category-tabs" class="__tab font-bold pt-6 px-3 {{ is_category('wszystkie') ? 'active' : '' }}">Wszystkie</a>
-        @foreach($categories as $category)
-        @if($category->name !== 'Wszystkie')
-        <a href="{{ get_category_link($category->term_id) }}#category-tabs" class="__tab font-bold pt-6 pb-4 px-3 {{ $term && $term->term_id === $category->term_id ? 'active' : '' }}">{{ $category->name }}</a>
-        @endif
-        @endforeach
-    </div>
+	<div class="__wrapper border-b-1 border-b-gray-300 flex justify-center gap-4">
+		<a href="/kategorie/wszystkie/#category-tabs" class="__tab font-bold pt-6 px-3 {{ is_category('wszystkie') ? 'active' : '' }}">Wszystkie</a>
+		@foreach($categories as $category)
+		@if($category->name !== 'Wszystkie')
+		<a href="{{ get_category_link($category->term_id) }}#category-tabs" class="__tab font-bold pt-6 pb-4 px-3 {{ $term && $term->term_id === $category->term_id ? 'active' : '' }}">{{ $category->name }}</a>
+		@endif
+		@endforeach
+	</div>
 </div>
 
 @if (have_posts())

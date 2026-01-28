@@ -12,10 +12,8 @@ style="background-image:linear-gradient(-90deg, rgb(0, 111, 51, 0.97) 0%, rgb(0,
 	<div class="__wrapper c-main relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20">
 
 		<div class="__content">
-			@php
-			if (function_exists('woocommerce_breadcrumb')) {
-			woocommerce_breadcrumb(); }
-			@endphp
+		
+		{!! \App\Helpers\Breadcrumbs::render() !!}
 
 			<h1 data-gsap-element="header" class="text-h2 text-white mt-30">{{ $g_herocat['title'] }}</h1>
 

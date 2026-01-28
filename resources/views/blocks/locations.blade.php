@@ -126,7 +126,7 @@ $sectionClass .= ' ' . $background;
 				</svg>
 			</div>
 
-			<div class="__content order2">
+			<div class="__content order2 w-3/4 md:1/2">
 				<h4 data-gsap-element="header" class="">{{ $g_locations['title'] }}</h4>
 
 				<div data-gsap-element="txt" class="mt-2">
@@ -142,4 +142,5 @@ $sectionClass .= ' ' . $background;
 		</div>
 	</div>
 
+	<img class="absolute -top-34 -right-100 aspect-square h-[604px]" src="/wp-content/uploads/2026/01/big_bearing.png" alt="{{ $g_tlc['image']['alt'] ?? '' }}" />
 </section>

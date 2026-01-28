@@ -25,7 +25,7 @@ class Catalogues extends Block
 		$catalogues = new FieldsBuilder('catalogues');
 
 		$catalogues
-			->setLocation('block', '==', 'acf/catalogues') // ważne!
+			->setLocation('block', '==', 'acf/catalogues')
 			->addText('block-title', [
 				'label' => 'Tytuł',
 				'required' => 0,
@@ -35,6 +35,7 @@ class Catalogues extends Block
 				'open' => false,
 				'multi_expand' => true,
 			])
+			
 			/*--- TAB #1 ---*/
 			->addTab('Treści', ['placement' => 'top'])
 			->addGroup('g_catalogues', ['label' => ''])
@@ -55,43 +56,45 @@ class Catalogues extends Block
 			->endGroup()
 
 			/*--- TAB #2 ---*/
-			->addTab('Katalogi TLC', ['placement' => 'top'])
-			->addText('header1', ['label' => 'Nagłówek'])
+			->addTab('Katalogi', ['placement' => 'top'])
+			->addText('catalogues_header', ['label' => 'Nagłówek sekcji katalogów'])
+			->addTrueFalse('enable_filters', [
+				'label' => 'Włącz filtrowanie',
+				'ui' => 1,
+				'ui_on_text' => 'Tak',
+				'ui_off_text' => 'Nie',
+				'default_value' => 1,
+			])
 			->addRepeater('r_catalogues', [
-				'label' => 'Katalogi TLC',
-				'layout' => 'table', // 'row', 'block', albo 'table'
+				'label' => 'Katalogi',
+				'layout' => 'row',
 				'min' => 1,
 				'button_label' => 'Dodaj katalog'
 			])
 			->addFile('file', [
-				'label' => 'Plik',
+				'label' => 'Plik PDF',
 				'return_format' => 'array',
+				'mime_types' => 'pdf',
 			])
 			->addText('title', [
-				'label' => 'Nagłówek',
+				'label' => 'Nazwa katalogu',
+				'required' => 1,
 			])
-			->endRepeater()
-
-			/*--- TAB #3 ---*/
-			->addTab('Katalogi producentów', ['placement' => 'top'])
-			->addText('header2', ['label' => 'Nagłówek'])
-			->addRepeater('r_catalogues_2', [
-				'label' => 'Katalogi producentów',
-				'layout' => 'table', // 'row', 'block', albo 'table'
-				'min' => 1,
-				'button_label' => 'Dodaj katalog'
+			->addText('producer', [
+				'label' => 'Producent',
+				'instructions' => 'Wpisz nazwę producenta (np. Bosch, Siemens)',
 			])
-			->addFile('file', [
-				'label' => 'Plik',
-				'return_format' => 'array',
+			->addText('product_group', [
+				'label' => 'Grupa produktowa',
+				'instructions' => 'Wpisz grupę produktową (np. Narzędzia, Elektronika)',
 			])
-			->addText('title', [
-				'label' => 'Nagłówek',
+			->addText('industry', [
+				'label' => 'Branża',
+				'instructions' => 'Wpisz branżę (np. Budowlana, Motoryzacyjna)',
 			])
 			->endRepeater()
 
 			/*--- USTAWIENIA BLOKU ---*/
-
 			->addTab('Ustawienia bloku', ['placement' => 'top'])
 			->addText('section_id', [
 				'label' => 'ID',
@@ -135,7 +138,7 @@ class Catalogues extends Block
 					'section-dark' => 'Ciemne',
 				],
 				'default_value' => 'none',
-				'ui' => 0, // Ulepszony interfejs
+				'ui' => 0,
 				'allow_null' => 0,
 			]);
 
@@ -146,10 +149,9 @@ class Catalogues extends Block
 	{
 		return [
 			'g_catalogues' => get_field('g_catalogues'),
+			'catalogues_header' => get_field('catalogues_header'),
 			'r_catalogues' => get_field('r_catalogues'),
-			'r_catalogues_2' => get_field('r_catalogues_2'),
-			'header1' => get_field('header1'),
-			'header2' => get_field('header2'),
+			'enable_filters' => get_field('enable_filters'),
 			'section_id' => get_field('section_id'),
 			'section_class' => get_field('section_class'),
 			'flip' => get_field('flip'),

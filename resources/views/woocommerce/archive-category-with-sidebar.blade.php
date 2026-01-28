@@ -2,12 +2,7 @@
 
 @section('content')
   <main id="main" class="main c-main -spt">
-
-    @php
-      if (function_exists('woocommerce_breadcrumb')) {
-        woocommerce_breadcrumb();
-      }
-    @endphp
+		{!! \App\Helpers\Breadcrumbs::render() !!}
     <header class="woocommerce-products-header grid grid-cols-1 md:grid-cols-2 gap-6">
       @if(apply_filters('woocommerce_show_page_title', true))
         <h1 class="woocommerce-products-header__title page-title text-h3">{!! woocommerce_page_title(false) !!}</h1>

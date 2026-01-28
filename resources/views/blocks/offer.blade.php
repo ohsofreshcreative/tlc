@@ -22,12 +22,14 @@ $sectionClass .= $darkbg ? ' section-dark' : '';
 			@if (!empty($g_offer['r_offer']))
 			@foreach ($g_offer['r_offer'] as $item)
 			<a class="" href="{{ $item['button']['url'] }}" target="{{ $item['button']['target'] ?? '_self' }}">
-				<div data-gsap-element="card" class="__card relative">
+				<div data-gsap-element="card" class="__card flex flex-col relative h-full">
 					<img class="mb-6" src="{{ $item['image']['url'] }}"
 						alt="{{ $item['image']['alt'] ?? '' }}" />
-					<h6 class="mb-4">{{ $item['header'] }}</h6>
-					<p class="">{{ $item['text'] }}</p>
-					<p class="underline-btn -arrow mt-6" href="{{ $item['button']['url'] }}" target="{{ $item['button']['target'] ?? '_self' }}">
+					<div class="__txt">
+						<h6 class="mb-4">{{ $item['header'] }}</h6>
+						<p class="">{{ $item['text'] }}</p>
+					</div>
+					<p class="underline-btn -arrow pt-6 mt-auto" href="{{ $item['button']['url'] }}" target="{{ $item['button']['target'] ?? '_self' }}">
 						{{ $item['button']['title'] }}
 					</p>
 				</div>

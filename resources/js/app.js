@@ -13,6 +13,8 @@ import './swiper.js';
 import './blocks/categories.js';
 import './blocks/logos.js';
 import './blocks/map.js';
+import './blocks/locations.js';
+import './blocks/catalogues.js';
 
 /*--- INICJALIZACJA BIBLIOTEK ---*/
 // Uruchom Alpine.js
@@ -98,3 +100,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+

@@ -44,30 +44,6 @@ const swiperContainer = document.querySelector('.sliders');
 const swiper = new Swiper(swiperContainer, swiperReviews);
 });
 
-/*--- SWIPER ---*/
-
-document.addEventListener('DOMContentLoaded', () => {
-  const swipers = document.querySelectorAll('.swiper');
-
-  if (swipers.length > 0) {
-    swipers.forEach((container) => {
-      new Swiper(container, {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        pagination: {
-          el: container.querySelector('.swiper-pagination'),
-          clickable: true,
-        },
-        navigation: {
-          nextEl: container.querySelector('.swiper-button-next'),
-          prevEl: container.querySelector('.swiper-button-prev'),
-        },
-      });
-    });
-  }
-});
-
 document.addEventListener('DOMContentLoaded', () => {
   const swipers = document.querySelectorAll('.usage-swiper');
 

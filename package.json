@@ -20,7 +20,7 @@
     "@tailwindcss/vite": "^4.1.14",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
-    "@vitejs/plugin-react": "^5.0.3",
+    "@vitejs/plugin-react": "^5.1.2",
     "autoprefixer": "^10.4.21",
     "laravel-vite-plugin": "^2.0.1",
     "postcss": "^8.5.6",
@@ -28,11 +28,12 @@
     "vite": "^7.1.10"
   },
   "dependencies": {
+    "@roots/sage": "^6.24.0",
     "alpinejs": "^3.14.9",
     "gsap": "^3.13.0",
     "jquery": "^3.7.1",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "swiper": "^11.2.6"
   }
 }

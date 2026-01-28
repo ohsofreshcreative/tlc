@@ -162,6 +162,8 @@ add_action('widgets_init', function () {
     ]);
 });
 
+
+
 /**
  * Register the theme sidebars.
  *
