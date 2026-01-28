@@ -50,7 +50,7 @@ $unique_industries = get_unique_values($catalogues_data, 'industry');
 
         {!! \App\Helpers\Breadcrumbs::render() !!}
         
-        <div class="relative grid grid-cols-1 lg:grid-cols-[1fr_2fr] items-center mt-30">
+        <div class="relative grid grid-cols-1 lg:grid-cols-[1fr_2fr] items-center pt-30">
             <div class="__content">
                 <h2 data-gsap-element="header" class="m-header">{{ strip_tags($g_catalogues['header'] ?? '') }}</h2>
                 <p data-gsap-element="txt">{!! $g_catalogues['text'] ?? '' !!}</p>
