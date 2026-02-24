@@ -44,6 +44,7 @@
 @import '../css/blocks/logos.scss';
 @import '../css/blocks/locations.scss';
 @import '../css/blocks/brands.scss';
+@import '../css/blocks/tiles.scss';
 
 /*-- NOT USED --*/
 @import '../css/blocks/hero-offer.scss';

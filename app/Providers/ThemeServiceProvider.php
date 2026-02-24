@@ -98,6 +98,14 @@ class ThemeServiceProvider extends SageServiceProvider
 				]);
 
 				acf_add_options_page([
+					'page_title' => 'Marki',
+					'menu_title' => 'Marki',
+					'menu_slug'  => 'brand',
+					'capability' => 'edit_posts',
+					'redirect'   => false,
+				]);
+
+				acf_add_options_page([
 					'page_title' => 'Obszar działania',
 					'menu_title' => 'Obszar działania',
 					'menu_slug'  => 'o-area',

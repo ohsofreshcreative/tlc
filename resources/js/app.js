@@ -15,6 +15,7 @@ import './blocks/logos.js';
 import './blocks/map.js';
 import './blocks/locations.js';
 import './blocks/catalogues.js';
+import './blocks/brands.js';
 
 /*--- INICJALIZACJA BIBLIOTEK ---*/
 // Uruchom Alpine.js

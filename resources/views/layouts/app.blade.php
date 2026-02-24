@@ -6,7 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	@php(do_action('get_header'))
 	@php(wp_head())
-
+<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/trap@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 	{{-- Fonts --}}
 	<link rel="stylesheet" href="https://use.typekit.net/jgm3pcx.css">
 
