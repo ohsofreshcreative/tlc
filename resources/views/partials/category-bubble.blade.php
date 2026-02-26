@@ -15,7 +15,7 @@
 				</svg>
 			</button>
 
-			<h6 class="text-white pr-6">Potrzebujesz pomocy?2</h6>
+			<h6 class="text-white pr-6">Potrzebujesz pomocy?</h6>
 			<img class="my-8" src="/wp-content/uploads/2025/11/photos.png" />
 			<p class="text-white">Nasz doradca pomoże Ci znaleźć odpowiedni produkt</p>
 

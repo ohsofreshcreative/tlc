@@ -27,9 +27,9 @@ $sectionClass = '';
 
 				</div>
 			</div>
-			<div data-gsap-element="img" class="h-full">
+			<!-- <div data-gsap-element="img" class="h-full">
 				<img class="h-full rounded-full object-cover" src="{{ $g_contact_1['image']['url'] }}" alt="{{ $g_contact_1['image']['alt'] ?? '' }}">
-			</div>
+			</div> -->
 		</div>
 
 	</div>
