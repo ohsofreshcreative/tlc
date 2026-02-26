@@ -386,26 +386,48 @@ function get_pdf_thumbnail_url($pdf_attachment_id)
     }
 }
 
-add_action('wp_footer', function () {
-    // Pobierz obiekt nadrzędnej strony "Sklep" na podstawie jej adresu URL (/produkty).
-    $parent_shop_page = get_page_by_path('produkty');
+/*--- HELP BUBBLE ---*/
 
-    // Jeśli strona nadrzędna nie istnieje, zakończ, aby uniknąć błędów.
-    if (!$parent_shop_page) {
+add_action('wp_footer', function () {
+    // Dla stron archiwów (np. główny sklep, kategorie) pokaż ogólny dymek i zakończ.
+    if (!is_singular()) {
+        if (function_exists('is_woocommerce') && is_woocommerce()) {
+            echo view('partials.contact-bubble');
+        }
         return;
     }
 
-    // Sprawdź, czy bieżąca strona jest podstroną strony "Sklep".
-    $is_child_of_shop_page = is_page() && get_queried_object()->post_parent === $parent_shop_page->ID;
+    // Mamy stronę singular (page, product, etc.)
+    $source_object_id = get_queried_object_id();
+    $source_object_type = 'post';
 
-    // Jeśli to podstrona sklepu (czyli Twoja niestandardowa kategoria), pokaż dedykowany dymek.
-    if ($is_child_of_shop_page) {
-        echo view('partials.category-bubble');
-        return; // Zakończ, aby nie pokazywać drugiego dymka.
+    // Jeśli jesteśmy na stronie produktu, musimy pobrać dane z jego kategorii.
+    if (is_product()) {
+        $terms = get_the_terms($source_object_id, 'product_cat');
+        // Jeśli produkt ma kategorie, użyj pierwszej z nich jako źródła danych.
+        if (!empty($terms)) {
+            $source_object_id = $terms[0]->term_id;
+            $source_object_type = 'term';
+        }
     }
 
-    // Jeśli to jakakolwiek inna strona WooCommerce (np. strona produktu, koszyk), pokaż ogólny dymek.
-    if (function_exists('is_woocommerce') && is_woocommerce()) {
+    // PRIORYTET 1: Sprawdź, czy włączono niestandardowy dymek (na stronie lub na kategorii produktu).
+    // Musimy połączyć ID i typ obiektu, aby ACF wiedział, gdzie szukać.
+    if (get_field('show_help_sidebar', $source_object_type . '_' . $source_object_id)) {
+        // Przekazujemy ID do widoku, aby on też wiedział skąd pobrać dane.
+        echo view('partials.page-help-bubble', ['source_id' => $source_object_type . '_' . $source_object_id]);
+        return;
+    }
+
+    // PRIORYTET 2: Jeśli nie ma dymka niestandardowego, sprawdź, czy to podstrona sklepu.
+    $parent_shop_page = get_page_by_path('produkty');
+    if ($parent_shop_page && get_queried_object()->post_parent === $parent_shop_page->ID) {
+        echo view('partials.category-bubble');
+        return;
+    }
+
+    // PRIORYTET 3: Jeśli nic z powyższych, a jesteśmy na stronie produktu, pokaż ogólny dymek.
+    if (is_product()) {
         echo view('partials.contact-bubble');
     }
 });

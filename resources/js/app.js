@@ -102,3 +102,21 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // 1) Odczytaj poprzednio zapisaną "aktualną" stronę => to będzie "poprzednia"
+  const prevTitle = sessionStorage.getItem('cf7_curr_title') || '';
+  const prevUrl = sessionStorage.getItem('cf7_curr_url') || '';
+
+  // 2) Zapisz obecną stronę jako "aktualną" (na przyszłość)
+  sessionStorage.setItem('cf7_curr_title', document.title);
+  sessionStorage.setItem('cf7_curr_url', window.location.href);
+
+  // 3) Jeśli jesteśmy na stronie z formularzem i pola istnieją — uzupełnij
+  const urlField = document.getElementById('referer_url');
+  const titleField = document.getElementById('referer_title');
+
+  if (urlField) urlField.value = prevUrl || document.referrer || '';
+  if (titleField) titleField.value = prevTitle || (document.referrer ? 'Strona odsyłająca' : 'Wejście bezpośrednie');
+});
