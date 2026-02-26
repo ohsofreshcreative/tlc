@@ -10,7 +10,7 @@ $sectionClass = '';
 
 	<div class="__wrapper c-main relative z-2">
 
-		<div class="relative grid grid-cols-1 lg:grid-cols-2 items-center gap-10 z-10">
+		<div class="relative w-full md:w-1/2 mx-auto">
 			<div class="__content flex flex-col justify-between">
 				<div class="__data">
 					<h2 data-gsap-element="header" class="text-white">{!! $g_contact_1['header'] !!}</h2>
