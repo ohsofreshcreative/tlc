@@ -35,9 +35,9 @@ if (!empty($background) && $background !== 'none') {
                             <div class="pb-4">
                                 {{ get_the_excerpt($sector->ID) }}
                             </div>
-                           <!--  <a href="{{ get_permalink($sector->ID) }}" class="underline-btn mt-auto">
+                           <a href="{{ get_permalink($sector->ID) }}" class="underline-btn mt-auto">
                                 Dowiedz się więcej
-                            </a> -->
+                            </a> 
                         </div>
                     </div>
                 @endforeach

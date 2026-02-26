@@ -61,20 +61,22 @@ $sectionClass .= ' ' . $background;
 						@foreach ($tab['posts'] as $service_post)
 						<div class="__card grid grid-cols-1 lg:grid-cols-[1.5fr_1.4fr] items-center gap-10 bg-white radius border-p p-6 mt-10">
 							@if (has_post_thumbnail($service_post->ID))
-							<a class="__order1 href=" {{ get_permalink($service_post->ID) }}">
+						
 								<img src="{{ get_the_post_thumbnail_url($service_post->ID, 'large') }}" alt="{{ $service_post->post_title }}" class="img-l w-full object-cover rounded-xl">
-							</a>
+							
 							@endif
 							<div class="__order2 p-6">
 								<h4 class="text-xl font-bold mb-2">
-									<a href="{{ get_permalink($service_post->ID) }}">{{ $service_post->post_title }}</a>
+									{{ $service_post->post_title }}
 								</h4>
 								<div class="text-gray-600 text-sm mb-4 prose max-w-none">
 									{!! get_field('short_description', $service_post->ID) !!}
 								</div>
-								<!-- <a href="{{ get_permalink($service_post->ID) }}" class="underline-btn">
-									Dowiedz się więcej
-								</a> -->
+								<a class="__order1 underline-btn " href="/kontakt/">
+									Skontaktuj się z nami
+								</a> 
+
+								{{--- BACKUP {{ get_permalink($service_post->ID) }} ---}}
 							</div>
 						</div>
 						@endforeach
