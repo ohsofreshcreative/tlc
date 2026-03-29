@@ -51,6 +51,9 @@ class Brand extends Field
 			->addUrl('link', [
 				'label' => 'Link',
 			])
+			->addUrl('producent', [
+				'label' => 'Strona producenta',
+			])
 			->endRepeater()
 
 			/*--- USTAWIENIA BLOKU ---*/
