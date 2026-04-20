@@ -18,7 +18,7 @@
 			<img class="my-8" src="/wp-content/uploads/2025/11/photos.png" />
 
 			@if ($name)
-			<h5 class="text-white">{{ $name }}</h5>
+                <h6 class="text-white">{{ $name }}</h6>
 			@endif
 			<p class="text-white">Nasz doradca pomoże Ci znaleźć odpowiedni produkt</p>
 

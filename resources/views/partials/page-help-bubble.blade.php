@@ -31,7 +31,7 @@
             @endif
 				
 				@if ($name)
-                <h5 class="text-white">{{ $name }}</h5>
+                <h6 class="text-white">{{ $name }}</h6>
 				@endif
 
             <p class="text-white">{{ $sidebar_text }}</p>
