@@ -83,7 +83,7 @@ $grouped_tabs[$tabName][] = $item;
 		</div>
 		@endif
 
-			@if (!empty($g_tabs['button']))
+		@if (!empty($g_tabs['button']))
 		<div class="mt-10 text-center">
 			<a href="{{ $g_tabs['button']['url'] }}" class="main-btn m-btn" target="{{ $g_tabs['button']['target'] ?? '_self' }}">
 				{{ $g_tabs['button']['title'] }}

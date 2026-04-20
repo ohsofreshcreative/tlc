@@ -27,7 +27,7 @@ if (!empty($background) && $background !== 'none') {
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-10">
                     {{-- Zmieniono $r_brands na $brands_data --}}
                     @foreach ($brands_data as $item)
-                    <div class="__card relative border-p bg-white flex items-center justify-center aspect-square h-48 p-4">
+                    <div class="__card relative border-p bg-white flex items-center justify-center aspect-square max-h-48 p-4">
                         @if (!empty($item['image']['url']))
                         <button 
                             type="button" 

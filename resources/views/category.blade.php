@@ -26,7 +26,7 @@ $category_image = get_field('category_image', $term);
 			@endif
 		</div>
 	</div>
-	<img class="__bg absolute top-0 right-0 pointer-events-none" src="{{ $category_image['url'] ?? '' }}" alt="{{ $category_image['alt'] ?? '' }}" />
+	<img class="__bg absolute top-0 right-0 pointer-events-none mix-blend-multiply" src="{{ $category_image['url'] ?? '' }}" alt="{{ $category_image['alt'] ?? '' }}" />
 </div>
 
 @php

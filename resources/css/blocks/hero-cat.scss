@@ -1,9 +1,8 @@
 .b-hero-cat {
-  .woocommerce-breadcrumb {
-    color: var(--p-100);
-    a {
-      color: #fff;
-    }
+  .breadcrumbs {
+	.breadcrumbs__link {
+      color: #fff !important;
+	}
   }
   .__arrow {
     position: relative;

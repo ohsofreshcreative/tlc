@@ -45,7 +45,7 @@ $sectionClass .= $bgClass[$bg ?? ''] ?? '';
 			@endif
 
 			@if (!empty($r_tlc))
-			<div class="__cards relative grid gap-10">
+			<div class="__cards relative grid gap-10 pt-30 md:pt-0">
 				@foreach ($r_tlc as $item)
 
 				<div data-gsap-element="card" class="__card border-right-p pr-6">

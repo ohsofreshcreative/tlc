@@ -142,5 +142,5 @@ $sectionClass .= ' ' . $background;
 		</div>
 	</div>
 
-	<img class="absolute -top-34 -right-100 aspect-square h-[604px]" src="/wp-content/uploads/2026/01/big_bearing.png" alt="{{ $g_tlc['image']['alt'] ?? '' }}" />
+	<img class="absolute -top-34 -right-50 sm-right-90 md:-right-80 aspect-square h-[304px] md:h-[504px]" src="/wp-content/uploads/2026/01/big_bearing.png" alt="{{ $g_tlc['image']['alt'] ?? '' }}" />
 </section>
