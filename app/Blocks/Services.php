@@ -93,9 +93,12 @@ class Services extends Block
 
 	public function with()
 	{
+		$service_tabs = $this->getServiceData();
+
 		return [
 			'title' => get_field('title'),
-			'service_tabs' => $this->getServiceData(),
+			'service_tabs' => $service_tabs,
+			'service_tabs_json' => json_encode($service_tabs),
 			'section_id' => get_field('section_id'),
 			'section_class' => get_field('section_class'),
 			'flip' => get_field('flip'),

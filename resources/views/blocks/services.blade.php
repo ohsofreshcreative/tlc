@@ -20,7 +20,15 @@ $sectionClass .= ' ' . $background;
 		<h2 class="text-center m-header">{{ $title }}</h2>
 		@endif
 
-		<div x-data="{ activeTab: {{ $service_tabs[0]['term']->term_id }} }" class="mt-12">
+	<div
+    x-data="serviceTabs(
+        {{-- Przekazujemy ID pierwszej zakładki jako domyślne --}}
+        {{ !empty($service_tabs) ? $service_tabs[0]['term']->term_id : 'null' }},
+        {{-- Przekazujemy całą tablicę jako string JSON --}}
+        '{{ $service_tabs_json }}'
+    )"
+    class="mt-12"
+>
 			{{-- Przyciski zakładek --}}
 			<div
 				x-data="{
