@@ -8,7 +8,7 @@ $sectionClass .= $nomt ? ' !mt-0' : '';
 
 <section data-gsap-anim="section" class="s-cta-bg c-main -smt {{ $sectionClass }} {{ $section_class }}">
 
-	<div data-gsap-element="bg" class="__wrapper radius grid grid-cols-1 lg:grid-cols-[2fr_1fr] items-center section-gap p-10 md:px-14 md:py-20" style="background-image:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('{{ $cta_bg['image']['url'] }}'); background-size:cover; background-position:center;">
+	<div data-gsap-element="bg" class="__wrapper radius grid grid-cols-1 lg:grid-cols-[2fr_1fr] items-center section-gap p-10 md:px-14 md:py-20" style="background-image:linear-gradient(rgba(0,39,4,0.8), rgba(0,39,4,0.8)), url('{{ $cta_bg['image']['url'] }}'); background-size:cover; background-position:center;">
 
 		<div data-gsap-element="txt" class="__content">
 			@if ($cta_bg['title'])

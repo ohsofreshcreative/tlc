@@ -21,6 +21,16 @@
 		@endphp
 	</div>
 
+
+	<div data-gsap-element="bg" class="__wrapper radius grid grid-cols-1 lg:grid-cols-[2fr_1fr] items-center section-gap p-10 md:px-14 md:py-20 mb-24" style="background-image:linear-gradient(rgba(0,39,4,0.8), rgba(0,39,4,0.8)), url('/wp-content/uploads/2025/11/expert-scaled.jpg'); background-size:cover; background-position:center;">
+		<div data-gsap-element="txt" class="__content">
+			<p class="primary">Potrzebujesz pomocy?</p>
+			<h3 class="text-white mt-6">Nasi doradcy pomogą Ci znaleźć odpowiedni produkt</h3>
+		</div>
+		<a data-gsap-element="btn" class="main-btn m-btn" href="/kontakt">Zapytaj eksperta</a>
+	</div>
+
+
 	@if(wc_get_loop_prop('total'))
 	@while(have_posts())
 	@php the_post(); wc_get_template_part('content', 'product'); @endphp

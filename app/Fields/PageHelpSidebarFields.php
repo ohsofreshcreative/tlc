@@ -42,6 +42,9 @@ class PageHelpSidebarFields extends Field
                 'return_format' => 'id',
             ])
             ->conditional('show_help_sidebar', '==', '1')
+            ->addText('name', [
+                'label' => 'Imię doradcy',
+            ])
             ->addTextarea('help_sidebar_text', [
                 'label' => 'Tekst',
                 'default_value' => 'Nasz doradca pomoże Ci znaleźć odpowiedni produkt',

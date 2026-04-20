@@ -6,6 +6,7 @@
     @php
         $sidebar_title = get_field('help_sidebar_title') ?: 'Potrzebujesz pomocy?';
         $sidebar_image = get_field('help_sidebar_image');
+        $name = get_field('name');
         $sidebar_text = get_field('help_sidebar_text') ?: 'Nasz doradca pomoże Ci znaleźć odpowiedni produkt';
         $sidebar_button = get_field('help_sidebar_button');
     @endphp
@@ -29,6 +30,10 @@
                 @if ($sidebar_image)
                     {!! wp_get_attachment_image($sidebar_image, 'full', false, ['class' => 'my-8']) !!}
                 @endif
+				
+				@if ($name)
+                <h5 class="text-white">{{ $name }}</h5>
+				@endif
 
                 <p class="text-white">{{ $sidebar_text }}</p>
 
