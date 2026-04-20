@@ -68,7 +68,7 @@ $grouped_tabs[$tabName][] = $item;
 							@endif
 
 							@if (!empty($item['button']))
-							<div class="mt-10 text-center">
+							<div class="">
 								<a href="{{ $item['button']['url'] }}" class="main-btn m-btn" target="{{ $item['button']['target'] ?? '_self' }}">
 									{{ $item['button']['title'] }}
 								</a>
