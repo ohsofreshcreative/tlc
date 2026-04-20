@@ -20,15 +20,7 @@ $sectionClass .= ' ' . $background;
 		<h2 class="text-center m-header">{{ $title }}</h2>
 		@endif
 
-	<div
-    x-data="serviceTabs(
-        {{-- Przekazujemy ID pierwszej zakładki jako domyślne --}}
-        {{ !empty($service_tabs) ? $service_tabs[0]['term']->term_id : 'null' }},
-        {{-- Przekazujemy całą tablicę jako string JSON --}}
-        '{{ $service_tabs_json }}'
-    )"
-    class="mt-12"
->
+		<div x-data="{ activeTab: {{ $service_tabs[0]['term']->term_id }} }" class="mt-12">
 			{{-- Przyciski zakładek --}}
 			<div
 				x-data="{
@@ -98,32 +90,3 @@ $sectionClass .= ' ' . $background;
 @elseif (is_admin())
 <p>Blok Usługi: Dodaj wpisy do CPT "Usługi" i przypisz je do "Kategorii Usług", aby wyświetlić je w zakładkach.</p>
 @endif
-
-<script>window.serviceTabs = (defaultTabId, tabsJson) => ({
-  activeTab: null,
-  tabs: [],
-
-  init() {
-    // Parsujemy string JSON, który otrzymaliśmy
-    this.tabs = JSON.parse(tabsJson);
-
-    const getTabIdFromHash = () => {
-      const hash = window.location.hash.substring(1);
-      if (!hash) return null;
-
-      const foundTab = this.tabs.find(tab => tab.term.slug === hash);
-      return foundTab ? foundTab.term.term_id : null;
-    };
-
-    // Ustawiamy aktywną zakładkę na podstawie URL lub domyślnej wartości
-    this.activeTab = getTabIdFromHash() || defaultTabId;
-
-    // Nasłuchujemy zmian w URL
-    window.addEventListener('hashchange', () => {
-      const newTabId = getTabIdFromHash();
-      if (newTabId) {
-        this.activeTab = newTabId;
-      }
-    });
-  },
-});</script>
