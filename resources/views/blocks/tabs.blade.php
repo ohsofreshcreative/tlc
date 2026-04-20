@@ -37,37 +37,7 @@ $grouped_tabs[$tabName][] = $item;
 		@endif
 
 		@if(!empty($grouped_tabs))
-	<div
-    x-data="{
-        activeTab: 0,
-
-        init(totalTabs) { // <-- Dodajemy argument `totalTabs`
-            const getTabFromHash = () => {
-                const hash = window.location.hash.substring(1);
-                // Używamy `totalTabs` zamiast kodu PHP
-                if (hash && !isNaN(hash) && parseInt(hash) < totalTabs) {
-                    return parseInt(hash);
-                }
-                return null;
-            };
-
-            const initialTab = getTabFromHash();
-            if (initialTab !== null) {
-                this.activeTab = initialTab;
-            }
-
-            window.addEventListener('hashchange', () => {
-                const newTab = getTabFromHash();
-                if (newTab !== null) {
-                    this.activeTab = newTab;
-                }
-            });
-        }
-    }"
-    {{-- Wywołujemy init() z liczbą zakładek --}}
-    x-init="init({{ count($grouped_tabs) }})"
-    class="mt-12"
->
+		<div x-data="{ activeTab: 0 }" class="mt-12">
 			<div class="flex justify-center flex-wrap gap-4 mb-10">
 				@foreach ($grouped_tabs as $name => $items)
 				<button
