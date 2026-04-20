@@ -37,12 +37,16 @@ $grouped_tabs[$tabName][] = $item;
 		@endif
 
 		@if(!empty($grouped_tabs))
-		<div
+	<div
     x-data="{
-        activeTab: 0,
+        activeTab: 0, // Domyślnie pierwsza zakładka
 
         init() {
-           
+            // Funkcja do pobrania numeru zakładki z URL
+            const getTabFromHash = () => {
+                // Pobierz hash, usuń '#' i zamień na liczbę
+                const hash = window.location.hash.substring(1);
+                // Sprawdź, czy hash jest liczbą i jest w zakresie dostępnych zakładek
                 if (hash && !isNaN(hash) && parseInt(hash) < {{ count($grouped_tabs) }}) {
                     return parseInt(hash);
                 }
@@ -54,6 +58,7 @@ $grouped_tabs[$tabName][] = $item;
                 this.activeTab = initialTab;
             }
 
+            // Nasłuchuj zmiany hasha w URL (np. gdy użytkownik klika Wstecz/Dalej)
             window.addEventListener('hashchange', () => {
                 const newTab = getTabFromHash();
                 if (newTab !== null) {
@@ -62,8 +67,7 @@ $grouped_tabs[$tabName][] = $item;
             });
         }
     }"
-    class="mt-12"
->
+    class="mt-12">
 			<div class="flex justify-center flex-wrap gap-4 mb-10">
 				@foreach ($grouped_tabs as $name => $items)
 				<button
