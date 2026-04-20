@@ -98,3 +98,32 @@ $sectionClass .= ' ' . $background;
 @elseif (is_admin())
 <p>Blok Usługi: Dodaj wpisy do CPT "Usługi" i przypisz je do "Kategorii Usług", aby wyświetlić je w zakładkach.</p>
 @endif
+
+<script>window.serviceTabs = (defaultTabId, tabsJson) => ({
+  activeTab: null,
+  tabs: [],
+
+  init() {
+    // Parsujemy string JSON, który otrzymaliśmy
+    this.tabs = JSON.parse(tabsJson);
+
+    const getTabIdFromHash = () => {
+      const hash = window.location.hash.substring(1);
+      if (!hash) return null;
+
+      const foundTab = this.tabs.find(tab => tab.term.slug === hash);
+      return foundTab ? foundTab.term.term_id : null;
+    };
+
+    // Ustawiamy aktywną zakładkę na podstawie URL lub domyślnej wartości
+    this.activeTab = getTabIdFromHash() || defaultTabId;
+
+    // Nasłuchujemy zmian w URL
+    window.addEventListener('hashchange', () => {
+      const newTabId = getTabIdFromHash();
+      if (newTabId) {
+        this.activeTab = newTabId;
+      }
+    });
+  },
+});</script>
