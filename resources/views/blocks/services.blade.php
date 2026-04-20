@@ -44,7 +44,7 @@ $sectionClass .= ' ' . $background;
                 "
 				class="__tabs flex justify-start md:justify-center gap-4 bg-dark rounded-full p-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] cursor-grab select-none">
 				@foreach ($service_tabs as $tab)
-				<buttona
+				<button
 					@click="activeTab = {{ $tab['term']->term_id }}"
 					:class="{ 'border-primary text-primary !pointer-events-none': activeTab === {{ $tab['term']->term_id }}, 'cursor-pointer border-transparent bg-dark text-white': activeTab !== {{ $tab['term']->term_id }} }"
 					class="bg-white text-white text-sm whitespace-nowrap py-4 px-6 rounded-full border-solid-p shrink-0">
