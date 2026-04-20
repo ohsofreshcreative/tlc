@@ -1,7 +1,6 @@
-
 <section data-gsap-anim="section">
 
-	<div data-gsap-element="bubble" 
+	<div data-gsap-element="bubble"
 		x-data="{ isOpen: true }"
 		x-show="isOpen"
 		x-transition
@@ -17,6 +16,10 @@
 
 			<h6 class="text-white pr-6">Potrzebujesz pomocy?</h6>
 			<img class="my-8" src="/wp-content/uploads/2025/11/photos.png" />
+
+			@if ($name)
+			<h5 class="text-white">{{ $name }}</h5>
+			@endif
 			<p class="text-white">Nasz doradca pomoże Ci znaleźć odpowiedni produkt</p>
 
 			<a class="main-btn m-btn mt-6" href="/kontakt">Zapytaj eksperta</a>

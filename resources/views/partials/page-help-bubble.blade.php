@@ -28,6 +28,10 @@
             @if ($sidebar_image)
                 {!! wp_get_attachment_image($sidebar_image, 'full', false, ['class' => 'w-30 aspect-square rounded-full my-4']) !!}
             @endif
+				
+				@if ($name)
+                <h5 class="text-white">{{ $name }}</h5>
+				@endif
 
             <p class="text-white">{{ $sidebar_text }}</p>
 

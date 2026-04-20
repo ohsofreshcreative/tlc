@@ -31,7 +31,9 @@
                     {!! wp_get_attachment_image($sidebar_image, 'full', false, ['class' => 'my-8']) !!}
                 @endif
 				
+				@if ($name)
                 <h5 class="text-white">{{ $name }}</h5>
+				@endif
 
                 <p class="text-white">{{ $sidebar_text }}</p>
 
