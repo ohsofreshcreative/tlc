@@ -4,6 +4,7 @@
 
     $sidebar_title = get_field('help_sidebar_title', $id_to_check) ?: 'Potrzebujesz pomocy?';
     $sidebar_image = get_field('help_sidebar_image', $id_to_check);
+        $name = get_field('name');
     $sidebar_text = get_field('help_sidebar_text', $id_to_check) ?: 'Nasz doradca pomoże Ci znaleźć odpowiedni produkt';
     $sidebar_button = get_field('help_sidebar_button', $id_to_check);
 @endphp
