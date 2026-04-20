@@ -58,8 +58,19 @@ class Brands extends Block
 
 	public function with()
 	{
+		// Pobierz dane z pola repeater
+		$brands_data = get_field('r_brand', 'option') ?: [];
+
+		// Posortuj tablicę alfabetycznie według pola 'title'
+		if (!empty($brands_data)) {
+			usort($brands_data, function ($a, $b) {
+				// Użyj `strnatcasecmp` dla naturalnego, niewrażliwego na wielkość liter sortowania
+				return strnatcasecmp($a['title'] ?? '', $b['title'] ?? '');
+			});
+		}
+
 		return [
-			'brands_data'   => get_field('r_brand', 'option') ?: [],
+			'brands_data'   => $brands_data, // Przekaż już posortowane dane
 			'section_id'    => get_field('section_id', 'option') ?: '',
 			'section_class' => get_field('section_class', 'option') ?: '',
 			'nomt'          => get_field('nomt', 'option') ?: false,

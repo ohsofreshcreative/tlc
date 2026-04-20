@@ -10,6 +10,8 @@ if (!empty($background) && $background !== 'none') {
 }
 @endphp
 
+<!--- brands --->
+
 {{-- Główny kontener dla logiki Alpine.js --}}
 <div x-data="{ modalVisible: false, image: '', title: '', description: '', link: '' }">
    <section 
