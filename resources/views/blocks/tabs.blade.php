@@ -66,20 +66,28 @@ $grouped_tabs[$tabName][] = $item;
 							@if (!empty($item['text']))
 							<div class="text-sm">{{ $item['text'] }}</div>
 							@endif
-							
-		@if (!empty($g_tabs['button']))
-		<div class="mt-10 text-center">
-			<a href="{{ $g_tabs['button']['url'] }}" class="main-btn m-btn" target="{{ $g_tabs['button']['target'] ?? '_self' }}">
-				{{ $g_tabs['button']['title'] }}
-			</a>
-		</div>
-		@endif
+
+							@if (!empty($item['button']))
+							<div class="mt-10 text-center">
+								<a href="{{ $item['button']['url'] }}" class="main-btn m-btn" target="{{ $item['button']['target'] ?? '_self' }}">
+									{{ $item['button']['title'] }}
+								</a>
+							</div>
+							@endif
 						</div>
 					</div>
 					@endforeach
 				</div>
 				@endforeach
 			</div>
+		</div>
+		@endif
+
+			@if (!empty($g_tabs['button']))
+		<div class="mt-10 text-center">
+			<a href="{{ $g_tabs['button']['url'] }}" class="main-btn m-btn" target="{{ $g_tabs['button']['target'] ?? '_self' }}">
+				{{ $g_tabs['button']['title'] }}
+			</a>
 		</div>
 		@endif
 
