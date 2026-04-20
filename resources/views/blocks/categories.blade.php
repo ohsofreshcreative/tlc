@@ -38,7 +38,7 @@ $darkbg ? 'section-dark' : '',
 								<img
 									src="{{ $category['image_url'] }}"
 									alt="{{ $category['name'] }}"
-									class="__Img __img w-full object-cover transition-transform duration-300 group-hover:scale-105"
+									class="__Img __img w-full object-cover transition-transform duration-300 group-hover:scale-105 mix-blend-multiply"
 									loading="lazy">
 							</div>
 							<div class="mt-4">
