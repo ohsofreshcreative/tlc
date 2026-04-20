@@ -37,7 +37,33 @@ $grouped_tabs[$tabName][] = $item;
 		@endif
 
 		@if(!empty($grouped_tabs))
-		<div x-data="{ activeTab: 0 }" class="mt-12">
+		<div
+    x-data="{
+        activeTab: 0,
+
+        init() {
+           
+                if (hash && !isNaN(hash) && parseInt(hash) < {{ count($grouped_tabs) }}) {
+                    return parseInt(hash);
+                }
+                return null;
+            };
+
+            const initialTab = getTabFromHash();
+            if (initialTab !== null) {
+                this.activeTab = initialTab;
+            }
+
+            window.addEventListener('hashchange', () => {
+                const newTab = getTabFromHash();
+                if (newTab !== null) {
+                    this.activeTab = newTab;
+                }
+            });
+        }
+    }"
+    class="mt-12"
+>
 			<div class="flex justify-center flex-wrap gap-4 mb-10">
 				@foreach ($grouped_tabs as $name => $items)
 				<button
