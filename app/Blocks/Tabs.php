@@ -74,6 +74,10 @@ class Tabs extends Block
 			->addTextarea('text', [
 				'label' => 'Opis',
 			])
+			->addLink('button', [
+				'label' => 'Przycisk',
+				'return_format' => 'array',
+			])
 			->endRepeater()
 
 			/*--- USTAWIENIA BLOKU ---*/
