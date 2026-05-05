@@ -18,7 +18,7 @@ $sectionClass .= ' ' . $background;
 		<div class="__col grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
 			@if (!empty($g_textimg['image']))
 			<div class="__img order1">
-				<img class="object-cover w-full __img radius-img" src="{{ $g_textimg['image']['url'] }}" alt="{{ $g_textimg['image']['alt'] ?? '' }}">
+				<img class="object-cover w-full __img radius-img min-h-80" src="{{ $g_textimg['image']['url'] }}" alt="{{ $g_textimg['image']['alt'] ?? '' }}">
 			</div>
 			@endif
 
