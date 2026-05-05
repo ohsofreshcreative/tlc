@@ -141,14 +141,14 @@ class Categories extends Block
 
 		$args = [
 			'taxonomy'   => 'product_cat',
-			'orderby'    => 'name',
+			'orderby'    => 'meta_value_num',
+			'meta_key'   => 'order',
 			'order'      => 'ASC',
 			'hide_empty' => $hide_empty,
 		];
 
 		if (!empty($selected_ids)) {
 			$args['include'] = $selected_ids;
-			$args['orderby'] = 'include';
 		} else {
 			$args['parent'] = 0;
 		}

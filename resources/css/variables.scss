@@ -1499,6 +1499,10 @@ footer {
 		width: 24px;
 		height: 24px;
 	}
+	.menu-underline {
+		text-decoration: underline !important;
+		color:var(--p-200) !important;
+	}
 }
 
 /*--- !WOOCOMMERCE ---*/

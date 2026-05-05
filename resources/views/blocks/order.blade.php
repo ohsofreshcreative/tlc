@@ -19,7 +19,7 @@ if (!empty($background) && $background !== 'none') {
 		<div class="__col grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
 			@if (!empty($g_order['image']))
 			<div data-gsap-element="image" class="__img order1">
-				<img class="__img img-2xl object-cover radius-left" src="{{ $g_order['image']['url'] }}" alt="{{ $g_order['image']['alt'] ?? '' }}">
+				<img class="__img img-2xl object-cover radius" src="{{ $g_order['image']['url'] }}" alt="{{ $g_order['image']['alt'] ?? '' }}">
 			</div>
 			@endif
 

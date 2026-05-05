@@ -87,8 +87,14 @@ if (!empty($background) && $background !== 'none') {
                 <div class="overflow-y-auto mb-4" x-html="description"></div>
 
                 <div class="">
-                    <a x-show="link" x-bind:href="link" target="_blank" rel="noopener noreferrer" class="main-btn m-btn">
+                    <a x-show="link" x-bind:href="link" target="_blank" rel="noopener noreferrer" class="underline-btn m-btn">
                         Strona producenta
+                    </a>
+                </div>
+
+                <div class="">
+                    <a href="https://b2b.tlc.pl/strona_glowna" target="_blank" rel="noopener noreferrer" class="main-btn m-btn">
+                        Zobacz w e-sklepie
                     </a>
                 </div>
             </div>
