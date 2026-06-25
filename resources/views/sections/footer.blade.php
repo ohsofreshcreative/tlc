@@ -12,7 +12,7 @@
 	<img class="__bg absolute bottom-0 left-1/2 -translate-x-1/2 mix-blend-overlay opacity-20 pointer-events-none" src="/wp-content/uploads/2025/11/big.png" />
 	</div>
 
-	<div class="c-main flex flex-col md:flex-row justify-between gap-6 py-10 footer-bottom">
+	<div class="c-main flex flex-col md:flex-row justify-center gap-6 py-10 footer-bottom">
 		<p class="">Copyright ©<?php echo date('Y'); ?> <?php echo get_bloginfo('name'); ?>. All Rights Reserved</p>
 		<!-- <p class="flex gap-2">Designed &amp; Developed by
 			<a target="_blank" href="https://www.ohsofresh.pl" title="OhSoFresh"><img class="oh" src="/wp-content/themes/tlc/resources/images/ohsofresh.svg"></a>
