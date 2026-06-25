@@ -22,7 +22,7 @@ $sectionClass .= ' ' . $background;
 			<p class="text-white">{{ strip_tags($g_cta['text']) }}</p>
 
 			@if (!empty($g_cta['button']))
-			<a class="main-btn m-btn" href="{{ $g_cta['button']['url'] }}">{{ $g_cta['button']['title'] }}</a>
+			<a class="main-btn m-btn" href="{{ $g_cta['button']['url'] }}" @if(!empty($g_cta['button']['target'])) target="{{ $g_cta['button']['target'] }}" @endif>{{ $g_cta['button']['title'] }}</a>
 			@endif
 		</div>
 

@@ -1,32 +1,28 @@
 .b-logos {
-	.swiper-wrapper {
-		display: flex;
-	}
+  .__logos {
+    overflow: hidden;
 
-	.logos-swiper .swiper-wrapper {
-		transition-timing-function: linear !important;
-	}
+    .__wrapper {
+      display: flex;
+      width: max-content !important;
+      align-items: center;
+      gap: 60px;
+      animation: logos-slider 120s linear infinite;
+      will-change: transform;
+    }
 
-	.logos-swiper .swiper-slide {
-		width: auto;
-	}
+    .__slide {
+      width: auto !important;
+      flex-shrink: 0;
+    }
 
-	.logos-swiper {
-	
-		overflow: hidden;
+    &:hover .__wrapper {
+      animation-play-state: paused;
+    }
+  }
+}
 
-		.swiper-wrapper {
-		
-			transition-timing-function: linear !important;
-		
-			align-items: center;
-		}
-
-		.swiper-slide {
-			
-			width: max-content !important;
-			flex-shrink: 0;
-		}
-		
-	}
+@keyframes logos-slider {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }

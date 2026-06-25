@@ -11,20 +11,16 @@ const initLogosSwiper = () => {
 
   new Swiper(logosSlider, {
     modules: [Autoplay],
-    loop: false,
-    freeMode: true,
+    loop: true,
     slidesPerView: 'auto',
     spaceBetween: 60,
+    allowTouchMove: false,
     autoplay: {
       delay: 0,
       disableOnInteraction: false,
-      pauseOnMouseEnter: true,
     },
     speed: 4000,
   });
-
-  // KROK 2: Usuń ręczne event listenery, ponieważ nie są już potrzebne.
 };
 
 document.addEventListener('DOMContentLoaded', initLogosSwiper);
-
