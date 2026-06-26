@@ -13,9 +13,9 @@ $heightStyle = match($img_height) {
 };
 @endphp
 
-<section data-gsap-anim="section" @if($sectionId) id="{{ $sectionId }}" @endif class="b-image mt-20 {{ $customClass }} {{ $sectionClass }} {{ $section_class }}">
+<section data-gsap-anim="section" @if($sectionId) id="{{ $sectionId }}" @endif class="b-image mt-16 {{ $customClass }} {{ $sectionClass }} {{ $section_class }}">
 
-	<div class="__wrapper c-main">
+	<div class="__wrapper">
 
 		@if (!empty($g_image['image']))
 		<img class="radius-img object-cover w-full __img order1" @if($heightStyle) style="{{ $heightStyle }}" @endif src="{{ $g_image['image']['url'] }}" alt="{{ $g_image['image']['alt'] ?? '' }}">
