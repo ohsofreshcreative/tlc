@@ -18,7 +18,7 @@ $heightStyle = match($img_height) {
 	<div class="__wrapper c-main">
 
 		@if (!empty($g_image['image']))
-		<img class="object-cover w-full __img order1" @if($heightStyle) style="{{ $heightStyle }}" @endif src="{{ $g_image['image']['url'] }}" alt="{{ $g_image['image']['alt'] ?? '' }}">
+		<img class="radius-img object-cover w-full __img order1" @if($heightStyle) style="{{ $heightStyle }}" @endif src="{{ $g_image['image']['url'] }}" alt="{{ $g_image['image']['alt'] ?? '' }}">
 		@endif
 
 	</div>
