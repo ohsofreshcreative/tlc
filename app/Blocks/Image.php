@@ -49,11 +49,10 @@ class Image extends Block
 			->addSelect('img_height', [
 				'label' => 'Wysokość obrazu',
 				'choices' => [
-					'auto'   => 'Auto (naturalna)',
-					'sm'     => 'Mała (400px)',
-					'md'     => 'Średnia (600px)',
-					'lg'     => 'Duża (800px)',
-					'full'   => 'Pełny ekran (100vh)',
+					'auto' => 'Auto (naturalna)',
+					'sm'   => 'Mała (400px)',
+					'md'   => 'Średnia (600px)',
+					'lg'   => 'Duża (800px)',
 				],
 				'default_value' => 'md',
 				'ui' => 1,
