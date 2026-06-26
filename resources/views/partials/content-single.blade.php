@@ -31,7 +31,7 @@ $category = !empty($categories) ? $categories[0] : null;
 		<div class="__content">
 			@if(has_post_thumbnail())
 			<div class="img-2xl rounded-xl overflow-hidden mb-16">
-				{!! get_the_post_thumbnail(get_the_ID(), 'large') !!}
+				{!! get_the_post_thumbnail(get_the_ID(), 'large', ['class' => 'object-cover w-full h-full']) !!}
 			</div>
 			@endif
 			{!! the_content() !!}

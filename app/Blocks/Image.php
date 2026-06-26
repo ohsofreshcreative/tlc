@@ -46,6 +46,18 @@ class Image extends Block
 				'preview_size' => 'medium',
 			])
 			->endGroup()
+			->addSelect('img_height', [
+				'label' => 'Wysokość obrazu',
+				'choices' => [
+					'auto'   => 'Auto (naturalna)',
+					'sm'     => 'Mała (400px)',
+					'md'     => 'Średnia (600px)',
+					'lg'     => 'Duża (800px)',
+					'full'   => 'Pełny ekran (100vh)',
+				],
+				'default_value' => 'md',
+				'ui' => 1,
+			])
 
 			/*--- USTAWIENIA BLOKU ---*/
 
@@ -63,8 +75,9 @@ class Image extends Block
 	public function with()
 	{
 		return [
-			'g_image' => get_field('g_image'),
-			'flip' => get_field('flip'),
+			'g_image'    => get_field('g_image'),
+			'flip'       => get_field('flip'),
+			'img_height' => get_field('img_height') ?: 'md',
 		];
 	}
 }

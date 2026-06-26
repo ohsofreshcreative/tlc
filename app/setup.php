@@ -294,6 +294,19 @@ add_action('wp_enqueue_scripts', function () {
 	wp_enqueue_script('gsap-st-cdn', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', ['gsap-cdn'], null, true);
 }, 1); // Ustawiamy priorytet na 1, aby wykonało się BARDZO wcześnie.
 
+/*--- LITESPEED CACHE: wyklucz GSAP z defer/minify ---*/
+// LiteSpeed Cache defer'uje skrypty CDN, przez co gsap jest undefined w DOMContentLoaded.
+add_filter('litespeed_optm_js_defer_exc', function ($excludes) {
+	$excludes[] = 'gsap.min.js';
+	$excludes[] = 'ScrollTrigger.min.js';
+	return $excludes;
+});
+add_filter('litespeed_optimize_js_excludes', function ($excludes) {
+	$excludes[] = 'gsap.min.js';
+	$excludes[] = 'ScrollTrigger.min.js';
+	return $excludes;
+});
+
 
 add_action('after_setup_theme', function () {
     remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);

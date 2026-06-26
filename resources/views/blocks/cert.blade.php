@@ -52,7 +52,7 @@ $sectionClass .= ' ' . $background;
 			<div class="flex flex-col">
 				@foreach ($r_cert as $item)
 				<div class="cert-item border-b border-gray-200 last:border-b-0">
-					<button @click="activeTab = (activeTab === {{ $loop->index }} ? null : {{ $loop->index }})" class="w-full text-left py-4">
+					<button @click="activeTab = (activeTab === {{ $loop->index }} ? null : {{ $loop->index }})" class="cursor-pointer w-full text-left py-4">
 						<div class="flex items-center">
 							<div class="transition-all duration-300 ease-in-out" :class="activeTab === {{ $loop->index }} ? 'w-10 mr-4' : 'w-0'">
 								<svg

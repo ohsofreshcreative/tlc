@@ -25,13 +25,13 @@ Alpine.start();
 
 /*--- SKRYPTY URUCHAMIANE PO ZAŁADOWANIU STRONY ---*/
 
-document.addEventListener('DOMContentLoaded', function () {
-
-  // Sprawdzenie, czy globalny GSAP istnieje. Jeśli nie, nic nie robimy, aby uniknąć błędów.
-  if (typeof gsap === 'undefined') {
-    console.error('GSAP nie został załadowany globalnie. Sprawdź plik app/setup.php lub functions.php');
+function initGsapAnimations() {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+    // LiteSpeed Cache może defer'ować GSAP poza DOMContentLoaded — czekamy na window.load
+    window.addEventListener('load', initGsapAnimations, { once: true });
     return;
   }
+  gsap.registerPlugin(ScrollTrigger);
 
   // --- TWOJE ISTNIEJĄCE ANIMACJE GSAP (TERAZ POWINNY DZIAŁAĆ) ---
   gsap.utils.toArray("[data-gsap-anim='section']").forEach((section) => {
@@ -100,7 +100,9 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   });
-});
+}
+
+document.addEventListener('DOMContentLoaded', initGsapAnimations);
 
 
 
