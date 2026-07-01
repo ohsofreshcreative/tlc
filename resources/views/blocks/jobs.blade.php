@@ -21,27 +21,32 @@ if (!empty($background) && $background !== 'none') {
 
         <div class="__col grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
             @if($jobs)
-                @foreach ($jobs as $sector)
-                    <div class="__card bg-white">
-                        @if (has_post_thumbnail($sector->ID))
-                            <a href="{{ get_permalink($sector->ID) }}">
-                                <img src="{{ get_the_post_thumbnail_url($sector->ID, 'large') }}" alt="{{ $sector->post_title }}" class="w-full img-s object-cover rounded-t-2xl">
-                            </a>
-                        @endif
-                        <div class="__content relative bg-white border-p radius p-6" style="margin-top:-32px;">
-                            <h6 class="">
-                                <a href="{{ get_permalink($sector->ID) }}">{{ $sector->post_title }}</a>
-                            </h6>
-                            <div class="flex items-center gap-2 mt-2">
-                                <img src="/wp-content/uploads/2025/11/place.svg" />{{ get_the_excerpt($sector->ID) }}
-                            </div>
-                            <a href="{{ get_permalink($sector->ID) }}" class="stroke-btn mt-5">
-                               Aplikuj
-                            </a>
-                        </div>
-                    </div>
-                @endforeach
+    @foreach ($jobs as $sector)
+        <div class="__card bg-white">
+            @if (has_post_thumbnail($sector->ID))
+                <a href="{{ get_permalink($sector->ID) }}">
+                    <img src="{{ get_the_post_thumbnail_url($sector->ID, 'large') }}" alt="{{ $sector->post_title }}" class="w-full img-s object-cover rounded-t-2xl">
+                </a>
             @endif
+            <div class="__content relative bg-white border-p radius p-6" style="margin-top:-32px;">
+                <h6 class="">
+                    <a href="{{ get_permalink($sector->ID) }}">{{ $sector->post_title }}</a>
+                </h6>
+                <div class="flex items-center gap-2 mt-2">
+                    <img src="/wp-content/uploads/2025/11/place.svg" />{{ get_the_excerpt($sector->ID) }}
+                </div>
+                <a href="{{ get_permalink($sector->ID) }}" class="stroke-btn mt-5">
+                   Aplikuj
+                </a>
+            </div>
+        </div>
+    @endforeach
+@else
+    <div class="col-span-3 text-center py-16">
+        <p class="text-lg mb-4">Aktualnie nie prowadzimy rekrutacji, ale możesz przesłać nam swoje CV.</p>
+        <a href="mailto:tlc@tlc.pl" class="stroke-btn">Wyślij CV: tlc@tlc.pl</a>
+    </div>
+@endif
         </div>
     </div>
 </section>
