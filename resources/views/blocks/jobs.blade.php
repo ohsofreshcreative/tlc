@@ -42,9 +42,9 @@ if (!empty($background) && $background !== 'none') {
         </div>
     @endforeach
 @else
-    <div class="col-span-3 text-center py-16">
+    <div class="col-span-3 bg-primary-200 radius border-2 border-dashed border-primary text-center py-16">
         <p class="text-lg mb-4">Aktualnie nie prowadzimy rekrutacji, ale możesz przesłać nam swoje CV.</p>
-        <a href="mailto:tlc@tlc.pl" class="stroke-btn">Wyślij CV: tlc@tlc.pl</a>
+        <a href="mailto:tlc@tlc.pl" class="stroke-btn mt-4">Wyślij CV: tlc@tlc.pl</a>
     </div>
 @endif
         </div>
