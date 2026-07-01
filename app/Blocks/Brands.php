@@ -61,13 +61,6 @@ class Brands extends Block
 		// Pobierz dane z pola repeater
 		$brands_data = get_field('r_brand', 'option') ?: [];
 
-		// Posortuj tablicę alfabetycznie według pola 'title'
-		if (!empty($brands_data)) {
-			usort($brands_data, function ($a, $b) {
-				// Użyj `strnatcasecmp` dla naturalnego, niewrażliwego na wielkość liter sortowania
-				return strnatcasecmp($a['title'] ?? '', $b['title'] ?? '');
-			});
-		}
 
 		return [
 			'brands_data'   => $brands_data, // Przekaż już posortowane dane
