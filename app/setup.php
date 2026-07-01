@@ -71,7 +71,7 @@ add_action('after_setup_theme', function () {
 	add_theme_support('wc-product-gallery-lightbox');
 	add_theme_support('wc-product-gallery-slider');
 
-	
+
 	/**
 	 * Disable full-site editing support.
 	 *
@@ -142,24 +142,24 @@ add_action('after_setup_theme', function () {
 /*--- WOOCOMMERCE PHP FILES ---*/
 
 array_map(function ($file) {
-  require_once $file;
+	require_once $file;
 }, array_merge(
-  glob(get_theme_file_path('app/Woo/*.php')) ?: [],
-  glob(get_theme_file_path('app/Woo/*/*.php')) ?: []
+	glob(get_theme_file_path('app/Woo/*.php')) ?: [],
+	glob(get_theme_file_path('app/Woo/*/*.php')) ?: []
 ));
 
 
 /*--- WOOCOMMERCE SIDEBAR ---*/
 
 add_action('widgets_init', function () {
-    register_sidebar([
-        'name'          => __('Sklep - Filtry', 'sage'),
-        'id'            => 'sidebar-shop',
-        'before_widget' => '<section class="widget %1$s %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h5 class="widget-title font-bold mb-4">',
-        'after_title'   => '</h5>',
-    ]);
+	register_sidebar([
+		'name'          => __('Sklep - Filtry', 'sage'),
+		'id'            => 'sidebar-shop',
+		'before_widget' => '<section class="widget %1$s %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h5 class="widget-title font-bold mb-4">',
+		'after_title'   => '</h5>',
+	]);
 });
 
 
@@ -216,29 +216,29 @@ add_action('acf/init', function () {
 			'title' => 'Ustawienia Kategorii',
 			'fields' => [
 				[
-                    'key' => 'field_category_header',
-                    'label' => 'Nagłówek',
-                    'name' => 'category_header',
-                    'type' => 'text',
-                    'instructions' => 'Opcjonalny nagłówek, który może zastąpić domyślną nazwę kategorii.',
-                ],
-                [
-                    'key' => 'field_category_description',
-                    'label' => 'Opis',
-                    'name' => 'category_description',
-                    'type' => 'textarea',
-                    'instructions' => 'Krótki opis wyświetlany na stronie kategorii.',
-                ],
-                [
-                    'key' => 'field_category_image',
-                    'label' => 'Zdjęcie Kategorii',
-                    'name' => 'category_image',
-                    'type' => 'image',
-                    'instructions' => 'Dodaj obrazek, który będzie wyświetlany jako tło lub nagłówek dla tej kategorii.',
-                    'return_format' => 'array', // Zwraca tablicę z danymi obrazka (url, alt, etc.)
-                    'preview_size' => 'medium',
-                    'library' => 'all',
-                ],
+					'key' => 'field_category_header',
+					'label' => 'Nagłówek',
+					'name' => 'category_header',
+					'type' => 'text',
+					'instructions' => 'Opcjonalny nagłówek, który może zastąpić domyślną nazwę kategorii.',
+				],
+				[
+					'key' => 'field_category_description',
+					'label' => 'Opis',
+					'name' => 'category_description',
+					'type' => 'textarea',
+					'instructions' => 'Krótki opis wyświetlany na stronie kategorii.',
+				],
+				[
+					'key' => 'field_category_image',
+					'label' => 'Zdjęcie Kategorii',
+					'name' => 'category_image',
+					'type' => 'image',
+					'instructions' => 'Dodaj obrazek, który będzie wyświetlany jako tło lub nagłówek dla tej kategorii.',
+					'return_format' => 'array', // Zwraca tablicę z danymi obrazka (url, alt, etc.)
+					'preview_size' => 'medium',
+					'library' => 'all',
+				],
 			],
 			'location' => [
 				[
@@ -263,19 +263,19 @@ add_action('acf/init', function () {
  * Remove archive title prefix (e.g., "Category:", "Tag:").
  */
 add_filter('get_the_archive_title', function ($title) {
-    if (is_category()) {
-        $title = single_cat_title('', false);
-    } elseif (is_tag()) {
-        $title = single_tag_title('', false);
-    } elseif (is_author()) {
-        $title = '<span class="vcard">' . get_the_author() . '</span>';
-    } elseif (is_post_type_archive()) {
-        $title = post_type_archive_title('', false);
-    } elseif (is_tax()) {
-        $title = single_term_title('', false);
-    }
+	if (is_category()) {
+		$title = single_cat_title('', false);
+	} elseif (is_tag()) {
+		$title = single_tag_title('', false);
+	} elseif (is_author()) {
+		$title = '<span class="vcard">' . get_the_author() . '</span>';
+	} elseif (is_post_type_archive()) {
+		$title = post_type_archive_title('', false);
+	} elseif (is_tax()) {
+		$title = single_term_title('', false);
+	}
 
-    return $title;
+	return $title;
 });
 
 /*--- GSAP ---*/
@@ -309,8 +309,8 @@ add_filter('litespeed_optimize_js_excludes', function ($excludes) {
 
 
 add_action('after_setup_theme', function () {
-    remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-    remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+	remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+	remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 });
 
 
@@ -321,33 +321,33 @@ add_action('after_setup_theme', function () {
  * Ten kod usuwa standardowe akcje WooCommerce, aby uprościć wygląd sklepu.
  */
 add_action('init', function () {
-    // Usuń akcję odpowiedzialną za wyświetlanie "Wyświetlanie X z Y wyników"
-    remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
+	// Usuń akcję odpowiedzialną za wyświetlanie "Wyświetlanie X z Y wyników"
+	remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 
-    // Usuń akcję odpowiedzialną za wyświetlanie dropdownu do sortowania
-    remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+	// Usuń akcję odpowiedzialną za wyświetlanie dropdownu do sortowania
+	remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
 });
 
 
 /*---- CATEGORY REDIRECT TO PAGE ----*/
 
 add_action('template_redirect', function () {
-    // Sprawdź, czy jesteśmy na stronie kategorii produktu i czy ACF jest aktywny
-    if (!is_product_category() || !function_exists('get_field')) {
-        return;
-    }
+	// Sprawdź, czy jesteśmy na stronie kategorii produktu i czy ACF jest aktywny
+	if (!is_product_category() || !function_exists('get_field')) {
+		return;
+	}
 
-    // Pobierz aktualny obiekt kategorii
-    $category = get_queried_object();
+	// Pobierz aktualny obiekt kategorii
+	$category = get_queried_object();
 
-    // Pobierz ID strony podlinkowanej w polu ACF
-    $linked_page_url = get_field('linked_page', $category);
+	// Pobierz ID strony podlinkowanej w polu ACF
+	$linked_page_url = get_field('linked_page', $category);
 
-    // Jeśli strona została podlinkowana, wykonaj przekierowanie 301
-    if ($linked_page_url) {
-        wp_redirect($linked_page_url, 301);
-        exit();
-    }
+	// Jeśli strona została podlinkowana, wykonaj przekierowanie 301
+	if ($linked_page_url) {
+		wp_redirect($linked_page_url, 301);
+		exit();
+	}
 });
 
 
@@ -359,90 +359,94 @@ add_action('template_redirect', function () {
  */
 function get_pdf_thumbnail_url($pdf_attachment_id)
 {
-    // Check if Imagick extension is available
-    if (!extension_loaded('imagick')) {
-        error_log('Imagick extension is not loaded. PDF thumbnail generation is disabled.');
-        return wp_get_attachment_url($pdf_attachment_id);
-    }
+	// Check if Imagick extension is available
+	if (!extension_loaded('imagick')) {
+		error_log('Imagick extension is not loaded. PDF thumbnail generation is disabled.');
+		return wp_get_attachment_url($pdf_attachment_id);
+	}
 
-    $pdf_path = get_attached_file($pdf_attachment_id);
-    if (!$pdf_path || !file_exists($pdf_path)) {
-        return wp_get_attachment_url($pdf_attachment_id);
-    }
+	$pdf_path = get_attached_file($pdf_attachment_id);
+	if (!$pdf_path || !file_exists($pdf_path)) {
+		return wp_get_attachment_url($pdf_attachment_id);
+	}
 
-    $upload_dir = wp_upload_dir();
-    $thumbnail_filename = pathinfo($pdf_path, PATHINFO_FILENAME) . '-pdf-thumb.jpg';
-    $thumbnail_path = "{$upload_dir['path']}/{$thumbnail_filename}";
-    $thumbnail_url = "{$upload_dir['url']}/{$thumbnail_filename}";
+	$upload_dir = wp_upload_dir();
+	$thumbnail_filename = pathinfo($pdf_path, PATHINFO_FILENAME) . '-pdf-thumb.jpg';
+	$thumbnail_path = "{$upload_dir['path']}/{$thumbnail_filename}";
+	$thumbnail_url = "{$upload_dir['url']}/{$thumbnail_filename}";
 
-    // If thumbnail already exists, return its URL
-    if (file_exists($thumbnail_path)) {
-        return $thumbnail_url;
-    }
+	// If thumbnail already exists, return its URL
+	if (file_exists($thumbnail_path)) {
+		return $thumbnail_url;
+	}
 
-    try {
-        $imagick = new \Imagick();
-        $imagick->setResolution(150, 150);
-        $imagick->readImage("{$pdf_path}[0]");
-        $imagick->setImageFormat('jpeg');
-        $imagick->setImageBackgroundColor('white');
-        $imagick->setImageAlphaChannel(\Imagick::ALPHACHANNEL_REMOVE);
-        $imagick->mergeImageLayers(\Imagick::LAYERMETHOD_FLATTEN);
-        $imagick->writeImage($thumbnail_path);
-        $imagick->clear();
-        $imagick->destroy();
+	try {
+		$imagick = new \Imagick();
+		$imagick->setResolution(150, 150);
+		$imagick->readImage("{$pdf_path}[0]");
+		// Konwertuj CMYK → sRGB jeśli potrzeba
+		if ($imagick->getImageColorspace() === \Imagick::COLORSPACE_CMYK) {
+			$imagick->transformImageColorspace(\Imagick::COLORSPACE_SRGB);
+		}
+		$imagick->setImageFormat('jpeg');
+		$imagick->setImageBackgroundColor('white');
+		$imagick->setImageAlphaChannel(\Imagick::ALPHACHANNEL_REMOVE);
+		$imagick->mergeImageLayers(\Imagick::LAYERMETHOD_FLATTEN);
+		$imagick->writeImage($thumbnail_path);
+		$imagick->clear();
+		$imagick->destroy();
 
-        return $thumbnail_url;
-    } catch (\Exception $e) {
-        error_log('PDF to Image conversion failed: ' . $e->getMessage());
-        return wp_get_attachment_url($pdf_attachment_id);
-    }
+		return $thumbnail_url;
+	} catch (\Exception $e) {
+		error_log('PDF to Image conversion failed: ' . $e->getMessage());
+		return wp_get_attachment_url($pdf_attachment_id);
+	}
 }
 
 /*--- HELP BUBBLE ---*/
 
 add_action('wp_footer', function () {
-    // Dla stron archiwów (np. główny sklep, kategorie) pokaż ogólny dymek i zakończ.
-    if (!is_singular()) {
-        if (function_exists('is_woocommerce') && is_woocommerce()) {
-            echo view('partials.contact-bubble');
-        }
-        return;
-    }
+	// Dla stron archiwów (np. główny sklep, kategorie) pokaż ogólny dymek i zakończ.
+	if (!is_singular()) {
+		if (function_exists('is_woocommerce') && is_woocommerce()) {
+			echo view('partials.contact-bubble');
+		}
+		return;
+	}
 
-    // Mamy stronę singular (page, product, etc.)
-    $source_object_id = get_queried_object_id();
-    $source_object_type = 'post';
+	// Mamy stronę singular (page, product, etc.)
+	$source_object_id = get_queried_object_id();
+	$source_object_type = 'post';
 
-    // Jeśli jesteśmy na stronie produktu, musimy pobrać dane z jego kategorii.
-    if (is_product()) {
-        $terms = get_the_terms($source_object_id, 'product_cat');
-        // Jeśli produkt ma kategorie, użyj pierwszej z nich jako źródła danych.
-        if (!empty($terms)) {
-            $source_object_id = $terms[0]->term_id;
-            $source_object_type = 'term';
-        }
-    }
+	// Jeśli jesteśmy na stronie produktu, musimy pobrać dane z jego kategorii.
+	if (is_product()) {
+		$terms = get_the_terms($source_object_id, 'product_cat');
+		// Jeśli produkt ma kategorie, użyj pierwszej z nich jako źródła danych.
+		if (!empty($terms)) {
+			$source_object_id = $terms[0]->term_id;
+			$source_object_type = 'term';
+		}
+	}
 
-    // PRIORYTET 1: Sprawdź, czy włączono niestandardowy dymek (na stronie lub na kategorii produktu).
-    // Musimy połączyć ID i typ obiektu, aby ACF wiedział, gdzie szukać.
-    if (get_field('show_help_sidebar', $source_object_type . '_' . $source_object_id)) {
-        // Przekazujemy ID do widoku, aby on też wiedział skąd pobrać dane.
-        echo view('partials.page-help-bubble', ['source_id' => $source_object_type . '_' . $source_object_id]);
-        return;
-    }
+	// PRIORYTET 1: Sprawdź, czy włączono niestandardowy dymek (na stronie lub na kategorii produktu).
+	// Musimy połączyć ID i typ obiektu, aby ACF wiedział, gdzie szukać.
+	if (get_field('show_help_sidebar', $source_object_type . '_' . $source_object_id)) {
+		// Przekazujemy ID do widoku, aby on też wiedział skąd pobrać dane.
+		echo view('partials.page-help-bubble', ['source_id' => $source_object_type . '_' . $source_object_id]);
+		return;
+	}
 
-    // PRIORYTET 2: Jeśli nie ma dymka niestandardowego, sprawdź, czy to podstrona sklepu.
-    $parent_shop_page = get_page_by_path('produkty');
-    if ($parent_shop_page && get_queried_object()->post_parent === $parent_shop_page->ID) {
-        echo view('partials.category-bubble');
-        return;
-    }
+	// PRIORYTET 2: Jeśli nie ma dymka niestandardowego, sprawdź, czy to podstrona sklepu.
+	$parent_shop_page = get_page_by_path('produkty');
+	if ($parent_shop_page && get_queried_object()->post_parent === $parent_shop_page->ID) {
+		echo view('partials.category-bubble');
+		return;
+	}
 
-    // PRIORYTET 3: Jeśli nic z powyższych, a jesteśmy na stronie produktu, pokaż ogólny dymek.
-    if (is_product()) {
-        echo view('partials.contact-bubble');
-    }
+	// PRIORYTET 3: Jeśli nic z powyższych, a jesteśmy na stronie produktu, pokaż ogólny dymek.
+	if (is_product()) {
+		echo view('partials.contact-bubble');
+	}
 });
 
 
