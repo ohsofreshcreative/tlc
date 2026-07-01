@@ -44,7 +44,7 @@ if (!empty($background) && $background !== 'none') {
 @else
     <div class="col-span-3 bg-p-light radius border-2 border-dashed border-primary text-center py-16">
         <p class="text-xl mb-4">Aktualnie nie prowadzimy rekrutacji, ale możesz przesłać nam swoje CV.</p>
-        <a href="mailto:tlc@tlc.pl" class="white-btn mt-4">Wyślij CV: tlc@tlc.pl</a>
+        <a href="mailto:tlc@tlc.pl" class="main-btn mt-4">Wyślij CV: tlc@tlc.pl</a>
     </div>
 @endif
         </div>
