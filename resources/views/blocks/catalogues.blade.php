@@ -26,7 +26,7 @@ if (!empty($r_catalogues)) {
 }
 
 // Zbierz unikalne wartości dla filtrów
-function get_unique_values($catalogues, $key) {
+$get_unique_values = function($catalogues, $key) {
     $values = array_map(function($cat) use ($key) {
         return $cat[$key];
     }, $catalogues);
@@ -36,11 +36,11 @@ function get_unique_values($catalogues, $key) {
     $values = array_unique($values);
     sort($values);
     return array_values($values);
-}
+};
 
-$unique_producers = get_unique_values($catalogues_data, 'producer');
-$unique_groups = get_unique_values($catalogues_data, 'product_group');
-$unique_industries = get_unique_values($catalogues_data, 'industry');
+$unique_producers  = $get_unique_values($catalogues_data, 'producer');
+$unique_groups     = $get_unique_values($catalogues_data, 'product_group');
+$unique_industries = $get_unique_values($catalogues_data, 'industry');
 @endphp
 
 <!--- CATALOGUES --->
