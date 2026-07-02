@@ -65,7 +65,7 @@ $category = !empty($categories) ? $categories[0] : null;
 			<a data-gsap-element="btn" class="main-btn m-btn align-self-bottom" href="/zapytaj-eksperta/">Zapytaj eksperta</a>
 			@else
 			<a data-gsap-element="btn" class="main-btn m-btn align-self-bottom" href="/kontakt/">Porozmawiajmy</a>
-			@endif
+			@endif	@endif
 		</div>
 	</div>
 </div>
