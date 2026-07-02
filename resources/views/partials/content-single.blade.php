@@ -36,12 +36,33 @@ $category = !empty($categories) ? $categories[0] : null;
 			@endif
 			{!! the_content() !!}
 		</div>
-		<div class="__sidebar sticky top-10 bg-dark radius h-max p-8">
-			<h6 class="text-white">Doradzimy Ci najlepsze rozwiązanie</h6>
-			<img class="my-8" src="/wp-content/uploads/2025/11/photos.png" />
-			<p class="text-white">Szybki kontakt z ekspertem pozwoli uniknąć kosztownych przestojów.</p>
+		@php
+		$sidebar_title = get_field('post_sidebar_title') ?: 'Doradzimy Ci najlepsze rozwiązanie';
+		$sidebar_image = get_field('post_sidebar_image');
+		$sidebar_name = get_field('post_sidebar_name');
+		$sidebar_desc = get_field('post_sidebar_desc') ?: 'Szybki kontakt z ekspertem pozwoli uniknąć kosztownych przestojów.';
+		$sidebar_btn = get_field('post_sidebar_btn');
+		@endphp
 
+		<div class="__sidebar sticky top-10 bg-dark radius h-max p-8">
+			<h6 class="text-white">{{ $sidebar_title }}</h6>
+
+			@if ($sidebar_image)
+			{!! wp_get_attachment_image($sidebar_image, 'large', false, ['class' => 'my-8 w-30 aspect-square rounded-full my-4 entered litespeed-loaded']) !!}
+			@else
+			<img class="my-8 " src="/wp-content/uploads/2025/11/photos.png" alt="" />
+			@endif
+
+			@if ($sidebar_name)
+			<h6 class="text-white mb-8">{{ $sidebar_name }}</h6>
+			@endif
+			<p class="text-white mb-8">{{ $sidebar_desc }}</p>
+
+			@if ($sidebar_btn && !empty($sidebar_btn['url']))
+			<a data-gsap-element="btn" class="main-btn m-btn align-self-bottom" href="{{ $sidebar_btn['url'] }}" @if(!empty($sidebar_btn['target'])) target="{{ $sidebar_btn['target'] }}" @endif>{{ $sidebar_btn['title'] }}</a>
+			@else
 			<a data-gsap-element="btn" class="main-btn m-btn align-self-bottom" href="/kontakt">Porozmawiajmy</a>
+			@endif
 		</div>
 	</div>
 </div>
