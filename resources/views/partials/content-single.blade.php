@@ -61,7 +61,10 @@ $category = !empty($categories) ? $categories[0] : null;
 			@if ($sidebar_btn && !empty($sidebar_btn['url']))
 			<a data-gsap-element="btn" class="main-btn m-btn align-self-bottom" href="{{ $sidebar_btn['url'] }}" @if(!empty($sidebar_btn['target'])) target="{{ $sidebar_btn['target'] }}" @endif>{{ $sidebar_btn['title'] }}</a>
 			@else
-			<a data-gsap-element="btn" class="main-btn m-btn align-self-bottom" href="/zapytaj-eksperta/">Porozmawiajmy</a>
+			@if ($sidebar_name)
+			<a data-gsap-element="btn" class="main-btn m-btn align-self-bottom" href="/zapytaj-eksperta/">Zapytaj eksperta</a>
+			@else
+			<a data-gsap-element="btn" class="main-btn m-btn align-self-bottom" href="/kontakt/">Porozmawiajmy</a>
 			@endif
 		</div>
 	</div>
