@@ -13,7 +13,7 @@ if (!empty($background) && $background !== 'none') {
 <!--- brands --->
 
 {{-- Główny kontener dla logiki Alpine.js --}}
-<div x-data="{ modalVisible: false, image: '', title: '', description: '', link: '' }">
+<div x-data="{ modalVisible: false, image: '', title: '', description: '', link: '', producent: '' }">
    <section 
     data-gsap-anim="section" 
     @if(!empty($block_section_id)) id="{{ $block_section_id }}" @endif 
@@ -38,6 +38,7 @@ if (!empty($background) && $background !== 'none') {
                                 title = {{ json_encode($item['title'] ?? '') }};
                                 description = {{ json_encode($item['txt'] ?? '') }};
                                 link = '{{ $item['link'] ?? '' }}';
+                                producent = '{{ $item['producent'] ?? '' }}';
                             "
                         >
                             <img class="" src="{{ $item['image']['url'] }}" alt="{{ $item['image']['alt'] ?? '' }}" />
@@ -58,7 +59,6 @@ if (!empty($background) && $background !== 'none') {
         </div>
     </section>
 
-    {{-- Modal (bez zmian) --}}
     <div 
         class="fixed right-0 top-0 z-[4000] h-screen w-full max-w-md bg-white shadow-lg backdrop-blur-sm transition-transform duration-300"
         x-show="modalVisible"
@@ -87,7 +87,7 @@ if (!empty($background) && $background !== 'none') {
                 <div class="overflow-y-auto mb-4" x-html="description"></div>
 
                 <div class="">
-                    <a x-show="link" x-bind:href="link" target="_blank" rel="noopener noreferrer" class="underline-btn m-btn">
+                    <a x-show="producent" x-bind:href="producent" target="_blank" rel="noopener noreferrer" class="underline-btn m-btn">
                         Strona producenta
                     </a>
                 </div>

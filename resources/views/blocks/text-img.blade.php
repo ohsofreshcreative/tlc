@@ -30,7 +30,16 @@ $sectionClass .= ' ' . $background;
 				</div>
 
 				@if (!empty($g_textimg['button']))
-				<a data-gsap-element="btn" class="main-btn m-btn align-self-bottom" href="{{ $g_textimg['button']['url'] }}">{{ $g_textimg['button']['title'] }}</a>
+				<a
+					data-gsap-element="btn"
+					class="main-btn m-btn align-self-bottom"
+					href="{{ $g_textimg['button']['url'] }}"
+					target="{{ $g_textimg['button']['target'] ?? '_self' }}"
+					@if(($g_textimg['button']['target'] ?? '' )==='_blank' )
+					rel="noopener noreferrer"
+					@endif>
+					{{ $g_textimg['button']['title'] }}
+				</a>
 				@endif
 
 			</div>

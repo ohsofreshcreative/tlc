@@ -5,6 +5,11 @@
     padding: 16px 18px;
     background-color: #ddf3e7;
 	transition: all 0.3s ease;
+	height: 52px !important;
+	width: 52px !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	svg path {
 	  fill: #00aa4f;
 	  transition: fill 0.3s ease;

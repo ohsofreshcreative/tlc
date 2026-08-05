@@ -11,6 +11,7 @@ import './menubar.js';
 import './footer-accordion.js';
 import './swiper.js';
 import './blocks/categories.js';
+import './blocks/hero-sub.js';
 import './blocks/logos.js';
 import './blocks/map.js';
 import './blocks/locations.js';

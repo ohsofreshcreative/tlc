@@ -6,7 +6,7 @@ $sectionClass .= $nomt ? ' !mt-0' : '';
 $sectionClass .= $gap ? ' wider-gap' : '';
 
 if (!empty($background) && $background !== 'none') {
-    $sectionClass .= ' ' . $background;
+$sectionClass .= ' ' . $background;
 }
 
 @endphp
@@ -30,7 +30,16 @@ if (!empty($background) && $background !== 'none') {
 				<h3 data-gsap-element="header" class="mt-4">{{ $g_order['header'] }}</h3>
 
 				@if (!empty($g_order['button']))
-				<a data-gsap-element="btn" class="main-btn m-btn" href="{{ $g_order['button']['url'] }}">{{ $g_order['button']['title'] }}</a>
+				<a
+					data-gsap-element="btn"
+					class="main-btn m-btn"
+					href="{{ $g_order['button']['url'] }}"
+					target="{{ $g_order['button']['target'] ?: '_self' }}"
+					@if(($g_order['button']['target'] ?? '' )==='_blank' )
+					rel="noopener noreferrer"
+					@endif>
+					{{ $g_order['button']['title'] }}
+				</a>
 				@endif
 
 			</div>

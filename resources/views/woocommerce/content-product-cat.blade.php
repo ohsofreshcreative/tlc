@@ -27,7 +27,7 @@ $classes = implode(' ', $classes);
 
 		@php do_action('woocommerce_before_subcategory_title', $category); @endphp
 
-		<h2 class="woocommerce-loop-category__title text-left text-h6 !mt-8">
+		<h2 class="woocommerce-loop-category__title text-left text-h6 min-h-13 !mt-8">
 			{{ $category->name }}
 
 			@if (!empty($category->count))

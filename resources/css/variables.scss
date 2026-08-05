@@ -1152,6 +1152,10 @@ h6,
 
 
 /*--- !BLOCKS ---*/
+.__arrow {
+	width:52px !important;
+	height:52px !important;
+}
 
 /*--- !FORM ---*/
 
@@ -1183,7 +1187,7 @@ h6,
 /*--- !INPUT CONTACT ---*/
 
 .wpcf7-response-output {
-	color:#FFF !important;
+	color: #FFF !important;
 }
 
 input[type='text'],
@@ -1503,9 +1507,10 @@ footer {
 		width: 24px;
 		height: 24px;
 	}
+
 	.menu-underline {
 		text-decoration: underline !important;
-		color:var(--p-200) !important;
+		color: var(--p-200) !important;
 	}
 }
 
