@@ -13,7 +13,7 @@ $imageUrl = !empty($g_connect_1['image']['url']) ? "url(" . $g_connect_1['image'
 <!--- connect --->
 
 <section
-	data-gsap-anim="section"
+	data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif
 	class="b-connect bg-s-lighter relative pt-10 pb-30 {{ $sectionClass }} {{ $section_class }}"
 	style="background-color: rgb(0, 39, 4); background-image: {{ $backgroundGradients }}; --bg-image: {{ $imageUrl }};">
 
