@@ -37,7 +37,7 @@ if (!empty($background) && $background !== 'none') {
                                 image = '{{ $item['image']['url'] }}';
                                 title = {{ json_encode($item['title'] ?? '') }};
                                 description = {{ json_encode($item['txt'] ?? '') }};
-                                link = '{{ $item['link'] ?? '' }}';
+                                link = {{ json_encode($item['link'] ?? '') }};
                                 producent = '{{ $item['producent'] ?? '' }}';
                             "
                         >
@@ -93,7 +93,7 @@ if (!empty($background) && $background !== 'none') {
                 </div>
 
                 <div class="">
-                    <a href="https://b2b.tlc.pl/strona_glowna" target="_blank" rel="noopener noreferrer" class="main-btn m-btn">
+                    <a x-bind:href="link || '#'" target="_blank" rel="noopener noreferrer" class="main-btn m-btn">
                         Zobacz w e-sklepie
                     </a>
                 </div>

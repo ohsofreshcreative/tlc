@@ -60,6 +60,9 @@ class Map extends Block
 			->addText('header', [
 				'label' => 'Oddział',
 			])
+			->addText('text', [
+				'label' => 'Dopisek',
+			])
 			->addText('phone', ['label' => 'Telefon'])
 			->addText('email', ['label' => 'Email'])
 			->addTextarea('address', [
