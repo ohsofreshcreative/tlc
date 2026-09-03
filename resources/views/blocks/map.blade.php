@@ -29,7 +29,7 @@ $sectionClass .= ' ' . $background;
 					<div id="{{ Str::slug($item['header']) }}" class="__card relative border-top-p pt-8 mt-8">
 
 						<h6 class="primary mb-2">{{ $item['header'] }}</h6>
-						<p class="mb-2">{{ $item['text'] }}</p>
+						<p class="primary font-header block !pb-2">{{ $item['text'] }}</p>
 
 						<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 							<div class="__data">
