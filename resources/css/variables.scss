@@ -1153,8 +1153,8 @@ h6,
 
 /*--- !BLOCKS ---*/
 .__arrow {
-	width:52px !important;
-	height:52px !important;
+	width: 52px !important;
+	height: 52px !important;
 }
 
 /*--- !FORM ---*/
@@ -1424,13 +1424,14 @@ article.post:hover img {
 /*--- !SINGLE ---*/
 
 .single-post {
+	.__content {
+		a {
+			color: var(--primary) !important;
+		}
 
-	a {
-		color:var(--primary) !important;
-	}
-
-	a:hover {
-		color:var(--primary-hover) !important;
+		a:hover {
+			color: var(--primary-hover) !important;
+		}
 	}
 
 	.wysiwyg,
