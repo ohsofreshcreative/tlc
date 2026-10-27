@@ -1425,6 +1425,14 @@ article.post:hover img {
 
 .single-post {
 
+	a {
+		color:var(--color-primary);
+	}
+
+	a:hover {
+		color:var(--color-primary-300);
+	}
+
 	.wysiwyg,
 	.cta {
 		width: 75%;
