@@ -1426,11 +1426,11 @@ article.post:hover img {
 .single-post {
 
 	a {
-		color:var(--color-primary);
+		color:var(--color-primary) !important;
 	}
 
 	a:hover {
-		color:var(--color-primary-300);
+		color:var(--color-primary-300) !important;
 	}
 
 	.wysiwyg,
